@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accountant Toolkit — Software Reviews for Freelance Accountants</title>
+  <meta name="description" content="Honest, in-depth software reviews and comparisons for freelance accountants and bookkeepers. Find the right tools for your practice." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f1f38;
+      --navy-mid: #1a3158;
+      --teal: #0d9488;
+      --teal-light: #ccfbf1;
+      --teal-mid: #14b8a6;
+      --amber: #d97706;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-400: #94a3b8;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+      --white: #ffffff;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-800);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.06;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -40px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: var(--teal-mid);
+      opacity: 0.07;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--teal-light);
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal-mid);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--teal-mid);
+      transform: translateY(-1px);
+    }
+
+    .hero-cta svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+
+    .trust-item svg {
+      color: var(--teal);
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--gray-600);
+      max-width: 540px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* FEATURED ARTICLES */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .article-card {
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      background: var(--white);
+    }
+
+    .article-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 4px 24px rgba(13, 148, 136, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-arrow {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-top: 0.5rem;
+    }
+
+    /* TOOLS COMPARISON SECTION */
+    .tools-section {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 5rem 2rem;
+    }
+
+    .tools-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .tool-pill {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 1.25rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--gray-800);
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .tool-pill:hover {
+      border-color: var(--teal);
+      box-shadow: 0 2px 12px rgba(13, 148, 136, 0.08);
+    }
+
+    .tool-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* WHY SECTION */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .why-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--teal-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .why-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--teal);
+    }
+
+    .why-text h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .why-text p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--navy);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .newsletter p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 240px;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #1e3a5f;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input::placeholder { color: #64748b; }
+    .newsletter-form input:focus { border-color: var(--teal); }
+
+    .newsletter-form button {
+      padding: 0.8rem 1.6rem;
+      background: var(--teal);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .newsletter-form button:hover { background: var(--teal-mid); }
+
+    .newsletter-note {
+      font-size: 0.78rem;
+      color: #64748b;
+      margin-top: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      padding: 3rem 2rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      margin-top: 0.5rem;
+      max-width: 280px;
+      line-height: 1.6;
+    }
+
+    .footer-links h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--navy); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--gray-200);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    .disclosure {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .trust-bar { gap: 1rem; }
+      .hero { padding: 4rem 1.5rem 3.5rem; }
+      .section { padding: 3.5rem 1.5rem; }
+      .tools-section { padding: 3.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Accountant<span>Toolkit</span></a>
+    <ul class="nav-links">
+      <li><a href="/reviews.html">Reviews</a></li>
+      <li><a href="/comparisons.html">Comparisons</a></li>
+      <li><a href="/guides.html">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">For Freelance Accountants &amp; Bookkeepers</div>
+    <h1>Find the <em>right software</em> for your practice</h1>
+    <p>Honest, in-depth reviews and head-to-head comparisons of accounting tools — so you can stop second-guessing and start working.</p>
+    <a href="#featured" class="hero-cta">
+      Browse reviews
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1l1.9 3.8L14 5.6l-3 2.9.7 4.1L8 10.5l-3.7 2.1.7-4.1L2 5.6l4.1-.8z"/></svg>
+      Hands-on tested
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+      Updated regularly
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8l4 4 8-8"/></svg>
+      No fluff, just facts
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="2"/><path d="M5 7h6M5 10h4"/></svg>
+      Affiliate disclosure
+    </div>
+  </div>
+
+  <!-- FEATURED ARTICLES -->
+  <div id="featured" class="section">
+    <div class="section-label">Latest reviews</div>
+    <h2 class="section-title">Comparisons &amp; Reviews</h2>
+    <p class="section-sub">Every review is written for freelance accountants specifically — not generic small business advice.</p>
+
+    <div class="articles-grid">
+      <a href="/xero-vs-wave.html" class="article-card">
+        <div class="card-tag">Comparison</div>
+        <div class="card-title">Xero vs Wave for Freelance Accountants</div>
+        <div class="card-desc">Two of the most popular tools for solo practitioners. We break down pricing, features, and who each one is actually right for.</div>
+        <div class="card-arrow">Read comparison <span>→</span></div>
+      </a>
+
+      <a href="/bonsai-vs-freshbooks.html" class="article-card">
+        <div class="card-tag">Comparison</div>
+        <div class="card-title">Bonsai vs FreshBooks for Solo Bookkeepers</div>
+        <div class="card-desc">Both target freelancers, but they make very different tradeoffs. Here's which one fits your workflow better.</div>
+        <div class="card-arrow">Read comparison <span>→</span></div>
+      </a>
+
+      <a href="/best-invoicing-software.html" class="article-card">
+        <div class="card-tag">Best picks</div>
+        <div class="card-title">Best Invoicing Software for Freelance Accountants</div>
+        <div class="card-desc">A ranked list of the top invoicing tools in 2025, with real pros, cons, and pricing for each — no filler.</div>
+        <div class="card-arrow">See the list <span>→</span></div>
+      </a>
+
+      <a href="/best-receipt-tracking.html" class="article-card">
+        <div class="card-tag">Best picks</div>
+        <div class="card-title">Best Receipt Tracking Apps for Self-Employed Accountants</div>
+        <div class="card-desc">Stop losing receipts. These apps make expense tracking painless — whether you're on mobile or desktop.</div>
+        <div class="card-arrow">See the list <span>→</span></div>
+      </a>
+
+      <a href="/zoho-vs-quickbooks.html" class="article-card">
+        <div class="card-tag">Comparison</div>
+        <div class="card-title">Zoho Books vs QuickBooks for Freelancers</div>
+        <div class="card-desc">QuickBooks is the default — but is it actually the best choice? We compare both honestly on cost and features.</div>
+        <div class="card-arrow">Read comparison <span>→</span></div>
+      </a>
+
+      <a href="/free-accounting-software.html" class="article-card">
+        <div class="card-tag">Guide</div>
+        <div class="card-title">Best Free Accounting Software for Freelancers</div>
+        <div class="card-desc">Starting out and not ready to pay yet? These free tools are legitimately good — no credit card required.</div>
+        <div class="card-arrow">Read guide <span>→</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TOOLS SECTION -->
+  <div class="tools-section">
+    <div class="tools-inner">
+      <div class="section-label">Software we cover</div>
+      <h2 class="section-title">Popular tools, honestly reviewed</h2>
+      <div class="tools-grid">
+        <a href="/xero-review.html" class="tool-pill">
+          <div class="tool-icon" style="background:#1ab4d7;color:white;">X</div>
+          Xero
+        </a>
+        <a href="/freshbooks-review.html" class="tool-pill">
+          <div class="tool-icon" style="background:#1cade4;color:white;">F</div>
+          FreshBooks
+        </a>
+        <a href="/wave-review.html" class="tool-pill">
+          <div class="tool-icon" style="background:#2563eb;color:white;">W</div>
+          Wave
+        </a>
+        <a href="/bonsai-review.html" class="tool-pill">
+          <div class="tool-icon" style="background:#16a34a;color:white;">B</div>
+          Bonsai
+        </a>
+        <a href="/quickbooks-review.html" class="tool-pill">
+          <div class="tool-icon" style="background:#2ca01c;color:white;">Q</div>
+          QuickBooks
+        </a>
+        <a href="/zoho-books-review.html" class="tool-pill">
+          <div class="tool-icon" style="background:#e8261d;color:white;">Z</div>
+          Zoho Books
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY SECTION -->
+  <div class="section">
+    <div class="section-label">Why Accountant Toolkit</div>
+    <h2 class="section-title">Reviews written for practitioners,<br>not for everyone</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12l2 2 4-4"/><rect x="3" y="3" width="14" height="14" rx="2"/>
+          </svg>
+        </div>
+        <div class="why-text">
+          <h3>Actually tested</h3>
+          <p>Every tool is evaluated hands-on — not summarised from the product homepage. We note the real quirks.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 3"/>
+          </svg>
+        </div>
+        <div class="why-text">
+          <h3>Kept up to date</h3>
+          <p>Pricing and features change constantly. We update our reviews when products change — not just when we feel like it.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 10h12M10 4v12"/>
+          </svg>
+        </div>
+        <div class="why-text">
+          <h3>Niche-specific</h3>
+          <p>We only cover tools relevant to freelance accountants and bookkeepers. No fluff about tools built for Fortune 500s.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10l4 4 10-8"/>
+          </svg>
+        </div>
+        <div class="why-text">
+          <h3>Transparent about commissions</h3>
+          <p>Some links earn us a commission. It never affects our ratings — we'll tell you when a tool isn't worth it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <h2>Get new reviews in your inbox</h2>
+    <p>No spam. Just useful tool reviews and comparisons, written for freelance accountants.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="your@email.com" />
+      <button type="button">Subscribe</button>
+    </div>
+    <p class="newsletter-note">Free. Unsubscribe any time.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">Accountant<span>Toolkit</span></a>
+          <p>Honest software reviews and comparisons for freelance accountants and bookkeepers.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Reviews</h4>
+          <ul>
+            <li><a href="/xero-review.html">Xero Review</a></li>
+            <li><a href="/freshbooks-review.html">FreshBooks Review</a></li>
+            <li><a href="/wave-review.html">Wave Review</a></li>
+            <li><a href="/bonsai-review.html">Bonsai Review</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Comparisons</h4>
+          <ul>
+            <li><a href="/xero-vs-wave.html">Xero vs Wave</a></li>
+            <li><a href="/bonsai-vs-freshbooks.html">Bonsai vs FreshBooks</a></li>
+            <li><a href="/zoho-vs-quickbooks.html">Zoho vs QuickBooks</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/disclosure.html">Affiliate Disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 AccountantToolkit.com — All rights reserved.</p>
+        <p class="disclosure">This site contains affiliate links. If you purchase through our links, we may earn a commission at no extra cost to you. This never affects our editorial ratings or recommendations.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
