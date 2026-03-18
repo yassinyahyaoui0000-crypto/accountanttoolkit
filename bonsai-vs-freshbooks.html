@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bonsai vs FreshBooks for Solo Bookkeepers (2025): Which One Wins?</title>
+  <meta name="description" content="Bonsai vs FreshBooks — an honest comparison for solo bookkeepers and freelance accountants. We cover pricing, invoicing, contracts, and which one is worth paying for." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f1f38;
+      --teal: #0d9488;
+      --teal-light: #ccfbf1;
+      --teal-mid: #14b8a6;
+      --amber: #d97706;
+      --amber-light: #fef3c7;
+      --bonsai: #16a34a;
+      --bonsai-light: #dcfce7;
+      --fresh: #1d4ed8;
+      --fresh-light: #dbeafe;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-400: #94a3b8;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+      --white: #ffffff;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--gray-800); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+
+    .article-wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: start; }
+    .article-main { min-width: 0; }
+    .article-sidebar { position: sticky; top: 84px; }
+
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .meta-tag { background: var(--teal-light); color: var(--teal); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 100px; text-decoration: none; }
+    .meta-date { font-size: 0.85rem; color: var(--gray-400); }
+    .meta-read { font-size: 0.85rem; color: var(--gray-400); }
+    h1.article-title { font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; color: var(--navy); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.25rem; }
+    .article-intro { font-size: 1.1rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 2rem; border-left: 3px solid var(--teal); padding-left: 1.25rem; }
+    .disclosure-box { background: var(--amber-light); border: 1px solid #fde68a; border-radius: 8px; padding: 0.85rem 1.1rem; font-size: 0.82rem; color: #92400e; margin-bottom: 2.5rem; line-height: 1.5; }
+
+    .verdict-box { background: var(--navy); border-radius: 12px; padding: 2rem; margin-bottom: 2.5rem; color: var(--white); }
+    .verdict-box h2 { font-family: var(--font-display); font-size: 1.3rem; color: var(--white); margin-bottom: 1.25rem; }
+    .verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .verdict-item { background: rgba(255,255,255,0.07); border-radius: 8px; padding: 1rem; }
+    .verdict-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.4rem; }
+    .verdict-text { font-size: 0.9rem; color: #cbd5e1; line-height: 1.5; }
+
+    .article-body h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin: 2.5rem 0 1rem; line-height: 1.25; }
+    .article-body h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--navy); margin: 2rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1.25rem; font-size: 1rem; line-height: 1.8; color: var(--gray-800); }
+    .article-body ul, .article-body ol { margin: 0 0 1.25rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; font-size: 1rem; line-height: 1.7; }
+    .article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { color: var(--navy); }
+    .article-body strong { font-weight: 600; color: var(--navy); }
+
+    .table-wrap { overflow-x: auto; margin: 2rem 0; border-radius: 12px; border: 1px solid var(--gray-200); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    thead tr { background: var(--navy); }
+    thead th { padding: 1rem 1.25rem; text-align: left; font-weight: 600; font-size: 0.85rem; color: var(--white); }
+    thead th:first-child { border-radius: 12px 0 0 0; }
+    thead th:last-child { border-radius: 0 12px 0 0; }
+    tbody tr { border-bottom: 1px solid var(--gray-200); transition: background 0.15s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--gray-50); }
+    tbody td { padding: 0.9rem 1.25rem; color: var(--gray-800); vertical-align: top; }
+    tbody td:first-child { font-weight: 500; color: var(--navy); }
+    .check { color: var(--teal); font-weight: 700; }
+    .cross { color: #ef4444; font-weight: 700; }
+    .neutral { color: var(--amber); font-weight: 600; }
+
+    .cta-box { border-radius: 12px; padding: 1.75rem; margin: 2rem 0; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .cta-box.bonsai { background: var(--bonsai-light); border: 1px solid #86efac; }
+    .cta-box.fresh { background: var(--fresh-light); border: 1px solid #93c5fd; }
+    .cta-info h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+    .cta-info p { font-size: 0.88rem; color: var(--gray-600); margin: 0; }
+    .cta-btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; white-space: nowrap; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.85; }
+    .cta-btn.bonsai { background: var(--bonsai); color: var(--white); }
+    .cta-btn.fresh { background: var(--fresh); color: var(--white); }
+
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    .pros, .cons { border-radius: 10px; padding: 1.25rem; }
+    .pros { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .cons { background: #fef2f2; border: 1px solid #fecaca; }
+    .pros h4 { color: #15803d; font-weight: 600; margin-bottom: 0.75rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .cons h4 { color: #dc2626; font-weight: 600; margin-bottom: 0.75rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pros ul, .cons ul { margin: 0; padding-left: 1.1rem; }
+    .pros li, .cons li { font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.4rem; }
+    .pros li { color: #166534; }
+    .cons li { color: #991b1b; }
+
+    .highlight { background: var(--gray-50); border-left: 4px solid var(--teal); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .highlight p { margin: 0; font-size: 0.95rem; color: var(--gray-800); }
+
+    .score-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .score-card { border: 1px solid var(--gray-200); border-radius: 10px; padding: 1.25rem; }
+    .score-card h4 { font-size: 0.85rem; font-weight: 600; color: var(--gray-600); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .score-row { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid var(--gray-100); font-size: 0.88rem; }
+    .score-row:last-child { border-bottom: none; }
+    .score-row span:first-child { color: var(--gray-600); }
+    .score-bar-wrap { display: flex; align-items: center; gap: 0.5rem; }
+    .score-bar { height: 6px; border-radius: 3px; }
+
+    .final-verdict { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+    .final-verdict h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--navy); margin-bottom: 1.25rem; }
+    .verdict-pick { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background: var(--white); border-radius: 8px; border: 1px solid var(--gray-200); margin-bottom: 0.75rem; }
+    .verdict-pick-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; color: var(--white); flex-shrink: 0; }
+    .verdict-pick-text strong { display: block; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.2rem; }
+    .verdict-pick-text span { font-size: 0.88rem; color: var(--gray-600); }
+
+    .sidebar-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .sidebar-card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem; }
+    .toc-list { list-style: none; padding: 0; }
+    .toc-list li { border-bottom: 1px solid var(--gray-200); }
+    .toc-list li:last-child { border-bottom: none; }
+    .toc-list a { display: block; padding: 0.6rem 0; font-size: 0.88rem; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+    .toc-list a:hover { color: var(--teal); }
+    .sidebar-pick { text-align: center; }
+    .sidebar-pick .pick-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal); margin-bottom: 0.5rem; }
+    .sidebar-pick .pick-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    .sidebar-pick .pick-reason { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 1rem; }
+    .sidebar-pick a { display: block; background: var(--bonsai); color: var(--white); text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 0.75rem; border-radius: 8px; transition: opacity 0.2s; }
+    .sidebar-pick a:hover { opacity: 0.85; }
+
+    footer { background: var(--gray-50); border-top: 1px solid var(--gray-200); padding: 2rem; text-align: center; }
+    footer p { font-size: 0.82rem; color: var(--gray-400); max-width: 600px; margin: 0 auto 0.5rem; }
+
+    @media (max-width: 768px) {
+      .article-wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem; }
+      .article-sidebar { position: static; }
+      .verdict-grid { grid-template-columns: 1fr; }
+      .pros-cons { grid-template-columns: 1fr; }
+      .score-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .cta-box { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Accountant<span>Toolkit</span></a>
+  <ul class="nav-links">
+    <li><a href="/reviews.html">Reviews</a></li>
+    <li><a href="/comparisons.html">Comparisons</a></li>
+    <li><a href="/guides.html">Guides</a></li>
+    <li><a href="/about.html">About</a></li>
+  </ul>
+</nav>
+
+<div class="article-wrap">
+  <main class="article-main">
+
+    <div class="article-meta">
+      <a href="/comparisons.html" class="meta-tag">Comparison</a>
+      <span class="meta-date">Updated March 2025</span>
+      <span class="meta-read">9 min read</span>
+    </div>
+
+    <h1 class="article-title">Bonsai vs FreshBooks for Solo Bookkeepers: An Honest 2025 Comparison</h1>
+
+    <p class="article-intro">Bonsai and FreshBooks are both built for independent professionals — but they make very different trade-offs. Bonsai bundles contracts, proposals, and invoicing into one freelancer-first platform. FreshBooks focuses more heavily on accounting depth. This comparison tells you which one actually fits a solo bookkeeper's workflow.</p>
+
+    <div class="disclosure-box">
+      <strong>Disclosure:</strong> This article contains affiliate links. If you sign up through our links, we may earn a commission at no extra cost to you. This never affects our ratings or recommendations.
+    </div>
+
+    <div class="verdict-box">
+      <h2>Quick verdict</h2>
+      <div class="verdict-grid">
+        <div class="verdict-item">
+          <div class="verdict-label">Choose Bonsai if...</div>
+          <div class="verdict-text">You need contracts, proposals, and client management alongside invoicing — and want everything in one place</div>
+        </div>
+        <div class="verdict-item">
+          <div class="verdict-label">Choose FreshBooks if...</div>
+          <div class="verdict-text">You need stronger accounting features, double-entry bookkeeping, and more robust reporting for your practice</div>
+        </div>
+        <div class="verdict-item">
+          <div class="verdict-label">Pricing</div>
+          <div class="verdict-text">Bonsai from $21/mo · FreshBooks from $19/mo</div>
+        </div>
+        <div class="verdict-item">
+          <div class="verdict-label">Our pick</div>
+          <div class="verdict-text">Bonsai for full client workflow · FreshBooks for accounting depth</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <h2 id="overview">What makes these two different</h2>
+      <p>At first glance, Bonsai and FreshBooks look similar — both are cloud-based tools for independent professionals, both handle invoicing, and both sit in a similar price range. But they come from very different product philosophies.</p>
+      <p>Bonsai started as a contracts and proposals tool for freelancers and expanded into invoicing and bookkeeping. The result is a platform that covers the entire client lifecycle — from first proposal to final invoice — but with shallower accounting features than a dedicated accounting tool.</p>
+      <p>FreshBooks started as an invoicing tool and built accounting features on top. It now offers double-entry accounting, more detailed reporting, and deeper financial tracking — but the client management side is thinner than Bonsai's.</p>
+      <p>For a solo bookkeeper, the question is really: do you need the full client workflow (contracts, proposals, time tracking, invoicing) or do you need serious accounting depth?</p>
+
+      <h2 id="pricing">Pricing: what you actually pay</h2>
+
+      <h3>Bonsai pricing</h3>
+      <p>Bonsai's <strong>Starter plan at $21/month</strong> covers invoicing, contracts, proposals, and basic time tracking for up to 3 clients. The <strong>Professional plan at $32/month</strong> removes client limits and adds more advanced features. The Business plan at $66/month adds subcontractor management. For most solo bookkeepers the Professional plan is the right tier.</p>
+      <p>Bonsai regularly offers discounts for annual billing — typically 25% off, bringing the Professional plan closer to $24/month effective.</p>
+
+      <h3>FreshBooks pricing</h3>
+      <p>FreshBooks starts at <strong>$19/month for the Lite plan</strong> but caps you at 5 billable clients — too restrictive for most active bookkeepers. The <strong>Plus plan at $33/month</strong> allows 50 clients and adds double-entry accounting, which is where most practitioners should start. The Premium plan at $60/month is unlimited clients.</p>
+      <p>Like Bonsai, FreshBooks offers significant annual billing discounts and frequently runs promotional pricing for new signups.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Bonsai Professional</th>
+              <th>FreshBooks Plus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monthly cost</td><td>$32/month</td><td>$33/month</td></tr>
+            <tr><td>Client limit</td><td>Unlimited</td><td>50 clients</td></tr>
+            <tr><td>Invoicing</td><td><span class="check">✓ Excellent</span></td><td><span class="check">✓ Excellent</span></td></tr>
+            <tr><td>Contracts</td><td><span class="check">✓ Built in</span></td><td><span class="cross">✗ Not available</span></td></tr>
+            <tr><td>Proposals</td><td><span class="check">✓ Built in</span></td><td><span class="cross">✗ Not available</span></td></tr>
+            <tr><td>Double-entry accounting</td><td><span class="neutral">~ Basic</span></td><td><span class="check">✓ Full</span></td></tr>
+            <tr><td>Time tracking</td><td><span class="check">✓ Strong</span></td><td><span class="check">✓ Good</span></td></tr>
+            <tr><td>Expense tracking</td><td><span class="check">✓ Yes</span></td><td><span class="check">✓ Yes</span></td></tr>
+            <tr><td>Bank reconciliation</td><td><span class="neutral">~ Basic</span></td><td><span class="check">✓ Full</span></td></tr>
+            <tr><td>Reporting depth</td><td><span class="neutral">~ Limited</span></td><td><span class="check">✓ Comprehensive</span></td></tr>
+            <tr><td>Client portal</td><td><span class="check">✓ Yes</span></td><td><span class="check">✓ Yes</span></td></tr>
+            <tr><td>Mobile app</td><td><span class="check">✓ Strong</span></td><td><span class="check">✓ Strong</span></td></tr>
+            <tr><td>Integrations</td><td><span class="neutral">~ Moderate</span></td><td><span class="check">✓ 100+</span></td></tr>
+            <tr><td>Free trial</td><td><span class="check">✓ 7 days</span></td><td><span class="check">✓ 30 days</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="invoicing">Invoicing: both are excellent</h2>
+      <p>This is the one area where both tools genuinely shine and the difference is minimal. Both offer professional invoice templates, automatic payment reminders, recurring invoices, and online payment collection via credit card and bank transfer.</p>
+      <p>FreshBooks has a slight edge on invoice customization — more template options and more granular control over the visual appearance. Bonsai's invoices are clean and professional but slightly less customizable.</p>
+      <p>Where Bonsai pulls ahead is the connection between invoices and the rest of the client workflow. You can create a proposal, have the client approve it, convert it to a contract, track time against the project, and generate an invoice — all without leaving the platform. FreshBooks handles the invoicing end well but requires third-party tools for proposals and contracts.</p>
+
+      <div class="highlight">
+        <p><strong>For solo bookkeepers specifically:</strong> If your clients pay on retainer and you just need to send the same invoice every month, both tools handle this equally well. If you're constantly onboarding new clients with custom scopes of work, Bonsai's proposal-to-invoice workflow saves significant time.</p>
+      </div>
+
+      <h2 id="accounting">Accounting depth: FreshBooks wins clearly</h2>
+      <p>This is the most important difference for someone with an accounting background.</p>
+      <p>FreshBooks Plus offers proper double-entry accounting — the foundation of accurate bookkeeping. You get a full chart of accounts, journal entries, a proper balance sheet, profit and loss statement, and a trial balance. For a freelance bookkeeper managing their own practice finances, this is the correct way to track your numbers.</p>
+      <p>Bonsai's accounting is single-entry and designed more for freelancers who want a simple income/expense overview than for accounting professionals who understand what double-entry means. The reports are simpler and less detailed. You won't find a proper balance sheet or trial balance in Bonsai.</p>
+      <p>If you're a bookkeeper, you know this matters. Using single-entry accounting to manage your own practice's finances is a bit like a chef eating fast food — technically fine, but professionally uncomfortable.</p>
+
+      <cta-box class="cta-box fresh">
+        <div class="cta-info">
+          <h4>Try FreshBooks free for 30 days</h4>
+          <p>Full access to Plus plan features. No credit card required.</p>
+        </div>
+        <a href="YOUR_FRESHBOOKS_AFFILIATE_LINK" class="cta-btn fresh" rel="nofollow sponsored">Start free trial →</a>
+      </cta-box>
+
+      <div class="cta-box fresh">
+        <div class="cta-info">
+          <h4>Try FreshBooks free for 30 days</h4>
+          <p>Full access to Plus plan features. No credit card required.</p>
+        </div>
+        <a href="YOUR_FRESHBOOKS_AFFILIATE_LINK" class="cta-btn fresh" rel="nofollow sponsored">Start free trial →</a>
+      </div>
+
+      <h2 id="client-management">Client management: Bonsai wins clearly</h2>
+      <p>Bonsai was built for the full client lifecycle and it shows. The platform includes a CRM-style client management system where you can track all client communication, projects, contracts, and invoices in one place. You can store client details, set up client portals, and manage multiple projects per client.</p>
+      <p>The contracts feature alone is worth highlighting — Bonsai includes legally-vetted contract templates for various freelance scenarios, with e-signature built in. For a solo bookkeeper taking on new clients, having a proper engagement letter or service agreement signed before starting work is essential. Bonsai makes this frictionless. FreshBooks has no equivalent.</p>
+      <p>FreshBooks does have a client section but it's more of an address book than a CRM. You can see all invoices for a client and send them statements, but there's no contract management, proposal tracking, or project pipeline view.</p>
+
+      <div class="cta-box bonsai">
+        <div class="cta-info">
+          <h4>Try Bonsai free for 7 days</h4>
+          <p>Full access including contracts, proposals, and invoicing.</p>
+        </div>
+        <a href="YOUR_BONSAI_AFFILIATE_LINK" class="cta-btn bonsai" rel="nofollow sponsored">Start free trial →</a>
+      </div>
+
+      <h2 id="pros-cons">Pros and cons</h2>
+
+      <h3>Bonsai</h3>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✓ Pros</h4>
+          <ul>
+            <li>Full client lifecycle in one platform</li>
+            <li>Built-in contracts with e-signature</li>
+            <li>Proposal creation and tracking</li>
+            <li>Clean, intuitive interface</li>
+            <li>Strong time tracking tied to projects</li>
+            <li>25% recurring affiliate commission</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>✗ Cons</h4>
+          <ul>
+            <li>Single-entry accounting only</li>
+            <li>Limited reporting depth</li>
+            <li>Fewer integrations than FreshBooks</li>
+            <li>Only 7-day free trial</li>
+            <li>Not suitable if you need proper double-entry books</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>FreshBooks</h3>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✓ Pros</h4>
+          <ul>
+            <li>Full double-entry accounting on Plus plan</li>
+            <li>Comprehensive financial reporting</li>
+            <li>Strong bank reconciliation</li>
+            <li>100+ integrations</li>
+            <li>30-day free trial</li>
+            <li>Better for tax preparation</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>✗ Cons</h4>
+          <ul>
+            <li>No contracts or proposals</li>
+            <li>Lite plan too limited (5 clients only)</li>
+            <li>Client management is basic</li>
+            <li>No e-signature functionality</li>
+            <li>Requires third-party tools for full client workflow</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="verdict">Our verdict: which should you choose?</h2>
+
+      <div class="final-verdict">
+        <h2>The right tool for your situation</h2>
+        <div class="verdict-pick">
+          <div class="verdict-pick-icon" style="background:#16a34a;">B</div>
+          <div class="verdict-pick-text">
+            <strong>Choose Bonsai if client workflow is your priority</strong>
+            <span>You onboard new clients regularly, need contracts and proposals, and want to manage the full relationship in one tool. The accounting limitations won't matter if you're not doing complex bookkeeping for your own practice.</span>
+          </div>
+        </div>
+        <div class="verdict-pick">
+          <div class="verdict-pick-icon" style="background:#1d4ed8;">F</div>
+          <div class="verdict-pick-text">
+            <strong>Choose FreshBooks if accounting accuracy is your priority</strong>
+            <span>You want proper double-entry accounting for your own practice finances, need detailed financial reports, and are comfortable using separate tools for contracts and proposals.</span>
+          </div>
+        </div>
+        <div class="verdict-pick">
+          <div class="verdict-pick-icon" style="background:#d97706;">!</div>
+          <div class="verdict-pick-text">
+            <strong>Consider using both</strong>
+            <span>Some solo bookkeepers use Bonsai for client-facing workflow (proposals, contracts, invoicing) and a separate tool like Xero or Wave for their own practice bookkeeping. Not ideal, but it covers all bases.</span>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="alternatives">Other tools worth considering</h2>
+      <p>If neither feels like a perfect fit, these are worth looking at:</p>
+      <ul>
+        <li><strong>Xero</strong> — stronger accounting than either option, but no contracts or proposals. Best for serious accounting depth.</li>
+        <li><strong>Wave</strong> — free alternative with basic invoicing and accounting. No contracts, no proposals, no time tracking.</li>
+        <li><strong>HoneyBook</strong> — similar to Bonsai with strong client management, but even less accounting depth.</li>
+      </ul>
+      <p>We have full reviews of Xero and Wave already published — see our <a href="/xero-vs-wave.html">Xero vs Wave comparison</a> for a detailed breakdown.</p>
+
+    </div>
+  </main>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card sidebar-pick">
+      <div class="pick-label">Our top pick</div>
+      <div class="pick-name">Bonsai</div>
+      <div class="pick-reason">Best for solo bookkeepers who need the full client workflow — proposals, contracts, and invoicing in one place</div>
+      <a href="YOUR_BONSAI_AFFILIATE_LINK" rel="nofollow sponsored">Try Bonsai free for 7 days →</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Table of contents</h3>
+      <ul class="toc-list">
+        <li><a href="#overview">What makes these different</a></li>
+        <li><a href="#pricing">Pricing breakdown</a></li>
+        <li><a href="#invoicing">Invoicing</a></li>
+        <li><a href="#accounting">Accounting depth</a></li>
+        <li><a href="#client-management">Client management</a></li>
+        <li><a href="#pros-cons">Pros and cons</a></li>
+        <li><a href="#verdict">Our verdict</a></li>
+        <li><a href="#alternatives">Alternatives</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Quick stats</h3>
+      <ul style="list-style:none;padding:0;">
+        <li style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--gray-200);font-size:0.88rem;"><span style="color:var(--gray-600);">Bonsai price</span><strong>$32/mo</strong></li>
+        <li style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--gray-200);font-size:0.88rem;"><span style="color:var(--gray-600);">FreshBooks price</span><strong>$33/mo</strong></li>
+        <li style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--gray-200);font-size:0.88rem;"><span style="color:var(--gray-600);">Bonsai trial</span><strong>7 days</strong></li>
+        <li style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--gray-200);font-size:0.88rem;"><span style="color:var(--gray-600);">FreshBooks trial</span><strong>30 days</strong></li>
+        <li style="display:flex;justify-content:space-between;padding:0.5rem 0;font-size:0.88rem;"><span style="color:var(--gray-600);">Contracts</span><strong>Bonsai only</strong></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Related articles</h3>
+      <ul class="toc-list">
+        <li><a href="/xero-vs-wave.html">Xero vs Wave comparison →</a></li>
+        <li><a href="/best-invoicing-software.html">Best invoicing software →</a></li>
+        <li><a href="/zoho-vs-quickbooks.html">Zoho vs QuickBooks →</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <p>© 2025 AccountantToolkit.com · <a href="/about.html" style="color:var(--teal);">About</a> · <a href="/disclosure.html" style="color:var(--teal);">Affiliate Disclosure</a> · <a href="/privacy.html" style="color:var(--teal);">Privacy</a></p>
+  <p>This site contains affiliate links. We may earn a commission if you purchase through our links, at no extra cost to you.</p>
+</footer>
+
+</body>
+</html>
