@@ -978,7 +978,7 @@ tbody tr:last-child td {
 .footer__inner {
   display: grid;
   gap: var(--space-8);
-  grid-template-columns: minmax(0, 1.15fr) repeat(4, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.25fr) repeat(4, minmax(0, 0.9fr));
 }
 
 .footer__brand p,

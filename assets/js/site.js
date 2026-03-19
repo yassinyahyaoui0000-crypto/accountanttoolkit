@@ -52,11 +52,11 @@ const articlePages = new Set([
   "guide"
 ]);
 
-function formatReviewedDate(value) {
-  const date = new Date(`${value}T00:00:00`);
+function formatReviewedDate(isoDate) {
+  const date = new Date(`${isoDate}T00:00:00`);
 
   if (Number.isNaN(date.getTime())) {
-    return value;
+    return isoDate;
   }
 
   return new Intl.DateTimeFormat("en-US", {
@@ -115,7 +115,8 @@ function renderFooter() {
         <section class="footer__brand">
           <h2>AccountantToolkit</h2>
           <p>We rebuild software buying decisions around actual workflows: invoicing, expense capture, client operations, bookkeeping depth, and integration risk.</p>
-          <p class="footer__meta">Disclosure: outbound product links currently go to official vendor pages. If affiliate links are added later, they should be disclosed clearly and should not change editorial recommendations.</p>
+          <p class="footer__meta">Read our <a href="editorial-policy.html">editorial policy</a> and <a href="affiliate-disclosure.html">affiliate disclosure</a> for how we research products, handle promotions, and label commercial relationships.</p>
+          <p class="footer__meta">Corrections and business inquiries: <a href="mailto:hello@accountanttoolkit.com">hello@accountanttoolkit.com</a>.</p>
           <p class="footer__meta">Last rebuilt on March 19, 2026.</p>
         </section>
         ${columns}
@@ -157,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (articlePages.has(currentPage)) {
     const articleBody = document.querySelector(".article-main.article-body");
-    const reviewed = document.body.dataset.reviewed || "2026-03-19";
+    const reviewDate = document.body.dataset.reviewed || "2026-03-19";
 
     if (articleBody && !articleBody.querySelector("[data-editorial-note]")) {
       const note = document.createElement("section");
@@ -165,8 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
       note.setAttribute("data-editorial-note", "true");
       note.innerHTML = `
         <p class="kicker">Editorial note</p>
-        <p><strong>Last reviewed:</strong> ${formatReviewedDate(reviewed)}. AccountantToolkit checks official vendor pages before making pricing, trial, or plan claims. When pricing is promotional, usage-based, or region-specific, the copy is intentionally softened instead of freezing numbers that may go stale.</p>
-        <p>See <a href="editorial-policy.html">Editorial Policy</a> and <a href="affiliate-disclosure.html">Affiliate Disclosure</a> for the full standards behind these pages.</p>
+        <p><strong>Last reviewed:</strong> ${formatReviewedDate(reviewDate)}. AccountantToolkit checks official vendor pages before making plan, trial, or pricing claims. When pricing is promotional, region-specific, or usage-based, we say so instead of freezing numbers that age badly.</p>
+        <p>For details on how pages are updated and how commercial relationships are handled, see our <a href="editorial-policy.html">editorial policy</a> and <a href="affiliate-disclosure.html">affiliate disclosure</a>.</p>
       `;
 
       const lede = articleBody.querySelector(".lede");
