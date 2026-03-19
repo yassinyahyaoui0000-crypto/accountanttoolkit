@@ -4,7 +4,8 @@ const navItems = [
   { href: "best-receipt-tracking.html", label: "Receipt Tracking", page: "receipt-tracking" },
   { href: "xero-vs-wave.html", label: "Comparisons", page: "comparisons" },
   { href: "freshbooks-review.html", label: "Reviews", page: "reviews" },
-  { href: "how-to-choose-accounting-software.html", label: "Guide", page: "guide" }
+  { href: "how-to-choose-accounting-software.html", label: "Guide", page: "guide" },
+  { href: "about.html", label: "About", page: "trust" }
 ];
 
 const footerColumns = [
@@ -31,8 +32,39 @@ const footerColumns = [
       ["Best receipt tracking tools", "best-receipt-tracking.html"],
       ["How to choose accounting software", "how-to-choose-accounting-software.html"]
     ]
+  },
+  {
+    title: "Trust",
+    links: [
+      ["About", "about.html"],
+      ["Contact", "contact.html"],
+      ["Editorial policy", "editorial-policy.html"],
+      ["Affiliate disclosure", "affiliate-disclosure.html"]
+    ]
   }
 ];
+
+const articlePages = new Set([
+  "best-invoicing",
+  "receipt-tracking",
+  "comparisons",
+  "reviews",
+  "guide"
+]);
+
+function formatReviewedDate(isoDate) {
+  const date = new Date(`${isoDate}T00:00:00`);
+
+  if (Number.isNaN(date.getTime())) {
+    return isoDate;
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+  }).format(date);
+}
 
 function renderHeader() {
   const currentPage = document.body.dataset.page || "";
@@ -83,7 +115,7 @@ function renderFooter() {
         <section class="footer__brand">
           <h2>AccountantToolkit</h2>
           <p>We rebuild software buying decisions around actual workflows: invoicing, expense capture, client operations, bookkeeping depth, and integration risk.</p>
-          <p class="footer__meta">Disclosure: some outbound links may later become affiliate links. Recommendations are editorial and pricing should always be confirmed on the vendor site.</p>
+          <p class="footer__meta">Read our <a href="editorial-policy.html">editorial policy</a> and <a href="affiliate-disclosure.html">affiliate disclosure</a> for how we research products, handle promotions, and label commercial relationships.</p>
           <p class="footer__meta">Last rebuilt on March 19, 2026.</p>
         </section>
         ${columns}
@@ -93,6 +125,7 @@ function renderFooter() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = document.body.dataset.page || "";
   const headerSlot = document.querySelector("[data-site-header]");
   const footerSlot = document.querySelector("[data-site-footer]");
 
@@ -120,5 +153,29 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.classList.remove("is-open");
       }
     });
+  }
+
+  if (articlePages.has(currentPage)) {
+    const articleBody = document.querySelector(".article-main.article-body");
+    const reviewDate = document.body.dataset.reviewed || "2026-03-19";
+
+    if (articleBody && !articleBody.querySelector("[data-editorial-note]")) {
+      const note = document.createElement("section");
+      note.className = "callout callout--muted editorial-note";
+      note.setAttribute("data-editorial-note", "true");
+      note.innerHTML = `
+        <p class="kicker">Editorial note</p>
+        <p><strong>Last reviewed:</strong> ${formatReviewedDate(reviewDate)}. AccountantToolkit checks official vendor pages before making plan, trial, or pricing claims. When pricing is promotional, region-specific, or usage-based, we say so instead of freezing numbers that age badly.</p>
+        <p>For details on how pages are updated and how commercial relationships are handled, see our <a href="editorial-policy.html">editorial policy</a> and <a href="affiliate-disclosure.html">affiliate disclosure</a>.</p>
+      `;
+
+      const lede = articleBody.querySelector(".lede");
+
+      if (lede) {
+        lede.insertAdjacentElement("afterend", note);
+      } else {
+        articleBody.prepend(note);
+      }
+    }
   }
 });
