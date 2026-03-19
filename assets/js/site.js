@@ -116,6 +116,7 @@ function renderFooter() {
           <h2>AccountantToolkit</h2>
           <p>We rebuild software buying decisions around actual workflows: invoicing, expense capture, client operations, bookkeeping depth, and integration risk.</p>
           <p class="footer__meta">Read our <a href="editorial-policy.html">editorial policy</a> and <a href="affiliate-disclosure.html">affiliate disclosure</a> for how we research products, handle promotions, and label commercial relationships.</p>
+          <p class="footer__meta">Corrections and business inquiries: <a href="mailto:hello@accountanttoolkit.com">hello@accountanttoolkit.com</a>.</p>
           <p class="footer__meta">Last rebuilt on March 19, 2026.</p>
         </section>
         ${columns}
