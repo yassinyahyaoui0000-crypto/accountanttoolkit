@@ -47,6 +47,8 @@ const footerColumns = [
 const articlePages = new Set([
   "best-invoicing",
   "receipt-tracking",
+  "freelancer-accounting",
+  "solo-bookkeeping",
   "comparisons",
   "reviews",
   "guide"
