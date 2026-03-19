@@ -1,420 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xero vs Wave for Freelance Accountants (2026): Honest Comparison</title>
-  <meta name="description" content="Xero vs Wave — an honest, hands-on comparison for freelance accountants. We cover pricing, features, invoicing, and which one is actually worth paying for." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0f1f38;
-      --teal: #0d9488;
-      --teal-light: #ccfbf1;
-      --teal-mid: #14b8a6;
-      --amber: #d97706;
-      --amber-light: #fef3c7;
-      --gray-50: #f8fafc;
-      --gray-100: #f1f5f9;
-      --gray-200: #e2e8f0;
-      --gray-400: #94a3b8;
-      --gray-600: #475569;
-      --gray-800: #1e293b;
-      --white: #ffffff;
-      --font-display: 'Fraunces', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--gray-800); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-
-    /* NAV */
-    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--navy); text-decoration: none; }
-    .nav-logo span { color: var(--teal); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--navy); }
-
-    /* ARTICLE LAYOUT */
-    .article-wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: start; }
-    .article-main { min-width: 0; }
-    .article-sidebar { position: sticky; top: 84px; }
-
-    /* ARTICLE HEADER */
-    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .meta-tag { background: var(--teal-light); color: var(--teal); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 100px; text-decoration: none; }
-    .meta-date { font-size: 0.85rem; color: var(--gray-400); }
-    .meta-read { font-size: 0.85rem; color: var(--gray-400); }
-    h1.article-title { font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; color: var(--navy); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.25rem; }
-    .article-intro { font-size: 1.1rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 2rem; border-left: 3px solid var(--teal); padding-left: 1.25rem; }
-
-    /* DISCLOSURE */
-    .disclosure-box { background: var(--amber-light); border: 1px solid #fde68a; border-radius: 8px; padding: 0.85rem 1.1rem; font-size: 0.82rem; color: #92400e; margin-bottom: 2.5rem; line-height: 1.5; }
-
-    /* VERDICT BOX */
-    .verdict-box { background: var(--navy); border-radius: 12px; padding: 2rem; margin-bottom: 2.5rem; color: var(--white); }
-    .verdict-box h2 { font-family: var(--font-display); font-size: 1.3rem; color: var(--white); margin-bottom: 1.25rem; }
-    .verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .verdict-item { background: rgba(255,255,255,0.07); border-radius: 8px; padding: 1rem; }
-    .verdict-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.4rem; }
-    .verdict-text { font-size: 0.9rem; color: #cbd5e1; line-height: 1.5; }
-
-    /* ARTICLE BODY */
-    .article-body h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin: 2.5rem 0 1rem; line-height: 1.25; }
-    .article-body h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--navy); margin: 2rem 0 0.75rem; }
-    .article-body p { margin-bottom: 1.25rem; font-size: 1rem; line-height: 1.8; color: var(--gray-800); }
-    .article-body ul, .article-body ol { margin: 0 0 1.25rem 1.5rem; }
-    .article-body li { margin-bottom: 0.5rem; font-size: 1rem; line-height: 1.7; }
-    .article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
-    .article-body a:hover { color: var(--navy); }
-    .article-body strong { font-weight: 600; color: var(--navy); }
-
-    /* COMPARISON TABLE */
-    .table-wrap { overflow-x: auto; margin: 2rem 0; border-radius: 12px; border: 1px solid var(--gray-200); }
-    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    thead tr { background: var(--navy); }
-    thead th { padding: 1rem 1.25rem; text-align: left; font-weight: 600; font-size: 0.85rem; color: var(--white); }
-    thead th:first-child { border-radius: 12px 0 0 0; }
-    thead th:last-child { border-radius: 0 12px 0 0; }
-    tbody tr { border-bottom: 1px solid var(--gray-200); transition: background 0.15s; }
-    tbody tr:last-child { border-bottom: none; }
-    tbody tr:hover { background: var(--gray-50); }
-    tbody td { padding: 0.9rem 1.25rem; color: var(--gray-800); vertical-align: top; }
-    tbody td:first-child { font-weight: 500; color: var(--navy); }
-    .check { color: var(--teal); font-weight: 700; }
-    .cross { color: #ef4444; font-weight: 700; }
-    .neutral { color: var(--amber); font-weight: 600; }
-
-    /* WINNER BADGE */
-    .winner-badge { display: inline-flex; align-items: center; gap: 0.3rem; background: var(--teal-light); color: var(--teal); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 100px; margin-left: 0.5rem; vertical-align: middle; }
-
-    /* CTA BOXES */
-    .cta-box { border-radius: 12px; padding: 1.75rem; margin: 2rem 0; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
-    .cta-box.xero { background: #e0f7f5; border: 1px solid #99f6e4; }
-    .cta-box.wave { background: #eff6ff; border: 1px solid #bfdbfe; }
-    .cta-info h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
-    .cta-info p { font-size: 0.88rem; color: var(--gray-600); margin: 0; }
-    .cta-btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; white-space: nowrap; transition: opacity 0.2s; }
-    .cta-btn:hover { opacity: 0.85; }
-    .cta-btn.xero { background: #0d9488; color: var(--white); }
-    .cta-btn.wave { background: #2563eb; color: var(--white); }
-
-    /* PROS CONS */
-    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
-    .pros, .cons { border-radius: 10px; padding: 1.25rem; }
-    .pros { background: #f0fdf4; border: 1px solid #bbf7d0; }
-    .cons { background: #fef2f2; border: 1px solid #fecaca; }
-    .pros h4 { color: #15803d; font-weight: 600; margin-bottom: 0.75rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .cons h4 { color: #dc2626; font-weight: 600; margin-bottom: 0.75rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .pros ul, .cons ul { margin: 0; padding-left: 1.1rem; }
-    .pros li, .cons li { font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.4rem; }
-    .pros li { color: #166534; }
-    .cons li { color: #991b1b; }
-
-    /* HIGHLIGHT BOX */
-    .highlight { background: var(--gray-50); border-left: 4px solid var(--teal); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
-    .highlight p { margin: 0; font-size: 0.95rem; color: var(--gray-800); }
-
-    /* FINAL VERDICT */
-    .final-verdict { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
-    .final-verdict h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--navy); margin-bottom: 1.25rem; }
-    .verdict-pick { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background: var(--white); border-radius: 8px; border: 1px solid var(--gray-200); margin-bottom: 0.75rem; }
-    .verdict-pick-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; color: var(--white); flex-shrink: 0; }
-    .verdict-pick-text strong { display: block; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.2rem; }
-    .verdict-pick-text span { font-size: 0.88rem; color: var(--gray-600); }
-
-    /* SIDEBAR */
-    .sidebar-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
-    .sidebar-card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem; }
-    .toc-list { list-style: none; padding: 0; }
-    .toc-list li { border-bottom: 1px solid var(--gray-200); }
-    .toc-list li:last-child { border-bottom: none; }
-    .toc-list a { display: block; padding: 0.6rem 0; font-size: 0.88rem; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
-    .toc-list a:hover { color: var(--teal); }
-    .sidebar-pick { text-align: center; }
-    .sidebar-pick .pick-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal); margin-bottom: 0.5rem; }
-    .sidebar-pick .pick-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
-    .sidebar-pick .pick-reason { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 1rem; }
-    .sidebar-pick a { display: block; background: var(--teal); color: var(--white); text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 0.75rem; border-radius: 8px; transition: background 0.2s; }
-    .sidebar-pick a:hover { background: var(--teal-mid); }
-
-    /* FOOTER */
-    footer { background: var(--gray-50); border-top: 1px solid var(--gray-200); padding: 2rem; text-align: center; }
-    footer p { font-size: 0.82rem; color: var(--gray-400); max-width: 600px; margin: 0 auto 0.5rem; }
-
-    @media (max-width: 768px) {
-      .article-wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem; }
-      .article-sidebar { position: static; }
-      .verdict-grid { grid-template-columns: 1fr; }
-      .pros-cons { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .cta-box { flex-direction: column; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xero vs Wave for Freelance Accountants in 2026 | AccountantToolkit</title>
+  <meta name="description" content="An honest 2026 comparison of Xero vs Wave for freelance accountants and bookkeepers, covering fit, pricing posture, ease of use, and bookkeeping depth.">
+  <link rel="canonical" href="https://accountanttoolkit.com/xero-vs-wave.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AccountantToolkit">
+  <meta property="og:title" content="Xero vs Wave for Freelance Accountants in 2026">
+  <meta property="og:description" content="Xero wins on bookkeeping depth. Wave still matters if your first constraint is budget and simplicity.">
+  <meta property="og:url" content="https://accountanttoolkit.com/xero-vs-wave.html">
+  <meta property="og:image" content="https://accountanttoolkit.com/assets/img/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Xero vs Wave for Freelance Accountants in 2026">
+  <meta name="twitter:description" content="A practical 2026 comparison for freelance accountants and bookkeepers.">
+  <meta name="twitter:image" content="https://accountanttoolkit.com/assets/img/og-default.svg">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="assets/js/site.js"></script>
 </head>
-<body>
+<body data-page="comparisons">
+  <div data-site-header></div>
 
-<nav>
-  <a href="/" class="nav-logo">Accountant<span>Toolkit</span></a>
-  <ul class="nav-links">
-    <li><a href="/reviews.html">Reviews</a></li>
-    <li><a href="/comparisons.html">Comparisons</a></li>
-    <li><a href="/guides.html">Guides</a></li>
-    <li><a href="/about.html">About</a></li>
-  </ul>
-</nav>
-
-<div class="article-wrap">
-  <main class="article-main">
-
-    <div class="article-meta">
-      <a href="/comparisons.html" class="meta-tag">Comparison</a>
-      <span class="meta-date">Updated March 2026</span>
-      <span class="meta-read">8 min read</span>
-    </div>
-
-    <h1 class="article-title">Xero vs Wave for Freelance Accountants: Which One Is Actually Worth It?</h1>
-
-    <p class="article-intro">Both Xero and Wave are popular choices for freelance accountants — but they're built for very different situations. One charges a monthly fee and gives you a genuinely powerful platform. The other is free but comes with real limitations you'll eventually hit. This comparison tells you exactly which one fits your practice.</p>
-
-    <div class="disclosure-box">
-      <strong>Disclosure:</strong> This article contains affiliate links. If you sign up through our links, we may earn a commission at no extra cost to you. This never affects our ratings — we'll tell you when something isn't worth it.
-    </div>
-
-    <!-- QUICK VERDICT -->
-    <div class="verdict-box">
-      <h2>Quick verdict</h2>
-      <div class="verdict-grid">
-        <div class="verdict-item">
-          <div class="verdict-label">Choose Xero if...</div>
-          <div class="verdict-text">You have 5+ clients, need multi-currency, want bank reconciliation, or plan to grow your practice</div>
-        </div>
-        <div class="verdict-item">
-          <div class="verdict-label">Choose Wave if...</div>
-          <div class="verdict-text">You're just starting out, have under 5 clients, and want zero software costs while you get established</div>
-        </div>
-        <div class="verdict-item">
-          <div class="verdict-label">Pricing</div>
-          <div class="verdict-text">Xero from $15/mo · Wave free (payments cost extra)</div>
-        </div>
-        <div class="verdict-item">
-          <div class="verdict-label">Our pick</div>
-          <div class="verdict-text">Xero for established freelancers · Wave for absolute beginners</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="article-body">
-
-      <h2 id="overview">What we're comparing</h2>
-      <p>Xero and Wave both serve freelance accountants and bookkeepers, but the comparison almost isn't fair — they target different stages of a practice. Xero is a professional-grade accounting platform used by over 3 million businesses worldwide. Wave is a free tool that covers the basics and makes money through payment processing fees instead of subscriptions.</p>
-      <p>We evaluated both tools specifically from the perspective of a freelance accountant or bookkeeper managing their own practice — not a small business owner using accounting software for their shop. The features that matter most to you are different: client management, invoicing flexibility, reporting depth, and how well the software handles the slightly unusual position of being both the accountant and the client.</p>
-
-      <h2 id="pricing">Pricing: the honest breakdown</h2>
-
-      <h3>Xero pricing</h3>
-      <p>Xero runs on a tiered subscription model. The <strong>Starter plan at $15/month</strong> is deliberately limited — you're capped at 20 invoices and 5 bills per month, which is too restrictive for most active freelancers. The <strong>Standard plan at $42/month</strong> removes those limits and is where most solo practitioners land. The Premium plan adds multi-currency support.</p>
-      <p>One thing worth knowing: Xero frequently offers promotional pricing for the first 6 months, so it's worth checking their current offers before signing up.</p>
-
-      <h3>Wave pricing</h3>
-      <p>Wave's accounting, invoicing, and receipt scanning are genuinely free — no trial period, no hidden fees for the core product. The catch is that payment processing costs extra: <strong>2.9% + $0.60 per credit card transaction</strong>, and bank payments cost 1% (minimum $1). If you're collecting payments through Wave, those fees add up. If you just use it for bookkeeping and send invoices paid via bank transfer, it stays free.</p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Xero Standard</th>
-              <th>Wave Free</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Monthly cost</td><td>$42/month</td><td>Free</td></tr>
-            <tr><td>Invoice limit</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Bank reconciliation</td><td><span class="check">✓ Full</span></td><td><span class="check">✓ Basic</span></td></tr>
-            <tr><td>Multi-currency</td><td><span class="check">✓ Premium plan</span></td><td><span class="cross">✗ Not available</span></td></tr>
-            <tr><td>Payroll</td><td><span class="check">✓ Add-on</span></td><td><span class="check">✓ Add-on (paid)</span></td></tr>
-            <tr><td>Accountant access</td><td><span class="check">✓ Included</span></td><td><span class="check">✓ Included</span></td></tr>
-            <tr><td>Inventory tracking</td><td><span class="check">✓ Yes</span></td><td><span class="cross">✗ No</span></td></tr>
-            <tr><td>Project tracking</td><td><span class="check">✓ Yes</span></td><td><span class="cross">✗ No</span></td></tr>
-            <tr><td>Mobile app</td><td><span class="check">✓ Strong</span></td><td><span class="check">✓ Basic</span></td></tr>
-            <tr><td>Integrations</td><td><span class="check">✓ 1000+</span></td><td><span class="neutral">~ Limited</span></td></tr>
-            <tr><td>Customer support</td><td><span class="check">✓ 24/7</span></td><td><span class="neutral">~ Community only (free)</span></td></tr>
-            <tr><td>Free trial</td><td><span class="check">✓ 30 days</span></td><td><span class="check">✓ Free forever</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2 id="invoicing">Invoicing: where they differ most</h2>
-      <p>For a freelance accountant, invoicing is one of the most used features — you're billing clients regularly, often with recurring retainer arrangements.</p>
-
-      <h3>Xero invoicing</h3>
-      <p>Xero's invoicing is genuinely excellent. You can create professional, branded invoices in minutes, set up automatic recurring invoices for retainer clients, and send automatic payment reminders. The online payment integration means clients can pay directly from the invoice via credit card or direct debit. For a freelance accountant billing 10–20 clients per month, the automation alone is worth the subscription cost.</p>
-
-      <h3>Wave invoicing</h3>
-      <p>Wave's invoicing is surprisingly capable for a free tool. You get customizable templates, recurring invoices, automatic payment reminders, and online payment collection. It covers everything most solo practitioners need. The main limitation is the payment processing fees if you collect card payments — for high-volume billing, these fees can exceed what Xero's subscription would cost.</p>
-
-      <div class="highlight">
-        <p><strong>The math:</strong> If you process $5,000/month in client payments via Wave's card processing (2.9% + $0.60/transaction), you're paying roughly $150–$175/month in fees. Xero at $42/month looks very different in that context.</p>
-      </div>
-
-      <h2 id="reconciliation">Bank reconciliation</h2>
-      <p>This is where Xero pulls decisively ahead. Bank reconciliation in Xero is fast, intelligent, and built for accountants. Xero connects to most major banks directly, imports transactions automatically, and uses machine learning to suggest matches that get smarter over time. For a freelance accountant managing their own books, it genuinely reduces reconciliation time significantly.</p>
-      <p>Wave's bank reconciliation works but feels more manual. It connects to banks via Plaid, which works well for US accounts but can be unreliable for some international banks. The matching suggestions are less sophisticated than Xero's. It gets the job done for simple accounts, but if you have multiple income streams or high transaction volume, it becomes tedious.</p>
-
-      <h2 id="reporting">Reporting and insights</h2>
-      <p>Xero's reporting suite is comprehensive — profit and loss, balance sheet, cash flow, aged receivables, custom reports. As a freelance accountant, you already know how to read these and Xero produces them correctly. Reports are exportable to PDF and Excel and can be shared directly with a link.</p>
-      <p>Wave's reporting covers the basics — P&amp;L, balance sheet, sales tax reports — but it's noticeably thinner. There's no cash flow forecast, no customizable reports, and limited filtering options. For your own simple practice finances, it's adequate. For anything more complex, you'll hit the ceiling quickly.</p>
-
-      <div class="cta-box xero">
-        <div class="cta-info">
-          <h4>Try Xero free for 30 days</h4>
-          <p>No credit card required. Full access to all Standard plan features.</p>
-        </div>
-        <a href="YOUR_XERO_AFFILIATE_LINK" class="cta-btn xero" rel="nofollow sponsored">Start free trial →</a>
-      </div>
-
-      <h2 id="pros-cons">Pros and cons</h2>
-
-      <h3>Xero</h3>
-      <div class="pros-cons">
-        <div class="pros">
-          <h4>✓ Pros</h4>
-          <ul>
-            <li>Excellent bank reconciliation with smart matching</li>
-            <li>Unlimited invoicing on Standard plan</li>
-            <li>1,000+ integrations with practice management tools</li>
-            <li>Strong mobile app for on-the-go access</li>
-            <li>24/7 customer support included</li>
-            <li>Multi-currency on Premium plan</li>
-            <li>Project and time tracking built in</li>
-          </ul>
-        </div>
-        <div class="cons">
-          <h4>✗ Cons</h4>
-          <ul>
-            <li>$42/month is a real cost for early-stage freelancers</li>
-            <li>Starter plan is too limited to be useful</li>
-            <li>Steeper learning curve than Wave</li>
-            <li>Multi-currency requires Premium upgrade</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>Wave</h3>
-      <div class="pros-cons">
-        <div class="pros">
-          <h4>✓ Pros</h4>
-          <ul>
-            <li>Genuinely free for core features</li>
-            <li>Good invoicing for a free tool</li>
-            <li>Clean, easy-to-use interface</li>
-            <li>No client or invoice limits</li>
-            <li>Decent for very simple bookkeeping</li>
-          </ul>
-        </div>
-        <div class="cons">
-          <h4>✗ Cons</h4>
-          <ul>
-            <li>No multi-currency support at all</li>
-            <li>Payment processing fees are high</li>
-            <li>Support is community-only on free plan</li>
-            <li>Limited integrations compared to Xero</li>
-            <li>No project tracking or time billing</li>
-            <li>Reporting is thin and not customizable</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cta-box wave">
-        <div class="cta-info">
-          <h4>Try Wave for free</h4>
-          <p>No credit card, no time limit. Free forever for core accounting features.</p>
-        </div>
-        <a href="YOUR_WAVE_AFFILIATE_LINK" class="cta-btn wave" rel="nofollow sponsored">Get started free →</a>
-      </div>
-
-      <h2 id="verdict">Our verdict: which should you choose?</h2>
-      <p>The honest answer is that this depends entirely on where you are in your freelance journey — not on which tool is objectively "better."</p>
-
-      <div class="final-verdict">
-        <h2>The right tool for your situation</h2>
-        <div class="verdict-pick">
-          <div class="verdict-pick-icon" style="background:#0d9488;">X</div>
-          <div class="verdict-pick-text">
-            <strong>Choose Xero if you have an established practice</strong>
-            <span>You're billing 5+ clients regularly, need proper reconciliation, want time-saving automation, or have international clients. The $42/month pays for itself in saved admin time within weeks.</span>
+  <main id="content">
+    <section class="page-hero">
+      <span class="page-hero__eyebrow">Comparison</span>
+      <div class="page-hero__layout">
+        <div>
+          <h1 class="page-hero__title">Xero vs Wave: which one makes more sense for a freelance practice?</h1>
+          <p class="page-hero__lede">If you only care about cost, Wave is still relevant. If you care about reconciliation, reporting, and growing into a sturdier bookkeeping stack, Xero is the better long-term choice.</p>
+          <div class="meta-row meta-row--light">
+            <span>Updated March 19, 2026</span>
+            <span>Comparison page</span>
+            <span>Estimated reading time: 8 minutes</span>
           </div>
         </div>
-        <div class="verdict-pick">
-          <div class="verdict-pick-icon" style="background:#2563eb;">W</div>
-          <div class="verdict-pick-text">
-            <strong>Choose Wave if you're just starting out</strong>
-            <span>You have 1–4 clients, want zero overhead while you find your footing, and don't need multi-currency or deep reporting. Upgrade to Xero when you're billing consistently.</span>
-          </div>
-        </div>
-        <div class="verdict-pick">
-          <div class="verdict-pick-icon" style="background:#d97706;">!</div>
-          <div class="verdict-pick-text">
-            <strong>Don't use Wave if you have international clients</strong>
-            <span>Wave has no multi-currency support whatsoever. If any of your clients pay in a different currency, go straight to Xero Premium or consider alternatives like FreshBooks.</span>
-          </div>
-        </div>
+        <aside class="hero-panel">
+          <h2>Quick answer</h2>
+          <p><strong>Xero wins overall</strong> for freelance accountants and bookkeepers who want stronger accounting depth, cleaner bank reconciliation, and an app ecosystem that scales with client work.</p>
+        </aside>
       </div>
+    </section>
 
-      <h2 id="alternatives">Alternatives worth considering</h2>
-      <p>If neither feels like the right fit, two other tools are worth looking at for freelance accountants specifically:</p>
-      <ul>
-        <li><strong>FreshBooks</strong> — better invoicing and time tracking than either Xero or Wave, but weaker on the accounting side. Good if billing and client management are your priority.</li>
-        <li><strong>Bonsai</strong> — built specifically for freelancers, includes contracts and proposals alongside invoicing. Less accounting depth but excellent for the full client workflow.</li>
-      </ul>
-      <p>We have full comparisons of both coming shortly.</p>
+    <div class="article-shell">
+      <article class="article-main article-body">
+        <p class="lede">This is not a close call for every buyer. It is only a close call if your top priority is keeping software cost near zero and you do not need much accounting depth yet.</p>
 
+        <section class="callout callout--disclosure">
+          <p><strong>Disclosure:</strong> product links on this page go to official vendor pages. Xero is running promotional pricing as of March 19, 2026, so this page avoids hard numbers that could go stale quickly. Wave pricing can also vary by product add-on and geography.</p>
+        </section>
+
+        <section class="callout callout--verdict" id="quick-verdict">
+          <p class="kicker">Quick verdict</p>
+          <div class="verdict-grid">
+            <div>
+              <h2>Xero is the better pick for most professionals</h2>
+              <p>Xero gives you better bank-feed workflows, stronger reports, broader integrations, and a clearer path once your practice moves beyond simple invoicing.</p>
+            </div>
+            <div>
+              <h2>Wave still wins one scenario</h2>
+              <p>If you are solo, budget-constrained, and want a lighter US or Canada-focused setup, Wave remains one of the few tools worth considering before you commit to paid accounting software.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="who-its-for">
+          <h2>Who each tool is best for</h2>
+          <div class="two-col">
+            <article class="card">
+              <p class="kicker">Choose Xero if</p>
+              <ul class="icon-list icon-list--good">
+                <li>You want stronger bookkeeping control, not just invoices and expense logging.</li>
+                <li>You expect to manage more clients, entities, or workflow complexity over time.</li>
+                <li>You care about integrations and want Hubdoc included on paid plans.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <p class="kicker">Choose Wave if</p>
+              <ul class="icon-list icon-list--good">
+                <li>You want a free accounting starting point before adding paid services.</li>
+                <li>Your process is light enough that simple invoicing and expense tracking are still enough.</li>
+                <li>You would rather accept fewer advanced features than take on a heavier setup.</li>
+              </ul>
+            </article>
+          </div>
+          <p>Readers who already know they need a stronger bookkeeping platform should skip the indecision and read our full <a href="xero-review.html">Xero review</a>. Readers who mainly need better invoices can also compare the broader field in <a href="best-invoicing-software.html">our invoicing roundup</a>.</p>
+        </section>
+
+        <section id="feature-comparison">
+          <h2>Feature comparison table</h2>
+          <div class="table-card">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Xero</th>
+                    <th>Wave</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Core accounting depth</td>
+                    <td>Built for fuller bookkeeping workflows and stronger reporting.</td>
+                    <td>Simpler and lighter; enough for basic owner-operator setups.</td>
+                  </tr>
+                  <tr>
+                    <td>Bank reconciliation</td>
+                    <td>Cleaner and more scalable once transactions increase.</td>
+                    <td>Usable, but less compelling once bookkeeping gets busier.</td>
+                  </tr>
+                  <tr>
+                    <td>Receipt capture</td>
+                    <td>Hubdoc is included with paid Xero plans.</td>
+                    <td>Basic capture is there, but not a best-in-class workflow.</td>
+                  </tr>
+                  <tr>
+                    <td>Invoicing</td>
+                    <td>Strong, flexible, and good enough for most practices.</td>
+                    <td>Very approachable and especially attractive for budget buyers.</td>
+                  </tr>
+                  <tr>
+                    <td>App ecosystem</td>
+                    <td>Broader and stronger for growing firms.</td>
+                    <td>More limited.</td>
+                  </tr>
+                  <tr>
+                    <td>Starting cost posture</td>
+                    <td>Tiered paid plans with promotional discounts common.</td>
+                    <td>Free Starter path plus paid add-ons and a paid Pro tier.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="pricing">
+          <h2>Pricing: what matters more than the headline number</h2>
+          <div class="snapshot">
+            <div class="snapshot__row">
+              <div class="snapshot__label">Xero pricing posture</div>
+              <div class="snapshot__value">Xero uses tiered paid plans and, as of March 19, 2026, is promoting introductory discounts plus a one-month-free offer on its US site. That makes hard pricing tables fragile, so check current pricing before buying.</div>
+            </div>
+            <div class="snapshot__row">
+              <div class="snapshot__label">Wave pricing posture</div>
+              <div class="snapshot__value">Wave still offers a free Starter route for accounting, then monetizes through paid features such as Pro-level invoicing and payment services. This makes it cheap to start, but the long-term fit depends on which paid extras you end up needing.</div>
+            </div>
+            <div class="snapshot__row">
+              <div class="snapshot__label">What we care about</div>
+              <div class="snapshot__value">The right question is not just "which is cheaper this month?" It is "which tool prevents a migration six months from now?" For many practitioners, Xero wins that question.</div>
+            </div>
+          </div>
+          <div class="callout callout--warning">
+            <p><strong>Pricing caution:</strong> promo-led pages can make a higher-tier product look artificially cheap for a short period. That is why this page does not recommend Xero solely on temporary discounts.</p>
+          </div>
+        </section>
+
+        <section id="ease-of-use">
+          <h2>Ease of use</h2>
+          <p>Wave is easier to understand on day one. Its simpler surface area is a real benefit, especially if you are running a solo practice and only need basic invoicing, payments, and expense tracking.</p>
+          <p>Xero takes longer to feel natural, but the extra structure pays off once your chart of accounts, reporting needs, or reconciliation volume becomes more serious. It is not harder for the sake of being harder; it is deeper because it is trying to solve bigger bookkeeping problems.</p>
+          <p>If clean onboarding matters more than long-term flexibility, Wave has the advantage. If you want a better ceiling, Xero is the stronger product.</p>
+        </section>
+
+        <section id="pros-cons">
+          <h2>Pros and cons</h2>
+          <div class="pros-cons">
+            <article class="card">
+              <p class="kicker">Xero strengths</p>
+              <ul class="icon-list icon-list--good">
+                <li>Better reconciliation and reporting for a growing freelance practice.</li>
+                <li>Broader app ecosystem and stronger accountant familiarity.</li>
+                <li>Hubdoc inclusion on paid plans improves receipt capture value.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <p class="kicker">Xero watchouts</p>
+              <ul class="icon-list icon-list--bad">
+                <li>More setup and learning overhead than Wave.</li>
+                <li>Less appealing if you are only trying to send invoices cheaply.</li>
+                <li>Promotional pricing can obscure the real long-term cost.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <p class="kicker">Wave strengths</p>
+              <ul class="icon-list icon-list--good">
+                <li>Low-friction way to start without a monthly accounting bill.</li>
+                <li>Clean interface for simple invoicing and basic bookkeeping.</li>
+                <li>Good fit when cost control matters more than depth.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <p class="kicker">Wave watchouts</p>
+              <ul class="icon-list icon-list--bad">
+                <li>Shallower product once your bookkeeping needs become more demanding.</li>
+                <li>Weaker ecosystem and less room to grow inside the same stack.</li>
+                <li>Can become a short-term answer rather than a lasting one.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="final-verdict">
+          <h2>Final verdict</h2>
+          <p>Xero is the better recommendation for most freelance accountants and bookkeepers because it gives you a sturdier operating base. It is the product we would rather grow into than migrate away from.</p>
+          <p>Wave still deserves a place in the conversation because free accounting software is not irrelevant in 2026. But it is only the better choice when budget and simplicity clearly matter more than accounting depth.</p>
+          <p>If you are still choosing between "low-cost starter" and "deeper long-term system," read <a href="xero-review.html">our Xero review</a> next and then compare it with the broader shortlist in <a href="best-invoicing-software.html">best invoicing software</a>.</p>
+        </section>
+
+        <section class="cta-panel">
+          <div>
+            <h2>Go to the official pages</h2>
+            <p>Use the official vendor sites to confirm today’s pricing, free-plan rules, and onboarding offers before you buy.</p>
+          </div>
+          <div class="chip-row">
+            <a class="button button--primary" href="https://www.xero.com/us/">Visit Xero</a>
+            <a class="button button--secondary" href="https://www.waveapps.com/">Visit Wave</a>
+          </div>
+        </section>
+
+        <section id="related">
+          <h2>Related articles</h2>
+          <div class="related-grid">
+            <a class="summary-card" href="xero-review.html">
+              <span class="summary-card__eyebrow">Review</span>
+              <h3>Xero review</h3>
+              <p>A closer look at Xero’s strengths, weak spots, and who should skip it.</p>
+            </a>
+            <a class="summary-card" href="best-invoicing-software.html">
+              <span class="summary-card__eyebrow">Roundup</span>
+              <h3>Best invoicing software</h3>
+              <p>See where both tools land in the wider market.</p>
+            </a>
+            <a class="summary-card" href="how-to-choose-accounting-software.html">
+              <span class="summary-card__eyebrow">Guide</span>
+              <h3>How to choose accounting software</h3>
+              <p>Use a practical framework before locking yourself into a tool.</p>
+            </a>
+          </div>
+        </section>
+      </article>
+
+      <aside class="article-sidebar">
+        <section class="sidebar-card">
+          <h2>On this page</h2>
+          <ul class="sidebar-list">
+            <li><a href="#quick-verdict">Quick verdict</a></li>
+            <li><a href="#who-its-for">Who each tool is best for</a></li>
+            <li><a href="#feature-comparison">Feature comparison</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#ease-of-use">Ease of use</a></li>
+            <li><a href="#pros-cons">Pros and cons</a></li>
+            <li><a href="#final-verdict">Final verdict</a></li>
+          </ul>
+        </section>
+        <section class="sidebar-card">
+          <h2>Short answer</h2>
+          <p>If bookkeeping depth matters, choose Xero. If zero-to-low monthly cost matters most, Wave is still a fair starter option.</p>
+        </section>
+        <section class="sidebar-card">
+          <h2>Read next</h2>
+          <ul class="link-list">
+            <li><a href="xero-review.html">Xero review</a></li>
+            <li><a href="best-receipt-tracking.html">Best receipt tracking tools</a></li>
+            <li><a href="zoho-vs-quickbooks.html">Zoho Books vs QuickBooks</a></li>
+          </ul>
+        </section>
+      </aside>
     </div>
   </main>
 
-  <!-- SIDEBAR -->
-  <aside class="article-sidebar">
-    <div class="sidebar-card sidebar-pick">
-      <div class="pick-label">Our top pick</div>
-      <div class="pick-name">Xero</div>
-      <div class="pick-reason">Best for established freelance accountants who need proper reconciliation and automation</div>
-      <a href="YOUR_XERO_AFFILIATE_LINK" rel="nofollow sponsored">Try Xero free for 30 days →</a>
-    </div>
+  <div data-site-footer></div>
 
-    <div class="sidebar-card">
-      <h3>Table of contents</h3>
-      <ul class="toc-list">
-        <li><a href="#overview">What we're comparing</a></li>
-        <li><a href="#pricing">Pricing breakdown</a></li>
-        <li><a href="#invoicing">Invoicing</a></li>
-        <li><a href="#reconciliation">Bank reconciliation</a></li>
-        <li><a href="#reporting">Reporting</a></li>
-        <li><a href="#pros-cons">Pros and cons</a></li>
-        <li><a href="#verdict">Our verdict</a></li>
-        <li><a href="#alternatives">Alternatives</a></li>
-      </ul>
-    </div>
-
-    <div class="sidebar-card">
-      <h3>Quick stats</h3>
-      <ul style="list-style:none;padding:0;">
-        <li style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--gray-200);font-size:0.88rem;"><span style="color:var(--gray-600);">Xero price</span><strong>$42/mo</strong></li>
-        <li style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--gray-200);font-size:0.88rem;"><span style="color:var(--gray-600);">Wave price</span><strong>Free</strong></li>
-        <li style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--gray-200);font-size:0.88rem;"><span style="color:var(--gray-600);">Xero trial</span><strong>30 days</strong></li>
-        <li style="display:flex;justify-content:space-between;padding:0.5rem 0;font-size:0.88rem;"><span style="color:var(--gray-600);">Multi-currency</span><strong>Xero only</strong></li>
-      </ul>
-    </div>
-  </aside>
-</div>
-
-<footer>
-  <p>© 2026 AccountantToolkit.com · <a href="/about.html" style="color:var(--teal);">About</a> · <a href="/disclosure.html" style="color:var(--teal);">Affiliate Disclosure</a> · <a href="/privacy.html" style="color:var(--teal);">Privacy</a></p>
-  <p>This site contains affiliate links. We may earn a commission if you purchase through our links, at no extra cost to you.</p>
-</footer>
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Xero vs Wave for Freelance Accountants in 2026",
+    "description": "An honest 2026 comparison of Xero vs Wave for freelance accountants and bookkeepers.",
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "mainEntityOfPage": "https://accountanttoolkit.com/xero-vs-wave.html",
+    "author": {
+      "@type": "Organization",
+      "name": "AccountantToolkit Editorial Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AccountantToolkit Editorial Team"
+    }
+  }
+  </script>
 </body>
 </html>

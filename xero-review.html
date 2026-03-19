@@ -1,316 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xero Review for Freelancers (2026): Is It Worth It?</title>
-  <meta name="description" content="An honest Xero review for freelancers and self-employed accountants in 2025. We cover pricing, features, pros, cons, and who it's actually best for." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0f1f38;
-      --teal: #0d9488;
-      --teal-light: #ccfbf1;
-      --teal-mid: #14b8a6;
-      --amber: #d97706;
-      --amber-light: #fef3c7;
-      --xero: #13b5ea;
-      --xero-light: #e0f7ff;
-      --gray-50: #f8fafc;
-      --gray-100: #f1f5f9;
-      --gray-200: #e2e8f0;
-      --gray-400: #94a3b8;
-      --gray-600: #475569;
-      --gray-800: #1e293b;
-      --white: #ffffff;
-      --font-display: 'Fraunces', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--gray-800); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-
-    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--navy); text-decoration: none; }
-    .nav-logo span { color: var(--teal); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--navy); }
-
-    .article-wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: start; }
-    .article-main { min-width: 0; }
-    .article-sidebar { position: sticky; top: 84px; }
-
-    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .meta-tag { background: var(--teal-light); color: var(--teal); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 100px; text-decoration: none; }
-    .meta-date { font-size: 0.85rem; color: var(--gray-400); }
-    .meta-read { font-size: 0.85rem; color: var(--gray-400); }
-    h1.article-title { font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; color: var(--navy); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.25rem; }
-    .article-intro { font-size: 1.1rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 2rem; border-left: 3px solid var(--teal); padding-left: 1.25rem; }
-    .disclosure-box { background: var(--amber-light); border: 1px solid #fde68a; border-radius: 8px; padding: 0.85rem 1.1rem; font-size: 0.82rem; color: #92400e; margin-bottom: 2.5rem; line-height: 1.5; }
-
-    .score-card { background: var(--navy); border-radius: 14px; padding: 2rem; margin-bottom: 2.5rem; display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: center; }
-    .score-overall { text-align: center; }
-    .score-number { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: var(--white); line-height: 1; }
-    .score-label { font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
-    .score-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-    .score-item { background: rgba(255,255,255,0.07); border-radius: 8px; padding: 0.75rem 1rem; }
-    .score-item-label { font-size: 0.78rem; color: #94a3b8; margin-bottom: 0.3rem; }
-    .score-item-value { display: flex; align-items: center; gap: 0.5rem; }
-    .score-item-bar { flex: 1; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
-    .score-item-fill { height: 100%; background: var(--teal-mid); border-radius: 2px; }
-    .score-item-num { font-size: 0.85rem; font-weight: 600; color: var(--white); min-width: 24px; text-align: right; }
-
-    .article-body h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin: 2.5rem 0 1rem; line-height: 1.25; }
-    .article-body h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--navy); margin: 2rem 0 0.75rem; }
-    .article-body p { margin-bottom: 1.25rem; font-size: 1rem; line-height: 1.8; }
-    .article-body ul, .article-body ol { margin: 0 0 1.25rem 1.5rem; }
-    .article-body li { margin-bottom: 0.5rem; font-size: 1rem; line-height: 1.7; }
-    .article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
-    .article-body a:hover { color: var(--navy); }
-    .article-body strong { font-weight: 600; color: var(--navy); }
-
-    .review-summary { border: 1px solid var(--gray-200); border-radius: 14px; overflow: hidden; margin: 2rem 0 2.5rem; }
-    .review-summary-head { background: var(--xero-light); padding: 1rem 1.25rem; border-bottom: 1px solid var(--gray-200); }
-    .review-summary-head h2 { margin: 0; font-size: 1.2rem; color: var(--navy); }
-    .review-summary-body { padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .pros h3, .cons h3 { margin-top: 0; margin-bottom: 0.75rem; }
-    .pros ul, .cons ul { margin-left: 1.2rem; }
-
-    .pricing-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
-    .pricing-box h3 { margin-top: 0; }
-
-    .cta-box { background: var(--navy); color: var(--white); border-radius: 14px; padding: 2rem; margin: 2.5rem 0; }
-    .cta-box h2 { color: var(--white); margin-top: 0; }
-    .cta-box p { color: #cbd5e1; }
-    .cta-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.25rem; }
-    .btn-primary, .btn-secondary {
-      display: inline-block; text-decoration: none; font-weight: 600;
-      padding: 0.85rem 1.2rem; border-radius: 8px; transition: 0.2s ease;
-    }
-    .btn-primary { background: var(--teal); color: var(--white); }
-    .btn-primary:hover { background: var(--teal-mid); }
-    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--white); }
-    .btn-secondary:hover { background: rgba(255,255,255,0.14); }
-
-    .sidebar-card { border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; background: var(--white); }
-    .sidebar-card h3 { font-family: var(--font-display); font-size: 1rem; color: var(--navy); margin-bottom: 0.85rem; }
-    .sidebar-card ul { list-style: none; }
-    .sidebar-card li { margin-bottom: 0.75rem; }
-    .sidebar-card a { color: var(--gray-600); text-decoration: none; font-size: 0.92rem; line-height: 1.5; }
-    .sidebar-card a:hover { color: var(--teal); }
-
-    footer { border-top: 1px solid var(--gray-200); margin-top: 4rem; padding: 2rem; text-align: center; color: var(--gray-400); font-size: 0.9rem; }
-
-    @media (max-width: 960px) {
-      .article-wrap { grid-template-columns: 1fr; gap: 2rem; }
-      .article-sidebar { position: static; }
-      .score-card { grid-template-columns: 1fr; text-align: center; }
-      .score-breakdown { grid-template-columns: 1fr; }
-      .review-summary-body { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 640px) {
-      nav { padding: 0 1rem; }
-      .nav-links { display: none; }
-      .article-wrap { padding: 2rem 1rem; }
-      .cta-buttons { flex-direction: column; }
-      .btn-primary, .btn-secondary { width: 100%; text-align: center; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xero Review for Freelance Accountants in 2026 | AccountantToolkit</title>
+  <meta name="description" content="Our 2026 Xero review covers scorecard, pricing posture, strengths, weaknesses, and whether Xero is still a smart choice for freelance accountants and bookkeepers.">
+  <link rel="canonical" href="https://accountanttoolkit.com/xero-review.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AccountantToolkit">
+  <meta property="og:title" content="Xero Review for Freelance Accountants in 2026">
+  <meta property="og:description" content="Xero remains one of the strongest bookkeeping platforms for growing freelance practices, especially if you value reconciliation, reporting, and app flexibility.">
+  <meta property="og:url" content="https://accountanttoolkit.com/xero-review.html">
+  <meta property="og:image" content="https://accountanttoolkit.com/assets/img/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Xero Review for Freelance Accountants in 2026">
+  <meta name="twitter:description" content="A practical 2026 Xero review for bookkeeping-focused practices.">
+  <meta name="twitter:image" content="https://accountanttoolkit.com/assets/img/og-default.svg">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="assets/js/site.js"></script>
 </head>
-<body>
+<body data-page="reviews">
+  <div data-site-header></div>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Accountant<span>Toolkit</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html#reviews">Reviews</a></li>
-      <li><a href="index.html#comparisons">Comparisons</a></li>
-      <li><a href="index.html#guides">Guides</a></li>
-    </ul>
-  </nav>
-
-  <main class="article-wrap">
-    <article class="article-main">
-      <div class="article-meta">
-        <a href="index.html#reviews" class="meta-tag">Review</a>
-        <span class="meta-date">Updated March 18, 2026</span>
-        <span class="meta-read">8 min read</span>
-      </div>
-
-      <h1 class="article-title">Xero Review for Freelancers (2026): Is It Worth It?</h1>
-
-      <p class="article-intro">
-        Xero is one of the strongest accounting platforms for freelancers who want automation, bank reconciliation, and a more professional finance stack. But it is not the cheapest option, and it is not the easiest tool for absolute beginners.
-      </p>
-
-      <div class="disclosure-box">
-        This article contains affiliate links. If you purchase through our links, we may earn a commission at no extra cost to you.
-      </div>
-
-      <section class="score-card">
-        <div class="score-overall">
-          <div class="score-number">8.8</div>
-          <div class="score-label">Overall Score</div>
-        </div>
-        <div class="score-breakdown">
-          <div class="score-item">
-            <div class="score-item-label">Ease of Use</div>
-            <div class="score-item-value">
-              <div class="score-item-bar"><div class="score-item-fill" style="width:82%"></div></div>
-              <span class="score-item-num">8.2</span>
-            </div>
-          </div>
-          <div class="score-item">
-            <div class="score-item-label">Features</div>
-            <div class="score-item-value">
-              <div class="score-item-bar"><div class="score-item-fill" style="width:92%"></div></div>
-              <span class="score-item-num">9.2</span>
-            </div>
-          </div>
-          <div class="score-item">
-            <div class="score-item-label">Value for Money</div>
-            <div class="score-item-value">
-              <div class="score-item-bar"><div class="score-item-fill" style="width:84%"></div></div>
-              <span class="score-item-num">8.4</span>
-            </div>
-          </div>
-          <div class="score-item">
-            <div class="score-item-label">Freelancer Fit</div>
-            <div class="score-item-value">
-              <div class="score-item-bar"><div class="score-item-fill" style="width:90%"></div></div>
-              <span class="score-item-num">9.0</span>
-            </div>
+  <main id="content">
+    <section class="page-hero">
+      <span class="page-hero__eyebrow">Review</span>
+      <div class="page-hero__layout">
+        <div>
+          <h1 class="page-hero__title">Xero review: still one of the best long-term accounting platforms for solo practices.</h1>
+          <p class="page-hero__lede">Xero is not the cheapest way to start and not the fastest product to learn. It is still one of the best places to grow once your freelance practice needs stronger books, cleaner reconciliation, and a broader app stack.</p>
+          <div class="meta-row meta-row--light">
+            <span>Updated March 19, 2026</span>
+            <span>Review page</span>
+            <span>Estimated reading time: 8 minutes</span>
           </div>
         </div>
-      </section>
+        <aside class="hero-panel">
+          <h2>Quick verdict</h2>
+          <p><strong>Xero is worth paying for</strong> when you are buying for durability, not just for low starting cost. It makes less sense if your whole use case is lightweight invoicing on a tight budget.</p>
+        </aside>
+      </div>
+    </section>
 
-      <div class="article-body">
-        <h2>Quick Verdict</h2>
-        <p>
-          Xero is best for freelancers who want a serious accounting system with strong automation, clean reporting, and room to grow. If your work is still very simple and your budget is tight, a lighter tool like Wave may be enough. But if you care about long-term bookkeeping quality, Xero is one of the safest choices.
-        </p>
+    <div class="article-shell">
+      <article class="article-main article-body">
+        <section class="callout callout--disclosure">
+          <p><strong>Disclosure:</strong> the US Xero site is currently highlighting introductory discounts and a free-month offer. This review avoids basing the recommendation on temporary promo pricing. Xero also includes Hubdoc with paid plans in the US, which meaningfully improves the receipt-capture value.</p>
+        </section>
 
-        <section class="review-summary">
-          <div class="review-summary-head">
-            <h2>Xero Review Summary</h2>
-          </div>
-          <div class="review-summary-body">
-            <div class="pros">
-              <h3>Pros</h3>
-              <ul>
-                <li>Strong bank reconciliation and automation</li>
-                <li>Professional invoicing and expense tracking</li>
-                <li>Excellent integrations and ecosystem</li>
-                <li>Scales better than many freelancer-first tools</li>
-              </ul>
+        <section class="score-card" id="scorecard">
+          <div class="score-card__layout">
+            <div class="score-card__total">
+              <strong>8.8</strong>
+              <span>Overall score</span>
             </div>
-            <div class="cons">
-              <h3>Cons</h3>
-              <ul>
-                <li>More expensive than simpler alternatives</li>
-                <li>Can feel overwhelming for beginners</li>
-                <li>Some freelancers may not need all the features</li>
-              </ul>
+            <div class="score-grid">
+              <div class="score-item">
+                <div class="score-item__label"><span>Bookkeeping depth</span><span>9.1</span></div>
+                <div class="score-item__track"><div class="score-item__fill" style="width: 91%;"></div></div>
+              </div>
+              <div class="score-item">
+                <div class="score-item__label"><span>Bank reconciliation</span><span>9.2</span></div>
+                <div class="score-item__track"><div class="score-item__fill" style="width: 92%;"></div></div>
+              </div>
+              <div class="score-item">
+                <div class="score-item__label"><span>Ease of use</span><span>7.6</span></div>
+                <div class="score-item__track"><div class="score-item__fill" style="width: 76%;"></div></div>
+              </div>
+              <div class="score-item">
+                <div class="score-item__label"><span>Scalability</span><span>9.0</span></div>
+                <div class="score-item__track"><div class="score-item__fill" style="width: 90%;"></div></div>
+              </div>
             </div>
           </div>
         </section>
 
-        <h2>Who Xero Is Best For</h2>
-        <p>
-          Xero is a strong fit for freelancers, solo bookkeepers, and self-employed accountants who want more than just invoicing. It works especially well if you want reliable reconciliation, better reporting, and a platform you will not outgrow quickly.
-        </p>
+        <p class="lede">Xero is the kind of product people rarely fall in love with on day one, but often respect more the longer they use it. That is because its strengths compound over time: cleaner bank feeds, stronger reporting, deeper integrations, and better room to grow.</p>
 
-        <h2>Who Should Skip Xero</h2>
-        <p>
-          If you only need to send basic invoices and track a few expenses each month, Xero may be more software than you actually need. In that case, cheaper tools or free tools can make more sense.
-        </p>
-
-        <div class="pricing-box">
-          <h3>Pricing Snapshot</h3>
-          <p>
-            Xero usually positions itself above entry-level invoicing tools. That higher price can be worth it if you actively use bookkeeping automation, reporting, and integrations. If you only use 20% of the platform, you will probably overpay.
-          </p>
-        </div>
-
-        <h2>What Xero Does Well</h2>
-        <h3>1. Bank reconciliation</h3>
-        <p>
-          This is one of Xero’s biggest strengths. If you want to spend less time manually matching transactions, Xero is a serious productivity upgrade.
-        </p>
-
-        <h3>2. Reporting</h3>
-        <p>
-          Many freelancers ignore reporting until tax time. That is a mistake. Xero gives you a much clearer view of revenue, expenses, and business health than basic invoicing tools.
-        </p>
-
-        <h3>3. Professional feel</h3>
-        <p>
-          Xero feels like a real accounting platform, not just a freelancer side tool. That matters if you want your systems to stay useful as your business grows.
-        </p>
-
-        <h2>Where Xero Falls Short</h2>
-        <h3>1. Learning curve</h3>
-        <p>
-          Beginners may find Xero less intuitive than simpler tools. It is not badly designed, but it assumes you are willing to learn a proper accounting workflow.
-        </p>
-
-        <h3>2. Price sensitivity</h3>
-        <p>
-          If your freelance income is still small, every monthly tool cost matters. Xero is easier to justify once your business is already generating steady revenue.
-        </p>
-
-        <h2>Xero vs Simpler Alternatives</h2>
-        <p>
-          Compared with Wave, Xero is more powerful but costs more. Compared with freelancer-focused tools like Bonsai, Xero is stronger on accounting depth but weaker on all-in-one workflow features like contracts and proposals.
-        </p>
-
-        <h2>Final Verdict</h2>
-        <p>
-          Xero is worth it for freelancers who want strong accounting foundations, better automation, and room to scale. It is not the best choice for everyone, but it is one of the best choices for serious solo professionals.
-        </p>
-
-        <div class="cta-box">
-          <h2>Should You Try Xero?</h2>
-          <p>
-            If you want a stronger accounting setup and you are ready to move beyond basic invoicing, Xero is one of the best tools to test first.
-          </p>
-          <div class="cta-buttons">
-            <a href="YOUR_XERO_AFFILIATE_LINK" class="btn-primary">Try Xero</a>
-            <a href="xero-vs-wave.html" class="btn-secondary">Read Xero vs Wave</a>
+        <section id="who-its-for">
+          <h2>Who it is for and who should skip it</h2>
+          <div class="two-col">
+            <article class="card">
+              <p class="kicker">A good fit for</p>
+              <ul class="icon-list icon-list--good">
+                <li>Freelance accountants and bookkeepers who want stronger accounting depth.</li>
+                <li>Practices that expect transaction volume, reporting needs, or integrations to grow.</li>
+                <li>Buyers who value Hubdoc inclusion and better bookkeeping durability.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <p class="kicker">Skip it if</p>
+              <ul class="icon-list icon-list--bad">
+                <li>You mainly need basic invoicing and want the lightest possible learning curve.</li>
+                <li>You are choosing purely on the lowest monthly cost.</li>
+                <li>Your business is simple enough that Wave or FreshBooks already covers the whole job.</li>
+              </ul>
+            </article>
           </div>
-        </div>
-      </div>
-    </article>
+        </section>
 
-    <aside class="article-sidebar">
-      <div class="sidebar-card">
-        <h3>In This Review</h3>
-        <ul>
-          <li><a href="#">Quick Verdict</a></li>
-          <li><a href="#">Who Xero Is Best For</a></li>
-          <li><a href="#">Pricing Snapshot</a></li>
-          <li><a href="#">Strengths and Weaknesses</a></li>
-          <li><a href="#">Final Verdict</a></li>
-        </ul>
-      </div>
+        <section id="pricing">
+          <h2>Pricing snapshot</h2>
+          <div class="snapshot">
+            <div class="snapshot__row">
+              <div class="snapshot__label">Plan structure</div>
+              <div class="snapshot__value">Xero currently presents Early, Growing, and Established plans on its US pages.</div>
+            </div>
+            <div class="snapshot__row">
+              <div class="snapshot__label">Offer posture</div>
+              <div class="snapshot__value">The vendor is currently showing introductory discounts and a one-month-free offer.</div>
+            </div>
+            <div class="snapshot__row">
+              <div class="snapshot__label">What matters most</div>
+              <div class="snapshot__value">Do not buy Xero because a promo makes it briefly cheap. Buy it because you want the stronger long-term accounting platform.</div>
+            </div>
+          </div>
+        </section>
 
-      <div class="sidebar-card">
-        <h3>Related Articles</h3>
-        <ul>
-          <li><a href="xero-vs-wave.html">Xero vs Wave</a></li>
-          <li><a href="best-invoicing-software.html">Best Invoicing Software</a></li>
-          <li><a href="how-to-choose-accounting-software.html">How to Choose Accounting Software</a></li>
-        </ul>
-      </div>
-    </aside>
+        <section id="strengths">
+          <h2>Where Xero is strong</h2>
+          <h3>1. Reconciliation is still a major strength</h3>
+          <p>Xero remains one of the strongest tools in this category for keeping bank feeds, categorization, and day-to-day bookkeeping work under control once transaction volume starts to rise.</p>
+          <h3>2. It scales better than many lighter alternatives</h3>
+          <p>This is the real reason to pick Xero over simpler options. It gives you more room before you need to rethink the whole stack.</p>
+          <h3>3. Hubdoc inclusion improves the value proposition</h3>
+          <p>Hubdoc being included with paid Xero plans matters. It improves document capture and reduces the need to buy a separate starter receipt tool immediately.</p>
+        </section>
+
+        <section id="weaknesses">
+          <h2>Where Xero is weaker</h2>
+          <h3>1. It is not the easiest tool to learn</h3>
+          <p>Xero is not confusing, but it is more demanding than Wave or FreshBooks. Buyers looking for immediate simplicity will feel that difference.</p>
+          <h3>2. It is not the best choice for the lightest possible use case</h3>
+          <p>If your whole job is sending invoices and keeping basic records, Xero can feel heavier than necessary.</p>
+          <h3>3. Promotional pricing should not drive the decision</h3>
+          <p>Because Xero regularly leans on introductory offers, it is easy to focus on the wrong number. The better decision framework is whether you want a stronger accounting base after the promotion ends.</p>
+        </section>
+
+        <section id="final-verdict">
+          <h2>Final verdict</h2>
+          <p>Xero is still one of the best long-term choices for freelance accountants and bookkeepers who expect their practice to become more demanding over time. It is a better product than many cheaper alternatives once the books start to matter more.</p>
+          <p>It is not the right choice for every small buyer, and it is not the easiest product to recommend to someone who just wants invoices and simplicity. But for serious bookkeeping work, Xero remains near the top of the list.</p>
+        </section>
+
+        <section class="cta-panel">
+          <div>
+            <h2>Check Xero directly</h2>
+            <p>Confirm the current offer, plan details, and included features on the official Xero site before you buy.</p>
+          </div>
+          <div class="chip-row">
+            <a class="button button--primary" href="https://www.xero.com/us/">Visit Xero</a>
+            <a class="button button--secondary" href="xero-vs-wave.html">Compare with Wave</a>
+          </div>
+        </section>
+
+        <section id="related">
+          <h2>Related articles</h2>
+          <div class="related-grid">
+            <a class="summary-card" href="xero-vs-wave.html">
+              <span class="summary-card__eyebrow">Comparison</span>
+              <h3>Xero vs Wave</h3>
+              <p>See when Xero’s extra depth is worth paying for.</p>
+            </a>
+            <a class="summary-card" href="best-receipt-tracking.html">
+              <span class="summary-card__eyebrow">Roundup</span>
+              <h3>Best receipt tracking tools</h3>
+              <p>Useful if your document capture workflow is the next bottleneck to solve.</p>
+            </a>
+            <a class="summary-card" href="best-invoicing-software.html">
+              <span class="summary-card__eyebrow">Roundup</span>
+              <h3>Best invoicing software</h3>
+              <p>See where Xero fits when invoicing is the main buying trigger.</p>
+            </a>
+          </div>
+        </section>
+      </article>
+
+      <aside class="article-sidebar">
+        <section class="sidebar-card">
+          <h2>On this page</h2>
+          <ul class="sidebar-list">
+            <li><a href="#scorecard">Scorecard</a></li>
+            <li><a href="#who-its-for">Who it is for</a></li>
+            <li><a href="#pricing">Pricing snapshot</a></li>
+            <li><a href="#strengths">Strengths</a></li>
+            <li><a href="#weaknesses">Weaknesses</a></li>
+            <li><a href="#final-verdict">Final verdict</a></li>
+          </ul>
+        </section>
+        <section class="sidebar-card">
+          <h2>Bottom line</h2>
+          <p>Xero is a better long-term accounting decision than many lighter tools, especially if your practice is growing up fast.</p>
+        </section>
+        <section class="sidebar-card">
+          <h2>Read next</h2>
+          <ul class="link-list">
+            <li><a href="xero-vs-wave.html">Xero vs Wave</a></li>
+            <li><a href="zoho-vs-quickbooks.html">Zoho Books vs QuickBooks</a></li>
+            <li><a href="how-to-choose-accounting-software.html">How to choose accounting software</a></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2026 AccountantToolkit. Honest software reviews for freelance accountants.</p>
-  </footer>
+  <div data-site-footer></div>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Xero Review for Freelance Accountants in 2026",
+    "description": "Our 2026 Xero review for freelance accountants and bookkeepers.",
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "mainEntityOfPage": "https://accountanttoolkit.com/xero-review.html",
+    "author": {
+      "@type": "Organization",
+      "name": "AccountantToolkit Editorial Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AccountantToolkit Editorial Team"
+    }
+  }
+  </script>
 </body>
 </html>
