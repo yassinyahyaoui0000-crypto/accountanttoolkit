@@ -1,3 +1,78 @@
+const THEME_STORAGE_KEY = "accountanttoolkit-theme";
+
+function getStoredTheme() {
+  try {
+    return localStorage.getItem(THEME_STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function getPreferredTheme() {
+  const storedTheme = getStoredTheme();
+
+  if (storedTheme === "dark" || storedTheme === "light") {
+    return storedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme(theme) {
+  const normalizedTheme = theme === "dark" ? "dark" : "light";
+  document.documentElement.dataset.theme = normalizedTheme;
+}
+
+function setTheme(theme, options = {}) {
+  const { withTransition = false } = options;
+  const normalizedTheme = theme === "dark" ? "dark" : "light";
+
+  if (withTransition) {
+    document.documentElement.classList.add("is-theme-switching");
+    window.setTimeout(() => {
+      document.documentElement.classList.remove("is-theme-switching");
+    }, 280);
+  }
+
+  applyTheme(normalizedTheme);
+
+  try {
+    localStorage.setItem(THEME_STORAGE_KEY, normalizedTheme);
+  } catch {
+    // Ignore localStorage failures in private browsing modes.
+  }
+}
+
+function updateThemeToggle(toggle, activeTheme) {
+  const nextTheme = activeTheme === "dark" ? "light" : "dark";
+  const nextThemeLabel = nextTheme === "dark" ? "Dark mode" : "Light mode";
+  const currentThemeIcon = activeTheme === "dark" ? "moon" : "sun";
+  const currentThemeGlyph = activeTheme === "dark" ? "\u263D" : "\u2600";
+
+  toggle.innerHTML = `<span class="theme-toggle__icon" aria-hidden="true" data-icon="${currentThemeIcon}">${currentThemeGlyph}</span><span class="theme-toggle__label">${nextThemeLabel}</span>`;
+  toggle.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+  toggle.setAttribute("aria-pressed", activeTheme === "dark" ? "true" : "false");
+}
+
+function initThemeToggle(root = document) {
+  const toggle = root.querySelector("[data-theme-toggle]");
+
+  if (!toggle) {
+    return;
+  }
+
+  updateThemeToggle(toggle, document.documentElement.dataset.theme || "light");
+
+  toggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    setTheme(nextTheme, { withTransition: true });
+    updateThemeToggle(toggle, nextTheme);
+  });
+}
+
+applyTheme(getPreferredTheme());
+
 const navItems = [
   { href: "index.html", label: "Home", page: "home" },
   { href: "best-invoicing-software.html", label: "Best Invoicing", page: "best-invoicing" },
@@ -101,6 +176,7 @@ function renderHeader() {
           </span>
         </a>
         <nav class="site-nav" aria-label="Primary">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" aria-pressed="false"><span class="theme-toggle__icon" aria-hidden="true" data-icon="sun">\u2600</span><span class="theme-toggle__label">Dark mode</span></button>
           <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
           <div class="site-nav__links" id="site-nav-links">${navLinks}</div>
         </nav>
@@ -194,6 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   decorateProductTokens();
+  initThemeToggle();
 
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".site-nav__links");
