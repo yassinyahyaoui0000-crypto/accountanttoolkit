@@ -15,7 +15,10 @@
   <rect x="50" y="50" width="1100" height="660" rx="38" fill="url(#bg)"/>
   <text x="96" y="125" fill="#a5fff2" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="28" font-weight="700" letter-spacing="3">ACCOUNTANTTOOLKIT FLOW</text>
   <text x="96" y="178" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="62" font-weight="700">Roundup &#8594; comparison &#8594; review</text>
-  <text x="96" y="226" fill="#deebf6" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="30">Use the site to shortlist fast, narrow to one head-to-head, then sanity-check the winner before buying.</text>
+  <text x="96" y="220" fill="#deebf6" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="26">
+    <tspan x="96" dy="0">Use the site to shortlist fast, narrow to one head-to-head,</tspan>
+    <tspan x="96" dy="34">then sanity-check the winner before buying.</tspan>
+  </text>
 
   <g transform="translate(96 290)">
     <rect width="286" height="310" rx="28" fill="url(#card)"/>
@@ -26,8 +29,8 @@
     <rect x="30" y="176" width="226" height="18" rx="9" fill="#d9e3ee"/>
     <rect x="30" y="206" width="194" height="18" rx="9" fill="#d9e3ee"/>
     <rect x="30" y="238" width="220" height="18" rx="9" fill="#e3ebf4"/>
-    <text x="30" y="334" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">See the whole shortlist, price posture,</text>
-    <text x="30" y="364" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">and who each tool is actually for.</text>
+    <text x="30" y="334" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="16">See the whole shortlist, price posture,</text>
+    <text x="30" y="358" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="16">and who each tool is actually for.</text>
   </g>
 
   <g transform="translate(457 290)">
@@ -43,8 +46,8 @@
     <text x="54" y="250" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22">Who wins overall?</text>
     <text x="54" y="278" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22">Who still benefits</text>
     <text x="54" y="304" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22">from the runner-up?</text>
-    <text x="30" y="334" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">Use one head-to-head to make the</text>
-    <text x="30" y="364" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">real tradeoffs easier to scan.</text>
+    <text x="30" y="334" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="16">Use one head-to-head to make the</text>
+    <text x="30" y="358" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="16">real tradeoffs easier to scan.</text>
   </g>
 
   <g transform="translate(818 290)">
@@ -56,8 +59,8 @@
     <rect x="30" y="184" width="226" height="18" rx="9" fill="#d9e3ee"/>
     <rect x="30" y="214" width="198" height="18" rx="9" fill="#d9e3ee"/>
     <rect x="30" y="256" width="214" height="18" rx="9" fill="#e9f2fa"/>
-    <text x="30" y="334" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">Use the review to confirm fit, scoring,</text>
-    <text x="30" y="364" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">pricing caution, and growth limits.</text>
+    <text x="30" y="334" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="16">Use the review to confirm fit, scoring,</text>
+    <text x="30" y="358" fill="#415971" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="16">pricing caution, and growth limits.</text>
   </g>
 
   <path d="M392 438h42" fill="none" stroke="#7ee5d8" stroke-linecap="round" stroke-width="10"/>

@@ -4,8 +4,8 @@
   <rect width="1200" height="760" rx="42" fill="#f2f7fb"/>
   <rect x="42" y="42" width="1116" height="676" rx="34" fill="#ffffff" stroke="#d8e2ee" stroke-width="4"/>
   <rect x="42" y="42" width="1116" height="92" rx="34" fill="#102343"/>
-  <rect x="88" y="78" width="162" height="24" rx="12" fill="#effaf8"/>
-  <text x="94" y="96" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700">FRESHBOOKS VIEW</text>
+  <rect x="88" y="78" width="206" height="24" rx="12" fill="#effaf8"/>
+  <text x="96" y="96" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700">FRESHBOOKS VIEW</text>
   <rect x="88" y="176" width="292" height="210" rx="28" fill="#f4f8fb" stroke="#d8e2ee"/>
   <text x="120" y="226" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">Invoice queue</text>
   <rect x="120" y="254" width="112" height="34" rx="17" fill="#e7f6ef"/>
@@ -23,12 +23,18 @@
   <rect x="782" y="176" width="294" height="210" rx="28" fill="#f6fbf9" stroke="#d6e8e2"/>
   <text x="816" y="226" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">Payment view</text>
   <rect x="816" y="256" width="138" height="34" rx="17" fill="#effaf8"/>
-  <text x="840" y="279" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20" font-weight="700">Auto-reminders</text>
+  <text x="830" y="279" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="19" font-weight="700">Auto-reminders</text>
   <rect x="816" y="308" width="226" height="18" rx="9" fill="#d8e2ee"/>
   <rect x="816" y="338" width="198" height="18" rx="9" fill="#d8e2ee"/>
 
   <rect x="88" y="432" width="988" height="236" rx="30" fill="#102343"/>
   <text x="124" y="488" fill="#a5fff2" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="2">WHY THIS HELPS</text>
-  <text x="124" y="538" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="44" font-weight="700">FreshBooks is easiest to understand as an invoice-first service workflow.</text>
-  <text x="124" y="590" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="28">The product is strongest when estimates, recurring billing, retainers, and payment status all sit close to the client relationship.</text>
+  <text x="124" y="536" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">
+    <tspan x="124" dy="0">FreshBooks is easiest to understand as an</tspan>
+    <tspan x="124" dy="46">invoice-first service workflow.</tspan>
+  </text>
+  <text x="124" y="610" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">
+    <tspan x="124" dy="0">The product is strongest when estimates, recurring billing, retainers, and payment status</tspan>
+    <tspan x="124" dy="34">all sit close to the client relationship.</tspan>
+  </text>
 </svg>

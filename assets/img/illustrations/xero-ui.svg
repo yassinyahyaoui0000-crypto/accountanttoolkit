@@ -4,7 +4,7 @@
   <rect width="1200" height="760" rx="42" fill="#eef6fb"/>
   <rect x="42" y="42" width="1116" height="676" rx="34" fill="#ffffff" stroke="#d8e4ef" stroke-width="4"/>
   <rect x="42" y="42" width="1116" height="92" rx="34" fill="#0f4e83"/>
-  <rect x="88" y="78" width="122" height="24" rx="12" fill="#e7f5ff"/>
+  <rect x="88" y="78" width="148" height="24" rx="12" fill="#e7f5ff"/>
   <text x="94" y="96" fill="#0077c8" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700">XERO VIEW</text>
   <rect x="88" y="176" width="384" height="224" rx="28" fill="#eef7ff" stroke="#cfe1ef"/>
   <text x="124" y="228" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="42" font-weight="700">Bank reconciliation</text>
@@ -17,18 +17,24 @@
   <text x="544" y="228" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="42" font-weight="700">Reporting</text>
   <rect x="544" y="264" width="204" height="18" rx="9" fill="#d8e2ee"/>
   <rect x="544" y="294" width="180" height="18" rx="9" fill="#d8e2ee"/>
-  <rect x="544" y="336" width="184" height="26" rx="13" fill="#eef5ff"/>
-  <text x="569" y="354" fill="#0077c8" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="18" font-weight="700">P and L, cash flow, dashboards</text>
+  <rect x="544" y="336" width="220" height="26" rx="13" fill="#eef5ff"/>
+  <text x="562" y="354" fill="#0077c8" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="15" font-weight="700">P&L, cash flow, dashboards</text>
 
   <rect x="822" y="176" width="254" height="224" rx="28" fill="#f6fbf9" stroke="#d6e8e2"/>
   <text x="856" y="228" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="42" font-weight="700">Capture</text>
   <rect x="856" y="264" width="170" height="18" rx="9" fill="#d8e2ee"/>
   <rect x="856" y="294" width="148" height="18" rx="9" fill="#d8e2ee"/>
-  <rect x="856" y="336" width="142" height="40" rx="20" fill="#effaf8"/>
-  <text x="885" y="362" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22" font-weight="700">Hubdoc included</text>
+  <rect x="856" y="336" width="186" height="40" rx="20" fill="#effaf8"/>
+  <text x="885" y="362" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="18" font-weight="700">Hubdoc included</text>
 
   <rect x="88" y="444" width="988" height="192" rx="30" fill="#102343"/>
   <text x="124" y="496" fill="#a5fff2" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="2">WHY THIS HELPS</text>
-  <text x="124" y="548" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="44" font-weight="700">Xero wins when bank feeds, reporting, and document flow need to grow with the practice.</text>
-  <text x="124" y="604" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="28">The product is easier to judge once reconciliation, reporting, and capture are seen as a long-term bookkeeping system instead of just a starter tool.</text>
+  <text x="124" y="546" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">
+    <tspan x="124" dy="0">Xero wins when bank feeds, reporting, and document flow</tspan>
+    <tspan x="124" dy="46">need to grow with the practice.</tspan>
+  </text>
+  <text x="124" y="620" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">
+    <tspan x="124" dy="0">The product is easier to judge once reconciliation, reporting, and capture are seen as</tspan>
+    <tspan x="124" dy="34">a long-term bookkeeping system instead of just a starter tool.</tspan>
+  </text>
 </svg>
