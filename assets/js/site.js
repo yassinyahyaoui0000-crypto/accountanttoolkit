@@ -199,16 +199,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".site-nav__links");
 
   if (navToggle && navLinks) {
+    const closeNav = () => {
+      navToggle.setAttribute("aria-expanded", "false");
+      navLinks.classList.remove("is-open");
+    };
+
+    const openNav = () => {
+      navToggle.setAttribute("aria-expanded", "true");
+      navLinks.classList.add("is-open");
+    };
+
     navToggle.addEventListener("click", () => {
       const expanded = navToggle.getAttribute("aria-expanded") === "true";
-      navToggle.setAttribute("aria-expanded", String(!expanded));
-      navLinks.classList.toggle("is-open", !expanded);
+      if (expanded) {
+        closeNav();
+      } else {
+        openNav();
+      }
     });
 
     navLinks.addEventListener("click", (event) => {
       if (event.target instanceof HTMLElement && event.target.tagName === "A") {
-        navToggle.setAttribute("aria-expanded", "false");
-        navLinks.classList.remove("is-open");
+        closeNav();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeNav();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+
+      if (!(target instanceof Node)) {
+        return;
+      }
+
+      if (!navToggle.contains(target) && !navLinks.contains(target)) {
+        closeNav();
       }
     });
   }
