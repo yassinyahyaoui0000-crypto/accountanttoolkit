@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 const navItems = [
   { href: "index.html", label: "Home", page: "home" },
   { href: "best-invoicing-software.html", label: "Best Invoicing", page: "best-invoicing" },
@@ -139,6 +141,94 @@ function renderFooter() {
   `;
 }
 
+function initStickyHeaderState() {
+  const header = document.querySelector(".site-header");
+
+  if (!header) {
+    return;
+  }
+
+  let frame = 0;
+
+  const syncHeader = () => {
+    frame = 0;
+    header.classList.toggle("site-header--scrolled", window.scrollY > 12);
+  };
+
+  syncHeader();
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (frame) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(syncHeader);
+    },
+    { passive: true }
+  );
+}
+
+function initRevealOnScroll() {
+  if (
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    !("IntersectionObserver" in window) ||
+    typeof HTMLElement.prototype.animate !== "function"
+  ) {
+    return;
+  }
+
+  const revealTargets = [
+    ...document.querySelectorAll(
+      ".page-hero, .page-section, .article-body > section, .article-sidebar > .sidebar-card, .page-404 .page-card"
+    )
+  ];
+
+  if (!revealTargets.length) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, watched) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const element = entry.target;
+        const duration = element.classList.contains("page-hero") ? 440 : 520;
+
+        element.animate(
+          [
+            {
+              opacity: 0.01,
+              transform: "translate3d(0, 1rem, 0)"
+            },
+            {
+              opacity: 1,
+              transform: "translate3d(0, 0, 0)"
+            }
+          ],
+          {
+            duration,
+            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+            fill: "both"
+          }
+        );
+
+        watched.unobserve(element);
+      });
+    },
+    {
+      threshold: 0.16,
+      rootMargin: "0px 0px -10% 0px"
+    }
+  );
+
+  revealTargets.forEach((element) => observer.observe(element));
+}
+
 function decorateProductTokens(root = document) {
   root.querySelectorAll("[data-product]").forEach((element) => {
     const product = productCatalog[element.dataset.product];
@@ -212,6 +302,29 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.classList.remove("is-open");
       }
     });
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+
+      if (!(target instanceof Node) || !navLinks.classList.contains("is-open")) {
+        return;
+      }
+
+      if (!navLinks.contains(target) && !navToggle.contains(target)) {
+        navToggle.setAttribute("aria-expanded", "false");
+        navLinks.classList.remove("is-open");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !navLinks.classList.contains("is-open")) {
+        return;
+      }
+
+      navToggle.setAttribute("aria-expanded", "false");
+      navLinks.classList.remove("is-open");
+      navToggle.focus();
+    });
   }
 
   if (articlePages.has(currentPage)) {
@@ -237,4 +350,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+
+  initStickyHeaderState();
+  initRevealOnScroll();
 });
