@@ -1496,6 +1496,36 @@ tbody td[data-product] {
     linear-gradient(180deg, #14273a 0%, #101f31 100%);
 }
 
+:root[data-theme="dark"] .footer {
+  border-top-color: rgba(111, 134, 163, 0.35);
+  background:
+    radial-gradient(circle at top right, rgba(68, 180, 172, 0.12), transparent 22rem),
+    linear-gradient(180deg, rgba(13, 24, 39, 0.96) 0%, rgba(10, 18, 30, 0.98) 100%);
+}
+
+:root[data-theme="dark"] .footer h2,
+:root[data-theme="dark"] .footer h3 {
+  color: #f0f6ff;
+}
+
+:root[data-theme="dark"] .footer__brand p,
+:root[data-theme="dark"] .footer__column p,
+:root[data-theme="dark"] .footer__meta {
+  color: #d5e2f2;
+}
+
+:root[data-theme="dark"] .footer__column a,
+:root[data-theme="dark"] .footer__brand a,
+:root[data-theme="dark"] .footer__meta a {
+  color: #8de6df;
+}
+
+:root[data-theme="dark"] .footer__column a:hover,
+:root[data-theme="dark"] .footer__brand a:hover,
+:root[data-theme="dark"] .footer__meta a:hover {
+  color: #b5fff8;
+}
+
 :root[data-theme="dark"] .table-scroll {
   background: #101b2c;
 }
