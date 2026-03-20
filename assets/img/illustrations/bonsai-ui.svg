@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Bonsai workflow illustration</title>
+  <desc id="desc">An editorial interface illustration showing proposals, contracts, and invoicing in one client workflow.</desc>
+  <rect width="1200" height="760" rx="42" fill="#f2f7f3"/>
+  <rect x="42" y="42" width="1116" height="676" rx="34" fill="#ffffff" stroke="#dbe6d6" stroke-width="4"/>
+  <rect x="42" y="42" width="1116" height="92" rx="34" fill="#405326"/>
+  <rect x="88" y="78" width="148" height="24" rx="12" fill="#ebf3df"/>
+  <text x="94" y="96" fill="#4d6b26" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700">BONSAI VIEW</text>
+  <rect x="88" y="176" width="238" height="460" rx="28" fill="#f6faf2" stroke="#d6e2cd"/>
+  <text x="120" y="226" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">Client flow</text>
+  <rect x="120" y="264" width="174" height="42" rx="21" fill="#ebf3df"/>
+  <text x="147" y="291" fill="#4d6b26" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22" font-weight="700">Proposal sent</text>
+  <rect x="120" y="330" width="174" height="42" rx="21" fill="#eef5ff"/>
+  <text x="149" y="357" fill="#0f73ff" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22" font-weight="700">Contract signed</text>
+  <rect x="120" y="396" width="174" height="42" rx="21" fill="#effaf8"/>
+  <text x="153" y="423" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22" font-weight="700">Invoice sent</text>
+
+  <rect x="366" y="176" width="710" height="210" rx="28" fill="#f8faf7" stroke="#dbe6d6"/>
+  <text x="402" y="226" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">Proposal, contract, invoice in one line of sight</text>
+  <rect x="402" y="262" width="260" height="18" rx="9" fill="#d8e2ee"/>
+  <rect x="402" y="292" width="312" height="18" rx="9" fill="#d8e2ee"/>
+  <rect x="402" y="322" width="276" height="18" rx="9" fill="#d8e2ee"/>
+  <rect x="738" y="252" width="300" height="96" rx="24" fill="#ebf3df"/>
+  <text x="772" y="292" fill="#4d6b26" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22" font-weight="700">Solo-business operating system</text>
+  <text x="772" y="325" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20">Best when client workflow is the real problem.</text>
+
+  <rect x="366" y="426" width="710" height="210" rx="28" fill="#102343"/>
+  <text x="402" y="478" fill="#a5fff2" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="2">WHY THIS HELPS</text>
+  <text x="402" y="530" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="44" font-weight="700">Bonsai makes more sense when the work before the invoice matters most.</text>
+  <text x="402" y="586" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="28">The product is easier to evaluate once proposals, contracts, forms, and billing are seen as one connected client journey.</text>
+</svg>

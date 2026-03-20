@@ -56,6 +56,18 @@ const articlePages = new Set([
   "guide"
 ]);
 
+const productCatalog = {
+  freshbooks: { icon: "assets/img/products/freshbooks.svg" },
+  bonsai: { icon: "assets/img/products/bonsai.svg" },
+  xero: { icon: "assets/img/products/xero.svg" },
+  wave: { icon: "assets/img/products/wave.svg" },
+  "zoho-books": { icon: "assets/img/products/zoho-books.svg" },
+  quickbooks: { icon: "assets/img/products/quickbooks.svg" },
+  dext: { icon: "assets/img/products/dext.svg" },
+  "zoho-expense": { icon: "assets/img/products/zoho-expense.svg" },
+  hubdoc: { icon: "assets/img/products/hubdoc.svg" }
+};
+
 function formatReviewedDate(isoDate) {
   const date = new Date(`${isoDate}T00:00:00`);
 
@@ -217,6 +229,48 @@ function initRevealOnScroll() {
   revealTargets.forEach((element) => observer.observe(element));
 }
 
+function decorateProductTokens(root = document) {
+  root.querySelectorAll("[data-product]").forEach((element) => {
+    const product = productCatalog[element.dataset.product];
+
+    if (!product || element.querySelector(".product-token__icon")) {
+      return;
+    }
+
+    const icon = document.createElement("img");
+    const compact = element.matches("th, td, .product-chip, .product-mini");
+    const size = compact ? 22 : 30;
+
+    icon.src = product.icon;
+    icon.alt = "";
+    icon.width = size;
+    icon.height = size;
+    icon.decoding = "async";
+    icon.loading = element.closest(".page-hero") ? "eager" : "lazy";
+    icon.className = "product-token__icon";
+
+    element.classList.add("product-token");
+
+    if (element.matches(".product-chip")) {
+      element.classList.add("product-token--chip");
+    }
+
+    if (element.matches("h1, h2, h3")) {
+      element.classList.add("product-token--heading");
+    }
+
+    if (element.matches("td, th")) {
+      element.classList.add("product-token--table");
+    }
+
+    if (element.matches(".kicker")) {
+      element.classList.add("product-token--kicker");
+    }
+
+    element.prepend(icon);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = document.body.dataset.page || "";
   const headerSlot = document.querySelector("[data-site-header]");
@@ -229,6 +283,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (footerSlot) {
     footerSlot.outerHTML = renderFooter();
   }
+
+  decorateProductTokens();
 
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".site-nav__links");

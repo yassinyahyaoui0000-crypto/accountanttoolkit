@@ -67,6 +67,11 @@
             <span>Comparison page</span>
             <span>Estimated reading time: 8 minutes</span>
           </div>
+          <div class="product-chip-row">
+            <span class="product-chip" data-product="bonsai">Bonsai</span>
+            <span class="product-chip" data-product="freshbooks">FreshBooks</span>
+            <span class="best-for-badge">Client ops vs cleaner accounting</span>
+          </div>
         </div>
         <aside class="hero-panel">
           <h2>Quick answer</h2>
@@ -86,11 +91,19 @@
         <section class="callout callout--verdict" id="quick-verdict">
           <p class="kicker">Quick verdict</p>
           <div class="verdict-grid">
-            <div>
+            <div class="product-panel">
+              <div class="product-panel__lead">
+                <span class="product-chip product-chip--surface" data-product="freshbooks">FreshBooks</span>
+                <span class="best-for-badge">Best for service accounting balance</span>
+              </div>
               <h2>FreshBooks is better for service accounting</h2>
               <p>It is easier to recommend when invoices, expense tracking, accountant collaboration, and day-to-day bookkeeping need to live in the same product.</p>
             </div>
-            <div>
+            <div class="product-panel">
+              <div class="product-panel__lead">
+                <span class="product-chip product-chip--surface" data-product="bonsai">Bonsai</span>
+                <span class="best-for-badge">Best for contract-heavy client workflow</span>
+              </div>
               <h2>Bonsai is better for client operations</h2>
               <p>If proposals, contracts, forms, retainer-style work, and client workflow are central, Bonsai feels more purpose-built than FreshBooks.</p>
             </div>
@@ -101,7 +114,7 @@
           <h2>Who each tool is best for</h2>
           <div class="two-col">
             <article class="card">
-              <p class="kicker">Choose FreshBooks if</p>
+              <p class="kicker" data-product="freshbooks">Choose FreshBooks if</p>
               <ul class="icon-list icon-list--good">
                 <li>You want strong invoicing without giving up the accounting basics.</li>
                 <li>You expect to work with an external accountant or bookkeeper inside the system.</li>
@@ -109,7 +122,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">Choose Bonsai if</p>
+              <p class="kicker" data-product="bonsai">Choose Bonsai if</p>
               <ul class="icon-list icon-list--good">
                 <li>You care most about proposals, contracts, forms, and client-facing workflow.</li>
                 <li>You are running a solo or tiny team that wants one polished client-ops hub.</li>
@@ -128,8 +141,8 @@
                 <thead>
                   <tr>
                     <th>Category</th>
-                    <th>FreshBooks</th>
-                    <th>Bonsai</th>
+                    <th data-product="freshbooks">FreshBooks</th>
+                    <th data-product="bonsai">Bonsai</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -198,7 +211,7 @@
           <h2>Pros and cons</h2>
           <div class="pros-cons">
             <article class="card">
-              <p class="kicker">FreshBooks strengths</p>
+              <p class="kicker" data-product="freshbooks">FreshBooks strengths</p>
               <ul class="icon-list icon-list--good">
                 <li>Excellent invoicing and strong client-friendly billing flows.</li>
                 <li>Better accounting footing than Bonsai.</li>
@@ -206,7 +219,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">FreshBooks watchouts</p>
+              <p class="kicker" data-product="freshbooks">FreshBooks watchouts</p>
               <ul class="icon-list icon-list--bad">
                 <li>Still not the deepest accounting platform in this market.</li>
                 <li>Promotional pricing can make it look cheaper than the long-term reality.</li>
@@ -214,7 +227,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">Bonsai strengths</p>
+              <p class="kicker" data-product="bonsai">Bonsai strengths</p>
               <ul class="icon-list icon-list--good">
                 <li>Excellent for proposals, contracts, client intake, and workflow continuity.</li>
                 <li>Feels very polished for solo service businesses.</li>
@@ -222,7 +235,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">Bonsai watchouts</p>
+              <p class="kicker" data-product="bonsai">Bonsai watchouts</p>
               <ul class="icon-list icon-list--bad">
                 <li>Weaker accounting depth than FreshBooks.</li>
                 <li>Per-user pricing can change the math as teams expand.</li>
