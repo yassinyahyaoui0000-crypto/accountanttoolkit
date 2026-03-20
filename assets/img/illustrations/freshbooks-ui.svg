@@ -27,8 +27,14 @@
   <rect x="816" y="308" width="226" height="18" rx="9" fill="#d8e2ee"/>
   <rect x="816" y="338" width="198" height="18" rx="9" fill="#d8e2ee"/>
 
-  <rect x="88" y="432" width="988" height="236" rx="30" fill="#102343"/>
+  <rect x="88" y="432" width="988" height="248" rx="30" fill="#102343"/>
   <text x="124" y="488" fill="#a5fff2" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="2">WHY THIS HELPS</text>
-  <text x="124" y="538" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="44" font-weight="700">FreshBooks is easiest to understand as an invoice-first service workflow.</text>
-  <text x="124" y="590" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="28">The product is strongest when estimates, recurring billing, retainers, and payment status all sit close to the client relationship.</text>
+  <text x="124" y="536" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">
+    <tspan x="124" dy="0">FreshBooks is easiest to understand as an</tspan>
+    <tspan x="124" dy="46">invoice-first service workflow.</tspan>
+  </text>
+  <text x="124" y="616" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">
+    <tspan x="124" dy="0">The product is strongest when estimates, recurring billing,</tspan>
+    <tspan x="124" dy="34">retainers, and payment status stay close to the client relationship.</tspan>
+  </text>
 </svg>

@@ -24,8 +24,14 @@
   <text x="772" y="292" fill="#4d6b26" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22" font-weight="700">Solo-business operating system</text>
   <text x="772" y="325" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20">Best when client workflow is the real problem.</text>
 
-  <rect x="366" y="426" width="710" height="210" rx="28" fill="#102343"/>
+  <rect x="366" y="426" width="710" height="238" rx="28" fill="#102343"/>
   <text x="402" y="478" fill="#a5fff2" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="2">WHY THIS HELPS</text>
-  <text x="402" y="530" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="44" font-weight="700">Bonsai makes more sense when the work before the invoice matters most.</text>
-  <text x="402" y="586" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="28">The product is easier to evaluate once proposals, contracts, forms, and billing are seen as one connected client journey.</text>
+  <text x="402" y="524" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="38" font-weight="700">
+    <tspan x="402" dy="0">Bonsai makes more sense when the work before</tspan>
+    <tspan x="402" dy="44">the invoice matters most.</tspan>
+  </text>
+  <text x="402" y="602" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24">
+    <tspan x="402" dy="0">It is easier to evaluate once proposals, contracts, forms, and billing</tspan>
+    <tspan x="402" dy="34">are seen as one connected client journey.</tspan>
+  </text>
 </svg>
