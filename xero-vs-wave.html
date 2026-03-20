@@ -67,6 +67,11 @@
             <span>Comparison page</span>
             <span>Estimated reading time: 8 minutes</span>
           </div>
+          <div class="product-chip-row">
+            <span class="product-chip" data-product="xero">Xero</span>
+            <span class="product-chip" data-product="wave">Wave</span>
+            <span class="best-for-badge">Depth vs budget starter path</span>
+          </div>
         </div>
         <aside class="hero-panel">
           <h2>Quick answer</h2>
@@ -86,11 +91,19 @@
         <section class="callout callout--verdict" id="quick-verdict">
           <p class="kicker">Quick verdict</p>
           <div class="verdict-grid">
-            <div>
+            <div class="product-panel">
+              <div class="product-panel__lead">
+                <span class="product-chip product-chip--surface" data-product="xero">Xero</span>
+                <span class="best-for-badge">Best for long-term bookkeeping depth</span>
+              </div>
               <h2>Xero is the better pick for most professionals</h2>
               <p>Xero gives you better bank-feed workflows, stronger reports, broader integrations, and a clearer path once your practice moves beyond simple invoicing.</p>
             </div>
-            <div>
+            <div class="product-panel">
+              <div class="product-panel__lead">
+                <span class="product-chip product-chip--surface" data-product="wave">Wave</span>
+                <span class="best-for-badge">Best for the leanest starting cost</span>
+              </div>
               <h2>Wave still wins one scenario</h2>
               <p>If you are solo, budget-constrained, and want a lighter US or Canada-focused setup, Wave remains one of the few tools worth considering before you commit to paid accounting software.</p>
             </div>
@@ -101,7 +114,7 @@
           <h2>Who each tool is best for</h2>
           <div class="two-col">
             <article class="card">
-              <p class="kicker">Choose Xero if</p>
+              <p class="kicker" data-product="xero">Choose Xero if</p>
               <ul class="icon-list icon-list--good">
                 <li>You want stronger bookkeeping control, not just invoices and expense logging.</li>
                 <li>You expect to manage more clients, entities, or workflow complexity over time.</li>
@@ -109,7 +122,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">Choose Wave if</p>
+              <p class="kicker" data-product="wave">Choose Wave if</p>
               <ul class="icon-list icon-list--good">
                 <li>You want a free accounting starting point before adding paid services.</li>
                 <li>Your process is light enough that simple invoicing and expense tracking are still enough.</li>
@@ -128,8 +141,8 @@
                 <thead>
                   <tr>
                     <th>Category</th>
-                    <th>Xero</th>
-                    <th>Wave</th>
+                    <th data-product="xero">Xero</th>
+                    <th data-product="wave">Wave</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -201,7 +214,7 @@
           <h2>Pros and cons</h2>
           <div class="pros-cons">
             <article class="card">
-              <p class="kicker">Xero strengths</p>
+              <p class="kicker" data-product="xero">Xero strengths</p>
               <ul class="icon-list icon-list--good">
                 <li>Better reconciliation and reporting for a growing freelance practice.</li>
                 <li>Broader app ecosystem and stronger accountant familiarity.</li>
@@ -209,7 +222,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">Xero watchouts</p>
+              <p class="kicker" data-product="xero">Xero watchouts</p>
               <ul class="icon-list icon-list--bad">
                 <li>More setup and learning overhead than Wave.</li>
                 <li>Less appealing if you are only trying to send invoices cheaply.</li>
@@ -217,7 +230,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">Wave strengths</p>
+              <p class="kicker" data-product="wave">Wave strengths</p>
               <ul class="icon-list icon-list--good">
                 <li>Low-friction way to start without a monthly accounting bill.</li>
                 <li>Clean interface for simple invoicing and basic bookkeeping.</li>
@@ -225,7 +238,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">Wave watchouts</p>
+              <p class="kicker" data-product="wave">Wave watchouts</p>
               <ul class="icon-list icon-list--bad">
                 <li>Shallower product once your bookkeeping needs become more demanding.</li>
                 <li>Weaker ecosystem and less room to grow inside the same stack.</li>

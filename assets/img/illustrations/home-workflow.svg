@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Editorial workflow illustration</title>
+  <desc id="desc">A three-step workflow showing readers move from roundup to comparison to review.</desc>
+  <defs>
+    <linearGradient id="bg" x1="112" x2="1088" y1="82" y2="678" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#102343"/>
+      <stop offset="1" stop-color="#18345f"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f4f8fb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="44" fill="#f2f7fa"/>
+  <rect x="50" y="50" width="1100" height="660" rx="38" fill="url(#bg)"/>
+  <text x="96" y="125" fill="#a5fff2" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="28" font-weight="700" letter-spacing="3">ACCOUNTANTTOOLKIT FLOW</text>
+  <text x="96" y="178" fill="#ffffff" font-family="Newsreader, Georgia, serif" font-size="58" font-weight="700">Roundup -&gt; comparison -&gt; review</text>
+  <text x="96" y="224" fill="#d7e4f1" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="28">Use the site to shortlist fast, narrow to one head-to-head, then sanity-check the winner before buying.</text>
+
+  <g transform="translate(96 290)">
+    <rect width="286" height="310" rx="28" fill="url(#card)"/>
+    <text x="30" y="52" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="2">STEP 1</text>
+    <text x="30" y="94" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">Roundup</text>
+    <rect x="30" y="120" width="108" height="38" rx="19" fill="#effaf8"/>
+    <text x="53" y="145" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20" font-weight="700">FreshBooks</text>
+    <rect x="30" y="176" width="226" height="18" rx="9" fill="#d9e3ee"/>
+    <rect x="30" y="206" width="194" height="18" rx="9" fill="#d9e3ee"/>
+    <rect x="30" y="236" width="238" height="18" rx="9" fill="#d9e3ee"/>
+    <rect x="30" y="272" width="188" height="18" rx="9" fill="#eaf1f7"/>
+    <text x="30" y="334" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22">See the whole shortlist, price posture,</text>
+    <text x="30" y="364" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22">and who each tool is actually for.</text>
+  </g>
+
+  <g transform="translate(457 290)">
+    <rect width="286" height="310" rx="28" fill="url(#card)"/>
+    <text x="30" y="52" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="2">STEP 2</text>
+    <text x="30" y="94" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">Comparison</text>
+    <rect x="30" y="120" width="112" height="38" rx="19" fill="#ecf5fb"/>
+    <text x="62" y="145" fill="#0077c8" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20" font-weight="700">Xero</text>
+    <rect x="154" y="120" width="102" height="38" rx="19" fill="#effaf8"/>
+    <text x="186" y="145" fill="#0f9cb5" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20" font-weight="700">Wave</text>
+    <rect x="30" y="184" width="226" height="90" rx="24" fill="#f6fafc" stroke="#d8e3ee"/>
+    <text x="54" y="218" fill="#102343" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22" font-weight="700">Quick verdict</text>
+    <text x="54" y="250" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20">Who wins overall?</text>
+    <text x="54" y="278" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20">Who still benefits from the runner-up?</text>
+    <text x="30" y="334" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22">Use one head-to-head to make the</text>
+    <text x="30" y="364" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22">real tradeoffs easier to scan.</text>
+  </g>
+
+  <g transform="translate(818 290)">
+    <rect width="286" height="310" rx="28" fill="url(#card)"/>
+    <text x="30" y="52" fill="#11827a" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="2">STEP 3</text>
+    <text x="30" y="94" fill="#102343" font-family="Newsreader, Georgia, serif" font-size="40" font-weight="700">Review</text>
+    <rect x="30" y="120" width="114" height="38" rx="19" fill="#edf3ff"/>
+    <text x="54" y="145" fill="#0f73ff" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20" font-weight="700">FreshBooks</text>
+    <rect x="30" y="184" width="226" height="18" rx="9" fill="#d9e3ee"/>
+    <rect x="30" y="214" width="198" height="18" rx="9" fill="#d9e3ee"/>
+    <rect x="30" y="256" width="226" height="18" rx="9" fill="#effaf8"/>
+    <rect x="30" y="286" width="178" height="18" rx="9" fill="#effaf8"/>
+    <text x="30" y="334" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22">Use the review to confirm fit, scoring,</text>
+    <text x="30" y="364" fill="#506074" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="22">pricing caution, and growth limits.</text>
+  </g>
+
+  <path d="M392 438h42" fill="none" stroke="#7ee5d8" stroke-linecap="round" stroke-width="10"/>
+  <path d="M753 438h42" fill="none" stroke="#7ee5d8" stroke-linecap="round" stroke-width="10"/>
+  <path d="M417 420l24 18-24 18" fill="none" stroke="#7ee5d8" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+  <path d="M778 420l24 18-24 18" fill="none" stroke="#7ee5d8" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+</svg>

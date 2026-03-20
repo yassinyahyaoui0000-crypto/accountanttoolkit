@@ -67,6 +67,11 @@
             <span>Comparison page</span>
             <span>Estimated reading time: 9 minutes</span>
           </div>
+          <div class="product-chip-row">
+            <span class="product-chip" data-product="zoho-books">Zoho Books</span>
+            <span class="product-chip" data-product="quickbooks">QuickBooks</span>
+            <span class="best-for-badge">Value stack vs market standard</span>
+          </div>
         </div>
         <aside class="hero-panel">
           <h2>Quick answer</h2>
@@ -86,11 +91,19 @@
         <section class="callout callout--verdict" id="quick-verdict">
           <p class="kicker">Quick verdict</p>
           <div class="verdict-grid">
-            <div>
+            <div class="product-panel">
+              <div class="product-panel__lead">
+                <span class="product-chip product-chip--surface" data-product="zoho-books">Zoho Books</span>
+                <span class="best-for-badge">Best for value and control</span>
+              </div>
               <h2>Zoho Books is the better value recommendation</h2>
               <p>It gives a lot of accounting capability for the money, and the product feels more deliberate than many buyers expect.</p>
             </div>
-            <div>
+            <div class="product-panel">
+              <div class="product-panel__lead">
+                <span class="product-chip product-chip--surface" data-product="quickbooks">QuickBooks</span>
+                <span class="best-for-badge">Best for familiarity and ecosystem gravity</span>
+              </div>
               <h2>QuickBooks wins on familiarity and ecosystem pull</h2>
               <p>If your clients, tax preparers, or adjacent tools already assume QuickBooks, that advantage is still real in 2026.</p>
             </div>
@@ -101,7 +114,7 @@
           <h2>Who each tool is best for</h2>
           <div class="two-col">
             <article class="card">
-              <p class="kicker">Choose Zoho Books if</p>
+              <p class="kicker" data-product="zoho-books">Choose Zoho Books if</p>
               <ul class="icon-list icon-list--good">
                 <li>You want more value from your software spend.</li>
                 <li>You like automation and customization without paying QuickBooks-level pricing.</li>
@@ -109,7 +122,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">Choose QuickBooks if</p>
+              <p class="kicker" data-product="quickbooks">Choose QuickBooks if</p>
               <ul class="icon-list icon-list--good">
                 <li>Your clients or collaborators expect it by default.</li>
                 <li>You care about breadth of integrations and accountant familiarity.</li>
@@ -128,8 +141,8 @@
                 <thead>
                   <tr>
                     <th>Category</th>
-                    <th>Zoho Books</th>
-                    <th>QuickBooks</th>
+                    <th data-product="zoho-books">Zoho Books</th>
+                    <th data-product="quickbooks">QuickBooks</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -198,7 +211,7 @@
           <h2>Pros and cons</h2>
           <div class="pros-cons">
             <article class="card">
-              <p class="kicker">Zoho Books strengths</p>
+              <p class="kicker" data-product="zoho-books">Zoho Books strengths</p>
               <ul class="icon-list icon-list--good">
                 <li>Excellent value relative to the feature set.</li>
                 <li>Very capable automation and workflow options.</li>
@@ -206,7 +219,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">Zoho Books watchouts</p>
+              <p class="kicker" data-product="zoho-books">Zoho Books watchouts</p>
               <ul class="icon-list icon-list--bad">
                 <li>Less universal market familiarity than QuickBooks.</li>
                 <li>Best fit improves if you are comfortable with the Zoho ecosystem.</li>
@@ -214,7 +227,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">QuickBooks strengths</p>
+              <p class="kicker" data-product="quickbooks">QuickBooks strengths</p>
               <ul class="icon-list icon-list--good">
                 <li>Strong accountant familiarity and broad integration support.</li>
                 <li>Still the default choice in many US-facing workflows.</li>
@@ -222,7 +235,7 @@
               </ul>
             </article>
             <article class="card">
-              <p class="kicker">QuickBooks watchouts</p>
+              <p class="kicker" data-product="quickbooks">QuickBooks watchouts</p>
               <ul class="icon-list icon-list--bad">
                 <li>Value is harder to love once promotional pricing expires.</li>
                 <li>The interface can feel busier than Zoho Books.</li>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">Zoho Expense icon</title>
+  <defs>
+    <linearGradient id="bg" x1="14" x2="82" y1="12" y2="84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7b3ff3"/>
+      <stop offset="1" stop-color="#b77afc"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="24" fill="url(#bg)"/>
+  <rect x="10" y="10" width="76" height="76" rx="19" fill="#ffffff" opacity=".08"/>
+  <text x="48" y="58" fill="#ffffff" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="29" font-weight="700" letter-spacing="1.5" text-anchor="middle">ZE</text>
+</svg>

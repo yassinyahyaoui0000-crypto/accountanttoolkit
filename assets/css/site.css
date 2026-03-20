@@ -360,6 +360,90 @@ select {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.product-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: var(--space-5);
+}
+
+.product-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.48rem 0.82rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(17, 130, 122, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--gray-800);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.page-hero .product-chip {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+}
+
+.best-for-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.82rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(180deg, var(--teal-050) 0%, var(--teal-100) 100%);
+  border: 1px solid rgba(17, 130, 122, 0.12);
+  color: var(--teal-700);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.page-hero .best-for-badge {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.product-token {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+th.product-token,
+td.product-token {
+  display: table-cell;
+  white-space: nowrap;
+}
+
+.product-token__icon {
+  flex: 0 0 auto;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 10px 24px rgba(16, 35, 67, 0.14);
+}
+
+.product-token--chip .product-token__icon,
+.product-token--table .product-token__icon,
+.product-token--kicker .product-token__icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 0.45rem;
+  box-shadow: 0 7px 16px rgba(16, 35, 67, 0.12);
+}
+
+.product-token--heading {
+  align-items: flex-start;
+}
+
+th.product-token .product-token__icon,
+td.product-token .product-token__icon {
+  display: inline-block;
+  margin-right: 0.55rem;
+  vertical-align: middle;
+}
+
 .grid-3,
 .grid-4,
 .cards-grid,
@@ -443,6 +527,8 @@ select {
 .page-card {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: column;
   transition:
     transform 180ms ease,
     border-color 180ms ease,
@@ -503,6 +589,82 @@ select {
   border-top: 1px solid var(--gray-200);
   color: var(--gray-600);
   font-weight: 600;
+}
+
+.summary-card .best-for-badge,
+.topic-card .best-for-badge,
+.story-card .best-for-badge {
+  margin-bottom: var(--space-4);
+}
+
+.workflow-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  border: 1px solid rgba(16, 35, 67, 0.1);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top right, rgba(18, 145, 139, 0.18), transparent 20rem),
+    linear-gradient(180deg, rgba(16, 35, 67, 0.98) 0%, rgba(19, 48, 86, 0.96) 100%);
+  box-shadow: var(--shadow-lg);
+}
+
+.workflow-card__figure img {
+  width: 100%;
+  border-radius: calc(var(--radius-lg) - 0.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 42px rgba(16, 35, 67, 0.18);
+}
+
+.workflow-card__copy {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.workflow-card__copy h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.02;
+  color: var(--white);
+}
+
+.workflow-card__copy p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.workflow-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.workflow-list strong {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-family: var(--font-display);
+}
+
+.workflow-list span {
+  color: rgba(255, 255, 255, 0.84);
 }
 
 .metric-grid {
@@ -665,6 +827,13 @@ select {
   border-color: rgba(17, 130, 122, 0.2);
 }
 
+.callout--verdict .verdict-grid > div {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(17, 130, 122, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+}
+
 .callout--muted {
   background: var(--gray-050);
 }
@@ -699,8 +868,63 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.comparison-duel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.product-panel {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.product-panel__lead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
+}
+
+.product-panel h2 {
+  margin: 0 0 0.65rem;
+}
+
+.product-panel p:last-child {
+  margin-bottom: 0;
+}
+
 .score-card {
   padding: var(--space-6);
+}
+
+.product-figure {
+  margin: var(--space-6) 0;
+}
+
+.product-figure__frame {
+  padding: var(--space-4);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top right, rgba(18, 145, 139, 0.12), transparent 18rem),
+    linear-gradient(180deg, #ffffff 0%, #f4f9fb 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.product-figure img {
+  width: 100%;
+  border-radius: calc(var(--radius-lg) - 0.4rem);
+  border: 1px solid rgba(207, 216, 227, 0.9);
+}
+
+.product-figure figcaption {
+  margin-top: 0.85rem;
+  color: var(--gray-600);
+  font-size: 0.98rem;
 }
 
 .score-card__layout {
@@ -875,6 +1099,11 @@ tbody tr:nth-child(even) {
 
 tbody tr:last-child td {
   border-bottom: none;
+}
+
+tbody td[data-product] {
+  font-weight: 700;
+  color: var(--navy-900);
 }
 
 .check {
@@ -1062,6 +1291,7 @@ tbody tr:last-child td {
   .page-hero__layout,
   .article-shell,
   .footer__inner,
+  .workflow-card,
   .grid-4,
   .topic-grid,
   .story-grid,
@@ -1075,6 +1305,7 @@ tbody tr:last-child td {
   .related-grid,
   .metric-grid,
   .verdict-grid,
+  .comparison-duel,
   .two-col,
   .pros-cons,
   .review-grid {
@@ -1138,6 +1369,7 @@ tbody tr:last-child td {
   .cards-grid,
   .summary-grid,
   .related-grid,
+  .comparison-duel,
   .grid-4,
   .topic-grid,
   .story-grid,
@@ -1166,6 +1398,18 @@ tbody tr:last-child td {
 
   .page-hero__title {
     font-size: clamp(2.2rem, 10vw, 3.6rem);
+  }
+
+  .product-token__icon {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
+  .product-token--chip .product-token__icon,
+  .product-token--table .product-token__icon,
+  .product-token--kicker .product-token__icon {
+    width: 1.15rem;
+    height: 1.15rem;
   }
 
   table {
