@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
-  <title id="title">Xero icon</title>
+  <title id="title">Xero badge</title>
   <defs>
     <linearGradient id="bg" x1="14" x2="82" y1="12" y2="84" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#0077c8"/>
@@ -7,6 +7,8 @@
     </linearGradient>
   </defs>
   <rect width="96" height="96" rx="24" fill="url(#bg)"/>
-  <circle cx="48" cy="48" r="33" fill="#ffffff" opacity=".1"/>
-  <text x="48" y="58" fill="#ffffff" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="31" font-weight="700" letter-spacing="1.5" text-anchor="middle">XE</text>
+  <rect x="7" y="7" width="82" height="82" rx="20" fill="#ffffff" opacity=".07" stroke="#ffffff" stroke-opacity=".12"/>
+  <rect x="21" y="21" width="54" height="54" rx="18" fill="#ffffff" opacity=".95"/>
+  <path d="M35 35l26 26M61 35L35 61" stroke="#0077c8" stroke-linecap="round" stroke-width="6"/>
+  <path d="M31 68h34" stroke="#89d3ff" stroke-linecap="round" stroke-width="4"/>
 </svg>

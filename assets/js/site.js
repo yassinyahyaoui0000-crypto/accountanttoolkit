@@ -1,5 +1,5 @@
 const THEME_STORAGE_KEY = "accountanttoolkit-theme";
-const ASSET_VERSION = "2026-03-21";
+const ASSET_VERSION = "2026-03-21-badges";
 const SITE_REBUILD_DATE = "2026-03-21";
 const DEFAULT_REVIEW_DATE = "2026-03-21";
 
