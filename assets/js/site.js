@@ -1,4 +1,7 @@
 const THEME_STORAGE_KEY = "accountanttoolkit-theme";
+const ASSET_VERSION = "2026-03-21";
+const SITE_REBUILD_DATE = "2026-03-21";
+const DEFAULT_REVIEW_DATE = "2026-03-21";
 
 function getStoredTheme() {
   try {
@@ -136,15 +139,15 @@ const articlePages = new Set([
 ]);
 
 const productCatalog = {
-  freshbooks: { icon: "assets/img/products/freshbooks.svg" },
-  bonsai: { icon: "assets/img/products/bonsai.svg" },
-  xero: { icon: "assets/img/products/xero.svg" },
-  wave: { icon: "assets/img/products/wave.svg" },
-  "zoho-books": { icon: "assets/img/products/zoho-books.svg" },
-  quickbooks: { icon: "assets/img/products/quickbooks.svg" },
-  dext: { icon: "assets/img/products/dext.svg" },
-  "zoho-expense": { icon: "assets/img/products/zoho-expense.svg" },
-  hubdoc: { icon: "assets/img/products/hubdoc.svg" }
+  freshbooks: { icon: `assets/img/products/freshbooks.svg?v=${ASSET_VERSION}` },
+  bonsai: { icon: `assets/img/products/bonsai.svg?v=${ASSET_VERSION}` },
+  xero: { icon: `assets/img/products/xero.svg?v=${ASSET_VERSION}` },
+  wave: { icon: `assets/img/products/wave.svg?v=${ASSET_VERSION}` },
+  "zoho-books": { icon: `assets/img/products/zoho-books.svg?v=${ASSET_VERSION}` },
+  quickbooks: { icon: `assets/img/products/quickbooks.svg?v=${ASSET_VERSION}` },
+  dext: { icon: `assets/img/products/dext.svg?v=${ASSET_VERSION}` },
+  "zoho-expense": { icon: `assets/img/products/zoho-expense.svg?v=${ASSET_VERSION}` },
+  hubdoc: { icon: `assets/img/products/hubdoc.svg?v=${ASSET_VERSION}` }
 };
 
 const affiliateDomainToProduct = {
@@ -337,7 +340,7 @@ function renderFooter() {
           <p>We rebuild software buying decisions around actual workflows: invoicing, expense capture, client operations, bookkeeping depth, and integration risk.</p>
           <p class="footer__meta">Read our <a href="editorial-policy.html">editorial policy</a> and <a href="affiliate-disclosure.html">affiliate disclosure</a> for how we research products, handle promotions, and label commercial relationships.</p>
           <p class="footer__meta">Corrections and business inquiries: <a href="mailto:hello@accountanttoolkit.com">hello@accountanttoolkit.com</a>.</p>
-          <p class="footer__meta">Last rebuilt on March 19, 2026.</p>
+          <p class="footer__meta">Last rebuilt on ${formatReviewedDate(SITE_REBUILD_DATE)}.</p>
         </section>
         ${columns}
       </div>
@@ -453,7 +456,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (articlePages.has(currentPage)) {
     const articleBody = document.querySelector(".article-main.article-body");
-    const reviewDate = document.body.dataset.reviewed || "2026-03-19";
+    const reviewDate = document.body.dataset.reviewed || DEFAULT_REVIEW_DATE;
 
     if (articleBody && !articleBody.querySelector("[data-editorial-note]")) {
       const note = document.createElement("section");

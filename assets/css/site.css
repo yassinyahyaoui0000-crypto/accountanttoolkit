@@ -1584,12 +1584,25 @@ tbody td[data-product] {
     min-height: 4rem;
   }
 
-  .nav-toggle {
-    display: inline-flex;
-  }
-
   .site-nav {
     position: relative;
+    gap: 0.55rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    position: relative;
+    z-index: 1;
+  }
+
+  .theme-toggle {
+    padding-inline: 0.68rem;
+    position: relative;
+    z-index: 0;
+  }
+
+  .theme-toggle__label {
+    display: none;
   }
 
   .site-nav__links {
