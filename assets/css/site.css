@@ -1939,6 +1939,8 @@ tbody td[data-product] {
 :root[data-theme="dark"] .topic-card .product-chip,
 :root[data-theme="dark"] .summary-card .product-chip,
 :root[data-theme="dark"] .story-card .product-chip,
+:root[data-theme="dark"] .decision-path .product-chip,
+:root[data-theme="dark"] .comparison-rail__item .product-chip,
 :root[data-theme="dark"] .product-panel .product-chip {
   background: rgba(244, 248, 253, 0.92);
   border-color: rgba(26, 47, 78, 0.2);
