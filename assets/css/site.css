@@ -1484,6 +1484,21 @@ tbody td[data-product] {
   box-shadow: none;
 }
 
+:root[data-theme="dark"] .topic-card .product-chip,
+:root[data-theme="dark"] .summary-card .product-chip,
+:root[data-theme="dark"] .story-card .product-chip,
+:root[data-theme="dark"] .product-panel .product-chip {
+  background: rgba(244, 248, 253, 0.92);
+  border-color: rgba(26, 47, 78, 0.2);
+  color: #20344f;
+}
+
+:root[data-theme="dark"] .page-hero .product-chip {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+}
+
 :root[data-theme="dark"] .callout--warning,
 :root[data-theme="dark"] .callout--disclosure {
   border-color: rgba(167, 91, 5, 0.35);
