@@ -1,5 +1,5 @@
 const THEME_STORAGE_KEY = "accountanttoolkit-theme";
-const ASSET_VERSION = "2026-03-21-badges";
+const ASSET_VERSION = "2026-03-21-premium";
 const SITE_REBUILD_DATE = "2026-03-21";
 const DEFAULT_REVIEW_DATE = "2026-03-21";
 
@@ -302,16 +302,21 @@ function renderHeader() {
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="index.html" aria-label="AccountantToolkit home">
-          <span class="brand__mark" aria-hidden="true">AT</span>
+          <span class="brand__mark" aria-hidden="true">
+            <span class="brand__mark-core">AT</span>
+          </span>
           <span class="brand__text">
+            <span class="brand__eyebrow">Independent editorial research</span>
             <span class="brand__name">AccountantToolkit</span>
-            <span class="brand__tag">Software reviews for freelance accountants</span>
+            <span class="brand__tag">Buying intelligence for freelance accountants and bookkeepers</span>
           </span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" aria-pressed="false"><span class="theme-toggle__icon" aria-hidden="true" data-icon="sun">\u2600</span><span class="theme-toggle__label">Dark mode</span></button>
-          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
           <div class="site-nav__links" id="site-nav-links">${navLinks}</div>
+          <div class="site-nav__actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" aria-pressed="false"><span class="theme-toggle__icon" aria-hidden="true" data-icon="sun">\u2600</span><span class="theme-toggle__label">Dark mode</span></button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -336,7 +341,9 @@ function renderFooter() {
     <footer class="footer">
       <div class="footer__inner">
         <section class="footer__brand">
+          <p class="footer__eyebrow">Independent software intelligence</p>
           <h2>AccountantToolkit</h2>
+          <p class="footer__lede">Clearer software decisions for freelance accountants, bookkeepers, and solo operators who want fit, not hype.</p>
           <p>We rebuild software buying decisions around actual workflows: invoicing, expense capture, client operations, bookkeeping depth, and integration risk.</p>
           <p class="footer__meta">Read our <a href="editorial-policy.html">editorial policy</a> and <a href="affiliate-disclosure.html">affiliate disclosure</a> for how we research products, handle promotions, and label commercial relationships.</p>
           <p class="footer__meta">Corrections and business inquiries: <a href="mailto:hello@accountanttoolkit.com">hello@accountanttoolkit.com</a>.</p>
