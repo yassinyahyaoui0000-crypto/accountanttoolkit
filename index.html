@@ -130,10 +130,11 @@
   <div data-site-header></div>
 
   <main id="content">
-    <section class="page-hero">
+    <section class="page-hero page-hero--home">
       <span class="page-hero__eyebrow">Accounting software reviews 2026</span>
-      <div class="page-hero__layout">
-        <div>
+      <div class="page-hero__layout home-hero__layout">
+        <div class="home-hero__copy">
+          <p class="home-hero__kicker">Decision desk for freelancers and bookkeepers</p>
           <h1 class="page-hero__title">Find the right software by <span>bottleneck</span>, not by brand.</h1>
           <p class="page-hero__lede">AccountantToolkit helps freelancers and bookkeepers choose accounting, invoicing, receipt-capture, and workflow software based on the real weekly pain point, not the loudest vendor pitch.</p>
           <div class="meta-row meta-row--light">
@@ -145,211 +146,279 @@
             <a class="button button--primary" href="how-to-choose-accounting-software.html">Start with the buying guide</a>
             <a class="button button--secondary" href="best-accounting-software-for-freelancers.html">See top accounting picks</a>
           </div>
+          <div class="home-signal-bar" aria-label="Decision path overview">
+            <div>
+              <strong>Start broad</strong>
+              <span>Use the guide when the decision is still fuzzy.</span>
+            </div>
+            <div>
+              <strong>Resolve one tradeoff</strong>
+              <span>Open a single head-to-head when the shortlist is down to two.</span>
+            </div>
+            <div>
+              <strong>Sanity-check the winner</strong>
+              <span>Use one review page to test setup friction and long-term fit.</span>
+            </div>
+          </div>
         </div>
-        <aside class="hero-panel">
-          <h2>Start with the right page</h2>
-          <ul>
-            <li>If the decision is still broad, start with <a href="how-to-choose-accounting-software.html">how to choose accounting software</a>.</li>
-            <li>If invoicing is the pain point, open <a href="best-invoicing-software.html">best invoicing software</a>.</li>
-            <li>If receipt capture is the bottleneck, go to <a href="best-receipt-tracking.html">best receipt tracking tools</a>.</li>
-            <li>If you already narrowed it down to two tools, jump into the <a href="quickbooks-vs-xero.html">comparisons</a>.</li>
-          </ul>
+        <aside class="hero-panel hero-panel--home">
+          <span class="hero-panel__eyebrow">Start with the right page</span>
+          <h2>Move through the decision in three deliberate passes.</h2>
+          <ol class="decision-ladder">
+            <li>
+              <strong>1. Name the bottleneck</strong>
+              <span>If the decision is still broad, begin with <a href="how-to-choose-accounting-software.html">how to choose accounting software</a>.</span>
+            </li>
+            <li>
+              <strong>2. Choose the lane</strong>
+              <span>If invoicing is the pain, open <a href="best-invoicing-software.html">best invoicing software</a>. If receipt capture is the issue, go to <a href="best-receipt-tracking.html">best receipt tracking tools</a>.</span>
+            </li>
+            <li>
+              <strong>3. Pressure-test the tradeoff</strong>
+              <span>If you are already between two tools, jump into <a href="quickbooks-vs-xero.html">comparisons</a> and finish with one product review only.</span>
+            </li>
+          </ol>
+          <div class="hero-panel__footer">
+            <span class="best-for-badge">Best use: roundup first, comparison next, review last</span>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="page-section page-section--tight">
-      <div class="section-heading">
+    <section class="page-section page-section--tight home-paths">
+      <div class="section-heading section-heading--stacked">
         <div>
           <span class="card__eyebrow">Start Here</span>
-          <h2>Best starting pages by problem</h2>
+          <h2>Choose the lane that matches the actual weekly pain.</h2>
         </div>
-        <p>The quickest way to make this site useful is to start with the page that matches the real bottleneck, then narrow into one comparison and one review only if you still need them.</p>
+        <p>The homepage should behave like a decision desk, not a category dump. Start in the lane that matches the bottleneck, then narrow into one comparison and one review only if the winner still feels close.</p>
       </div>
-      <div class="grid-4">
-        <a class="story-card" href="how-to-choose-accounting-software.html">
-          <span class="story-card__eyebrow">Guide</span>
-          <h3>How to choose accounting software</h3>
-          <p>The best starting point if the decision is still broad and you need a framework before you open specific product pages.</p>
-          <div class="story-card__meta">Best first click for unsure buyers</div>
-        </a>
-        <a class="story-card" href="best-accounting-software-for-freelancers.html">
-          <span class="story-card__eyebrow">Roundup</span>
-          <h3>Best accounting software for freelancers</h3>
-          <p>Xero, Wave, FreshBooks, Zoho Books, QuickBooks, and Bonsai compared around bookkeeping depth, automation, and freelancer workflow fit.</p>
-          <div class="story-card__meta">Best for broader accounting decisions</div>
-        </a>
-        <a class="story-card" href="best-bookkeeping-software-for-solo-accountants.html">
-          <span class="story-card__eyebrow">Roundup</span>
-          <h3>Best bookkeeping software for solo accountants</h3>
-          <p>Xero, Zoho Books, QuickBooks, Wave, and FreshBooks compared around reconciliation, reporting, expense tracking, and long-term usability.</p>
-          <div class="story-card__meta">Best for bookkeeping-first buyers</div>
-        </a>
-        <a class="story-card" href="best-invoicing-software.html">
-          <span class="story-card__eyebrow">Roundup</span>
-          <h3>Best invoicing software for freelance accountants</h3>
-          <p>FreshBooks, Bonsai, Xero, Wave, Zoho Books, and QuickBooks compared around cash flow, client limits, and bookkeeping reality.</p>
-          <div class="story-card__meta">Best for billing and service workflow pain</div>
-        </a>
-        <a class="story-card" href="best-receipt-tracking.html">
-          <span class="story-card__eyebrow">Roundup</span>
-          <h3>Best receipt tracking software</h3>
-          <p>Dext, Zoho Expense, Hubdoc, QuickBooks, and Wave reviewed for submission speed, extraction quality, and cleanup effort.</p>
-          <div class="story-card__meta">Best for capture, extraction, and cleanup bottlenecks</div>
-        </a>
+      <div class="decision-workbench">
+        <article class="decision-workbench__lead">
+          <span class="card__eyebrow">Fastest route</span>
+          <h3>Use one framework, one comparison, and one review.</h3>
+          <p>Most visitors do not need six tabs open. The highest-signal path is one roundup to narrow the field, one head-to-head to resolve the tradeoff, and one review to check whether the winner still fits your workflow and tolerance for setup friction.</p>
+          <ol class="workbench-steps">
+            <li>
+              <strong>Roundup</strong>
+              <span>Find the shortlist that actually fits the workflow.</span>
+            </li>
+            <li>
+              <strong>Comparison</strong>
+              <span>Resolve the single tradeoff still blocking the decision.</span>
+            </li>
+            <li>
+              <strong>Review</strong>
+              <span>Check the winning tool for practical fit, not hype.</span>
+            </li>
+          </ol>
+          <a class="text-link" href="how-to-choose-accounting-software.html">Start with the buying guide</a>
+        </article>
+        <div class="decision-paths">
+          <a class="decision-path decision-path--primary" href="best-accounting-software-for-freelancers.html">
+            <span class="decision-path__eyebrow">Accounting depth</span>
+            <h3>Best accounting software for freelancers</h3>
+            <p>Xero, Wave, FreshBooks, Zoho Books, QuickBooks, and Bonsai compared around bookkeeping depth, automation, and freelancer workflow fit.</p>
+            <div class="decision-path__meta">Best for broader accounting decisions</div>
+          </a>
+          <a class="decision-path" href="best-bookkeeping-software-for-solo-accountants.html">
+            <span class="decision-path__eyebrow">Bookkeeping-first</span>
+            <h3>Best bookkeeping software for solo accountants</h3>
+            <p>Xero, Zoho Books, QuickBooks, Wave, and FreshBooks compared around reconciliation, reporting, expense tracking, and long-term usability.</p>
+            <div class="decision-path__meta">Best for bookkeeping-first buyers</div>
+          </a>
+          <a class="decision-path" href="best-invoicing-software.html">
+            <span class="decision-path__eyebrow">Billing workflow</span>
+            <h3>Best invoicing software for freelance accountants</h3>
+            <p>FreshBooks, Bonsai, Xero, Wave, Zoho Books, and QuickBooks compared around cash flow, client limits, and bookkeeping reality.</p>
+            <div class="decision-path__meta">Best for billing and service workflow pain</div>
+          </a>
+          <a class="decision-path" href="best-receipt-tracking.html">
+            <span class="decision-path__eyebrow">Receipt capture</span>
+            <h3>Best receipt tracking software</h3>
+            <p>Dext, Zoho Expense, Hubdoc, QuickBooks, and Wave reviewed for submission speed, extraction quality, and cleanup effort.</p>
+            <div class="decision-path__meta">Best for capture, extraction, and cleanup bottlenecks</div>
+          </a>
+          <a class="decision-path decision-path--wide" href="quickbooks-vs-xero.html">
+            <span class="decision-path__eyebrow">Already down to two?</span>
+            <h3>Go straight into a comparison page.</h3>
+            <p>If your shortlist is already narrow, skip the category pages and use one head-to-head like QuickBooks vs Xero or Xero vs Wave to resolve the tradeoff quickly.</p>
+            <div class="decision-path__meta">Best for buyers near the finish line</div>
+          </a>
+        </div>
       </div>
     </section>
 
     <section class="page-section page-section--tight" id="featured">
-      <div class="section-heading">
+      <div class="section-heading section-heading--stacked">
         <div>
           <span class="card__eyebrow">Comparisons</span>
-          <h2>Head-to-head pages with a real verdict</h2>
+          <h2>Head-to-head pages with one real verdict, not two fake winners.</h2>
         </div>
-        <p>Every comparison page answers three things quickly: who wins overall, who should still choose the runner-up, and what pricing language needs caution because of promotions or regional rules.</p>
+        <p>Every comparison page should answer three things quickly: who wins overall, who should still choose the runner-up, and what pricing language needs caution because of promotions or regional rules.</p>
       </div>
-      <div class="topic-grid">
-        <a class="topic-card" href="xero-vs-wave.html">
-          <span class="topic-card__eyebrow">Comparison</span>
+      <div class="comparison-stage">
+        <article class="comparison-spotlight">
+          <span class="card__eyebrow">Featured comparison</span>
           <div class="product-chip-row">
             <span class="product-chip" data-product="xero">Xero</span>
             <span class="product-chip" data-product="wave">Wave</span>
           </div>
-          <h3>Xero vs Wave</h3>
-          <p>Xero wins on depth and bookkeeping control. Wave still matters if your priority is a free starter path and a simpler invoicing setup.</p>
-          <div class="topic-card__meta">Best for: depth vs budget</div>
-        </a>
-        <a class="topic-card" href="bonsai-vs-freshbooks.html">
-          <span class="topic-card__eyebrow">Comparison</span>
-          <div class="product-chip-row">
-            <span class="product-chip" data-product="bonsai">Bonsai</span>
-            <span class="product-chip" data-product="freshbooks">FreshBooks</span>
+          <h3>Xero vs Wave is the clearest expression of the site&rsquo;s buying philosophy.</h3>
+          <p>Xero wins on depth and bookkeeping control. Wave still matters if your priority is a free starter path, simpler invoicing, and a lighter setup burden before the workflow gets heavier.</p>
+          <div class="comparison-spotlight__split">
+            <div>
+              <span class="comparison-spotlight__label">Choose Xero if</span>
+              <p>you are buying for reconciliation quality, reporting control, and a more durable bookkeeping foundation.</p>
+            </div>
+            <div>
+              <span class="comparison-spotlight__label">Choose Wave if</span>
+              <p>your priority is cost control, a simpler starting point, and basic invoicing before the accounting workload grows.</p>
+            </div>
           </div>
-          <h3>Bonsai vs FreshBooks</h3>
-          <p>Bonsai is stronger as a client-ops system. FreshBooks is the safer choice when you need better core books and cleaner invoice workflows.</p>
-          <div class="topic-card__meta">Best for: client ops vs service accounting</div>
-        </a>
-        <a class="topic-card" href="zoho-vs-quickbooks.html">
-          <span class="topic-card__eyebrow">Comparison</span>
-          <div class="product-chip-row">
-            <span class="product-chip" data-product="zoho-books">Zoho Books</span>
-            <span class="product-chip" data-product="quickbooks">QuickBooks</span>
+          <div class="chip-row">
+            <a class="button button--primary" href="xero-vs-wave.html">Read Xero vs Wave</a>
+            <a class="button button--secondary" href="wave-review.html">See the Wave review</a>
           </div>
-          <h3>Zoho Books vs QuickBooks</h3>
-          <p>Zoho Books is the better value play. QuickBooks still has the strongest familiarity and ecosystem pull in the US market.</p>
-          <div class="topic-card__meta">Best for: value vs ecosystem</div>
-        </a>
-        <a class="topic-card" href="wave-vs-freshbooks.html">
-          <span class="topic-card__eyebrow">Comparison</span>
-          <div class="product-chip-row">
-            <span class="product-chip" data-product="wave">Wave</span>
-            <span class="product-chip" data-product="freshbooks">FreshBooks</span>
-          </div>
-          <h3>Wave vs FreshBooks</h3>
-          <p>Wave is the free starter path. FreshBooks is the stronger paid option for service-led invoice workflows.</p>
-          <div class="topic-card__meta">Best for: free start vs paid polish</div>
-        </a>
-        <a class="topic-card" href="zoho-vs-wave.html">
-          <span class="topic-card__eyebrow">Comparison</span>
-          <div class="product-chip-row">
-            <span class="product-chip" data-product="zoho-books">Zoho Books</span>
-            <span class="product-chip" data-product="wave">Wave</span>
-          </div>
-          <h3>Zoho Books vs Wave</h3>
-          <p>Zoho Books usually wins long-term value and depth. Wave still matters for budget-first and no-cost starts.</p>
-          <div class="topic-card__meta">Best for: value depth vs free simplicity</div>
-        </a>
-        <a class="topic-card" href="quickbooks-vs-xero.html">
-          <span class="topic-card__eyebrow">Comparison</span>
-          <div class="product-chip-row">
-            <span class="product-chip" data-product="quickbooks">QuickBooks</span>
-            <span class="product-chip" data-product="xero">Xero</span>
-          </div>
-          <h3>QuickBooks vs Xero</h3>
-          <p>QuickBooks wins familiarity and ecosystem pull. Xero often wins for bookkeeping depth and long-term operating control.</p>
-          <div class="topic-card__meta">Best for: ecosystem vs depth</div>
-        </a>
+        </article>
+        <div class="comparison-rail">
+          <a class="comparison-rail__item" href="quickbooks-vs-xero.html">
+            <div class="product-chip-row">
+              <span class="product-chip" data-product="quickbooks">QuickBooks</span>
+              <span class="product-chip" data-product="xero">Xero</span>
+            </div>
+            <h3>QuickBooks vs Xero</h3>
+            <p>QuickBooks wins ecosystem pull. Xero often wins bookkeeping depth and operating control.</p>
+            <span class="comparison-rail__meta">Best for: ecosystem vs depth</span>
+          </a>
+          <a class="comparison-rail__item" href="zoho-vs-quickbooks.html">
+            <div class="product-chip-row">
+              <span class="product-chip" data-product="zoho-books">Zoho Books</span>
+              <span class="product-chip" data-product="quickbooks">QuickBooks</span>
+            </div>
+            <h3>Zoho Books vs QuickBooks</h3>
+            <p>Zoho Books is the sharper value play. QuickBooks still has the strongest familiarity in the US market.</p>
+            <span class="comparison-rail__meta">Best for: value vs ecosystem</span>
+          </a>
+          <a class="comparison-rail__item" href="wave-vs-freshbooks.html">
+            <div class="product-chip-row">
+              <span class="product-chip" data-product="wave">Wave</span>
+              <span class="product-chip" data-product="freshbooks">FreshBooks</span>
+            </div>
+            <h3>Wave vs FreshBooks</h3>
+            <p>Wave is the free-start path. FreshBooks is the stronger paid option for service-led invoice workflows.</p>
+            <span class="comparison-rail__meta">Best for: free start vs paid polish</span>
+          </a>
+          <a class="comparison-rail__item" href="bonsai-vs-freshbooks.html">
+            <div class="product-chip-row">
+              <span class="product-chip" data-product="bonsai">Bonsai</span>
+              <span class="product-chip" data-product="freshbooks">FreshBooks</span>
+            </div>
+            <h3>Bonsai vs FreshBooks</h3>
+            <p>Bonsai is stronger as a client-ops system. FreshBooks is safer when you need better core books.</p>
+            <span class="comparison-rail__meta">Best for: client ops vs service accounting</span>
+          </a>
+          <a class="comparison-rail__item" href="zoho-vs-wave.html">
+            <div class="product-chip-row">
+              <span class="product-chip" data-product="zoho-books">Zoho Books</span>
+              <span class="product-chip" data-product="wave">Wave</span>
+            </div>
+            <h3>Zoho Books vs Wave</h3>
+            <p>Zoho Books usually wins long-term value and depth. Wave still matters for budget-first and no-cost starts.</p>
+            <span class="comparison-rail__meta">Best for: value depth vs free simplicity</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <section class="page-section page-section--tight" id="reviews">
-      <div class="section-heading">
+      <div class="section-heading section-heading--stacked">
         <div>
           <span class="card__eyebrow">Reviews</span>
-          <h2>Product reviews written for practice owners</h2>
+          <h2>Product reviews written to help practice owners finish the decision.</h2>
         </div>
         <p>The review pages focus on fit, tradeoffs, and workflow friction, not inflated scorecards designed to make every tool look equally good.</p>
       </div>
-      <div class="summary-grid">
-        <a class="summary-card" href="freshbooks-review.html">
-          <span class="summary-card__eyebrow">Review</span>
-          <h3 data-product="freshbooks">FreshBooks review</h3>
-          <p>Excellent invoicing and client-facing polish. Better for running your own service business than for replacing a deeper accounting platform.</p>
-          <div class="summary-card__meta">High score for invoicing, lower score for accounting depth</div>
-        </a>
-        <a class="summary-card" href="bonsai-review.html">
-          <span class="summary-card__eyebrow">Review</span>
-          <h3 data-product="bonsai">Bonsai review</h3>
-          <p>One of the cleanest all-in-one operating systems for solo service firms, but not a full substitute for stronger accounting software.</p>
-          <div class="summary-card__meta">Best for proposals, contracts, time, and billing</div>
-        </a>
-        <a class="summary-card" href="xero-review.html">
-          <span class="summary-card__eyebrow">Review</span>
+      <div class="review-shelf">
+        <article class="review-feature">
+          <span class="card__eyebrow">Lead review</span>
           <h3 data-product="xero">Xero review</h3>
-          <p>A serious bookkeeping platform with strong reconciliation and reporting, plus Hubdoc inclusion on paid plans.</p>
-          <div class="summary-card__meta">Best for growing freelance practices</div>
-        </a>
-        <a class="summary-card" href="wave-review.html">
-          <span class="summary-card__eyebrow">Review</span>
-          <h3 data-product="wave">Wave review</h3>
-          <p>A practical free-start option for simple workflows, with clear tradeoffs once bookkeeping needs get heavier.</p>
-          <div class="summary-card__meta">Best for budget-first solo operators</div>
-        </a>
-        <a class="summary-card" href="quickbooks-review.html">
-          <span class="summary-card__eyebrow">Review</span>
-          <h3 data-product="quickbooks">QuickBooks review</h3>
-          <p>Strong ecosystem familiarity and accountant adoption, but not always the cleanest value or simplest workflow.</p>
-          <div class="summary-card__meta">Best for ecosystem-led buying decisions</div>
-        </a>
-        <a class="summary-card" href="zoho-review.html">
-          <span class="summary-card__eyebrow">Review</span>
-          <h3 data-product="zoho-books">Zoho Books review</h3>
-          <p>One of the strongest value-led accounting options for freelancers who want real depth without overpaying.</p>
-          <div class="summary-card__meta">Best for value-first accounting buyers</div>
-        </a>
+          <p>Xero is the homepage&rsquo;s anchor review because it represents the clearest "buy for durability" case on the site. It makes sense when you want stronger reconciliation, reporting, and long-term bookkeeping control, not just a low starting price.</p>
+          <ul class="review-feature__list">
+            <li><strong>Why it matters:</strong> it anchors the accounting-depth end of the decision spectrum.</li>
+            <li><strong>Where it wins:</strong> stronger reconciliation, reporting, and paid-plan bookkeeping depth.</li>
+            <li><strong>Where to cross-check it:</strong> compare it against <a href="quickbooks-vs-xero.html">QuickBooks vs Xero</a> or <a href="xero-vs-wave.html">Xero vs Wave</a> before committing.</li>
+          </ul>
+          <div class="chip-row">
+            <a class="button button--primary" href="xero-review.html">Read the Xero review</a>
+            <a class="button button--secondary" href="best-accounting-software-for-freelancers.html">See the accounting roundup</a>
+          </div>
+        </article>
+        <div class="review-ledger">
+          <a class="review-ledger__item" href="freshbooks-review.html">
+            <span class="kicker" data-product="freshbooks">FreshBooks</span>
+            <h3>FreshBooks review</h3>
+            <p>Excellent invoicing and client-facing polish. Better for running a service business than replacing deeper accounting software.</p>
+            <span class="review-ledger__meta">High score for invoicing, lower score for accounting depth</span>
+          </a>
+          <a class="review-ledger__item" href="wave-review.html">
+            <span class="kicker" data-product="wave">Wave</span>
+            <h3>Wave review</h3>
+            <p>A practical free-start option for simple workflows, with clear tradeoffs once bookkeeping needs get heavier.</p>
+            <span class="review-ledger__meta">Best for budget-first solo operators</span>
+          </a>
+          <a class="review-ledger__item" href="quickbooks-review.html">
+            <span class="kicker" data-product="quickbooks">QuickBooks</span>
+            <h3>QuickBooks review</h3>
+            <p>Strong ecosystem familiarity and accountant adoption, but not always the cleanest value or simplest workflow.</p>
+            <span class="review-ledger__meta">Best for ecosystem-led buying decisions</span>
+          </a>
+          <a class="review-ledger__item" href="zoho-review.html">
+            <span class="kicker" data-product="zoho-books">Zoho Books</span>
+            <h3>Zoho Books review</h3>
+            <p>One of the strongest value-led accounting options for freelancers who want real depth without overpaying.</p>
+            <span class="review-ledger__meta">Best for value-first accounting buyers</span>
+          </a>
+          <a class="review-ledger__item" href="bonsai-review.html">
+            <span class="kicker" data-product="bonsai">Bonsai</span>
+            <h3>Bonsai review</h3>
+            <p>One of the cleanest all-in-one operating systems for solo service firms, but not a full substitute for stronger accounting software.</p>
+            <span class="review-ledger__meta">Best for proposals, contracts, time, and billing</span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="page-section page-section--tight">
-      <div class="section-heading">
+    <section class="page-section page-section--tight home-principles">
+      <div class="section-heading section-heading--stacked">
         <div>
           <span class="card__eyebrow">Editorial approach</span>
-          <h2>Why this homepage should be easier to trust</h2>
+          <h2>Why this homepage should feel easier to trust.</h2>
         </div>
         <p>This site deliberately avoids fake freshness, stale price tables, and generic category clutter. The pages are built to help buyers finish a decision, not just keep scrolling.</p>
       </div>
-      <div class="metric-grid">
-        <article class="stat-card">
+      <div class="principles-band">
+        <article class="principle-stat">
           <strong>2026</strong>
           <span>core roundups, reviews, and comparisons refreshed around current positioning and buyer intent.</span>
         </article>
-        <article class="stat-card">
+        <article class="principle-stat">
           <strong>3</strong>
           <span>steps to finish most decisions: roundup first, one comparison next, one review last.</span>
         </article>
-        <article class="stat-card">
+        <article class="principle-stat">
           <strong>Zero</strong>
           <span>pretend timeless price tables when vendor promos, free tiers, or regional offers are unstable.</span>
         </article>
       </div>
-      <div class="two-col u-mt-8">
-        <article class="card">
+      <div class="principles-columns">
+        <article class="principle-panel">
           <span class="card__eyebrow">How we handle pricing</span>
           <h3>Stable facts only</h3>
           <p>When a vendor uses aggressive introductory pricing, rotating promos, or region-specific logic, the page avoids pretending those numbers are timeless. Instead, the page tells readers to confirm current pricing on the official site.</p>
           <a class="text-link" href="how-to-choose-accounting-software.html#pricing-checks">See the buying framework</a>
         </article>
-        <article class="card">
+        <article class="principle-panel">
           <span class="card__eyebrow">How to use this site</span>
           <h3>Move from roundup to comparison to review</h3>
           <p>Start broad with a roundup, narrow down with a head-to-head comparison, then use the review page to sanity-check whether the winner still fits your workflow and tolerance for setup friction.</p>
@@ -360,27 +429,27 @@
     </section>
 
     <section class="page-section page-section--tight" id="faq">
-      <div class="section-heading">
+      <div class="section-heading section-heading--stacked">
         <div>
           <span class="card__eyebrow">FAQ</span>
-          <h2>Questions buyers usually have on the homepage</h2>
+          <h2>Questions buyers usually have on the homepage.</h2>
         </div>
         <p>The homepage should answer the first decision quickly: where to start and which page to read next.</p>
       </div>
-      <div class="cards-grid">
-        <article class="card">
+      <div class="faq-stack">
+        <article class="faq-item">
           <h3>Where should freelancers start on AccountantToolkit?</h3>
           <p>Start with the page that matches the real bottleneck. Use the accounting roundup for stronger books, the invoicing roundup for billing and service workflow, the receipt roundup for document capture, or a comparison page if your shortlist is already narrow.</p>
         </article>
-        <article class="card">
+        <article class="faq-item">
           <h3>What is the best page for bookkeeping software?</h3>
           <p>The best starting point for bookkeeping-focused buyers is <a href="best-bookkeeping-software-for-solo-accountants.html">best bookkeeping software for solo accountants</a>, then the <a href="xero-review.html">Xero review</a> or a comparison like <a href="quickbooks-vs-xero.html">QuickBooks vs Xero</a>.</p>
         </article>
-        <article class="card">
+        <article class="faq-item">
           <h3>What if invoicing is the main pain point?</h3>
           <p>If invoicing is the main pain point, start with <a href="best-invoicing-software.html">best invoicing software</a> and then narrow into comparisons like <a href="wave-vs-freshbooks.html">Wave vs FreshBooks</a> or <a href="bonsai-vs-freshbooks.html">Bonsai vs FreshBooks</a>.</p>
         </article>
-        <article class="card">
+        <article class="faq-item">
           <h3>How should buyers use the site to decide faster?</h3>
           <p>The fastest path is usually roundup first, then one comparison, then one review. That keeps the research focused while still giving enough detail to sanity-check the winner.</p>
         </article>
@@ -388,7 +457,7 @@
     </section>
 
     <section class="page-section page-section--tight">
-      <div class="cta-panel">
+      <div class="cta-panel cta-panel--home">
         <div>
           <h2>Need the fastest path to a decision?</h2>
           <p>If you want the shortest route, start with the guide if the decision is still broad, or jump straight into the roundup for your main pain point if you already know the problem.</p>
