@@ -89,7 +89,10 @@ const footerColumns = [
     links: [
       ["Xero vs Wave", "xero-vs-wave.html"],
       ["Bonsai vs FreshBooks", "bonsai-vs-freshbooks.html"],
-      ["Zoho Books vs QuickBooks", "zoho-vs-quickbooks.html"]
+      ["Zoho Books vs QuickBooks", "zoho-vs-quickbooks.html"],
+      ["Wave vs FreshBooks", "wave-vs-freshbooks.html"],
+      ["Zoho Books vs Wave", "zoho-vs-wave.html"],
+      ["QuickBooks vs Xero", "quickbooks-vs-xero.html"]
     ]
   },
   {
@@ -97,7 +100,10 @@ const footerColumns = [
     links: [
       ["FreshBooks review", "freshbooks-review.html"],
       ["Bonsai review", "bonsai-review.html"],
-      ["Xero review", "xero-review.html"]
+      ["Xero review", "xero-review.html"],
+      ["Wave review", "wave-review.html"],
+      ["QuickBooks review", "quickbooks-review.html"],
+      ["Zoho Books review", "zoho-review.html"]
     ]
   },
   {
@@ -140,6 +146,130 @@ const productCatalog = {
   "zoho-expense": { icon: "assets/img/products/zoho-expense.svg" },
   hubdoc: { icon: "assets/img/products/hubdoc.svg" }
 };
+
+const affiliateDomainToProduct = {
+  "xero.com": "xero",
+  "freshbooks.com": "freshbooks",
+  "waveapps.com": "wave",
+  "hellobonsai.com": "bonsai",
+  "zoho.com": "zoho-books",
+  "intuit.com": "quickbooks"
+};
+
+function getProductByHostname(hostname) {
+  const normalizedHost = hostname.replace(/^www\./, "").toLowerCase();
+  const match = Object.keys(affiliateDomainToProduct).find((domain) =>
+    normalizedHost === domain || normalizedHost.endsWith(`.${domain}`)
+  );
+
+  return match ? affiliateDomainToProduct[match] : null;
+}
+
+function detectCtaPosition(link) {
+  const panel = link.closest(".cta-panel, .hero-panel, .summary-card, .table-card, .article-sidebar");
+
+  if (panel?.classList.contains("cta-panel")) {
+    return "end";
+  }
+
+  if (panel?.classList.contains("hero-panel")) {
+    return "top";
+  }
+
+  if (panel?.classList.contains("summary-card") || panel?.classList.contains("table-card")) {
+    return "mid";
+  }
+
+  if (panel?.classList.contains("article-sidebar")) {
+    return "sidebar";
+  }
+
+  return "inline";
+}
+
+function normalizeAffiliateLinks(root = document) {
+  const page = document.body.dataset.page || "site";
+  const links = root.querySelectorAll("a[href^='http://'], a[href^='https://']");
+
+  links.forEach((link) => {
+    let parsed;
+
+    try {
+      parsed = new URL(link.href, window.location.origin);
+    } catch {
+      return;
+    }
+
+    const isExternal = parsed.hostname !== window.location.hostname;
+    const product = getProductByHostname(parsed.hostname);
+
+    if (!isExternal || !product) {
+      return;
+    }
+
+    const relSet = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
+    relSet.add("sponsored");
+    relSet.add("nofollow");
+    relSet.add("noopener");
+    relSet.add("noreferrer");
+    link.setAttribute("rel", Array.from(relSet).join(" "));
+
+    parsed.searchParams.set("utm_source", "accountanttoolkit");
+    parsed.searchParams.set("utm_medium", "affiliate");
+
+    if (!parsed.searchParams.has("utm_campaign")) {
+      parsed.searchParams.set("utm_campaign", page);
+    }
+
+    if (!parsed.searchParams.has("utm_content")) {
+      parsed.searchParams.set("utm_content", detectCtaPosition(link));
+    }
+
+    link.href = parsed.toString();
+    link.dataset.affiliateLink = "true";
+    link.dataset.affiliateProduct = product;
+  });
+}
+
+function trackAffiliateClick(link) {
+  const analyticsPayload = {
+    event: "affiliate_click",
+    page: document.body.dataset.page || "unknown",
+    href: link.href,
+    domain: new URL(link.href).hostname,
+    position: detectCtaPosition(link),
+    product: link.dataset.affiliateProduct || "unknown",
+    label: (link.textContent || "").trim().slice(0, 80)
+  };
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "affiliate_click", analyticsPayload);
+  }
+
+  if (Array.isArray(window.dataLayer)) {
+    window.dataLayer.push(analyticsPayload);
+  }
+}
+
+function initAffiliateTracking(root = document) {
+  normalizeAffiliateLinks(root);
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const link = target.closest("a[data-affiliate-link='true']");
+
+    if (!link) {
+      return;
+    }
+
+    trackAffiliateClick(link);
+  });
+}
 
 function formatReviewedDate(isoDate) {
   const date = new Date(`${isoDate}T00:00:00`);
@@ -271,6 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   decorateProductTokens();
   initThemeToggle();
+  initAffiliateTracking();
 
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".site-nav__links");
