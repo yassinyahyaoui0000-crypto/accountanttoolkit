@@ -1,7 +1,62 @@
 const THEME_STORAGE_KEY = "accountanttoolkit-theme";
-const ASSET_VERSION = "2026-03-21-badges";
-const SITE_REBUILD_DATE = "2026-03-21";
-const DEFAULT_REVIEW_DATE = "2026-03-21";
+const ASSET_VERSION = "2026-03-22-stabilize";
+const SITE_REBUILD_DATE = "2026-03-22";
+const DEFAULT_REVIEW_DATE = "2026-03-22";
+const GTM_CONTAINER_ID = "GTM-MXCN4BF7";
+
+function isConfiguredGtmId(value) {
+  return /^GTM-[A-Z0-9]+$/i.test(value) && !/^GTM-X+$/i.test(value);
+}
+
+function ensureDataLayer() {
+  window.dataLayer = window.dataLayer || [];
+  return window.dataLayer;
+}
+
+function initTagManager() {
+  if (!isConfiguredGtmId(GTM_CONTAINER_ID)) {
+    return false;
+  }
+
+  if (
+    document.querySelector(`script[data-gtm-container="${GTM_CONTAINER_ID}"]`) ||
+    document.querySelector(`script[src*="googletagmanager.com/gtm.js?id=${GTM_CONTAINER_ID}"]`) ||
+    (window.google_tag_manager && window.google_tag_manager[GTM_CONTAINER_ID])
+  ) {
+    return true;
+  }
+
+  const dataLayer = ensureDataLayer();
+  dataLayer.push({
+    "gtm.start": Date.now(),
+    event: "gtm.js"
+  });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(GTM_CONTAINER_ID)}`;
+  script.setAttribute("data-gtm-container", GTM_CONTAINER_ID);
+  document.head.appendChild(script);
+  document.documentElement.dataset.gtmConfigured = "true";
+
+  return true;
+}
+
+function trackPageView() {
+  const payload = {
+    event: "at_page_view",
+    page_title: document.title,
+    page_location: window.location.href,
+    page_path: window.location.pathname,
+    page_type: document.body.dataset.page || "unknown"
+  };
+
+  ensureDataLayer().push(payload);
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "page_view", payload);
+  }
+}
 
 function getStoredTheme() {
   try {
@@ -77,53 +132,53 @@ function initThemeToggle(root = document) {
 applyTheme(getPreferredTheme());
 
 const navItems = [
-  { href: "index.html", label: "Home", page: "home" },
-  { href: "best-invoicing-software.html", label: "Best Invoicing", page: "best-invoicing" },
-  { href: "best-receipt-tracking.html", label: "Receipt Tracking", page: "receipt-tracking" },
-  { href: "xero-vs-wave.html", label: "Comparisons", page: "comparisons" },
-  { href: "freshbooks-review.html", label: "Reviews", page: "reviews" },
-  { href: "how-to-choose-accounting-software.html", label: "Guide", page: "guide" },
-  { href: "about.html", label: "About", page: "trust" }
+  { href: "/", label: "Home", page: "home" },
+  { href: "/best-invoicing-software", label: "Best Invoicing", page: "best-invoicing" },
+  { href: "/best-receipt-tracking", label: "Receipt Tracking", page: "receipt-tracking" },
+  { href: "/xero-vs-wave", label: "Comparisons", page: "comparisons" },
+  { href: "/freshbooks-review", label: "Reviews", page: "reviews" },
+  { href: "/how-to-choose-accounting-software", label: "Guide", page: "guide" },
+  { href: "/about", label: "About", page: "trust" }
 ];
 
 const footerColumns = [
   {
     title: "Comparisons",
     links: [
-      ["Xero vs Wave", "xero-vs-wave.html"],
-      ["Bonsai vs FreshBooks", "bonsai-vs-freshbooks.html"],
-      ["Zoho Books vs QuickBooks", "zoho-vs-quickbooks.html"],
-      ["Wave vs FreshBooks", "wave-vs-freshbooks.html"],
-      ["Zoho Books vs Wave", "zoho-vs-wave.html"],
-      ["QuickBooks vs Xero", "quickbooks-vs-xero.html"]
+      ["Xero vs Wave", "/xero-vs-wave"],
+      ["Bonsai vs FreshBooks", "/bonsai-vs-freshbooks"],
+      ["Zoho Books vs QuickBooks", "/zoho-vs-quickbooks"],
+      ["Wave vs FreshBooks", "/wave-vs-freshbooks"],
+      ["Zoho Books vs Wave", "/zoho-vs-wave"],
+      ["QuickBooks vs Xero", "/quickbooks-vs-xero"]
     ]
   },
   {
     title: "Reviews",
     links: [
-      ["FreshBooks review", "freshbooks-review.html"],
-      ["Bonsai review", "bonsai-review.html"],
-      ["Xero review", "xero-review.html"],
-      ["Wave review", "wave-review.html"],
-      ["QuickBooks review", "quickbooks-review.html"],
-      ["Zoho Books review", "zoho-review.html"]
+      ["FreshBooks review", "/freshbooks-review"],
+      ["Bonsai review", "/bonsai-review"],
+      ["Xero review", "/xero-review"],
+      ["Wave review", "/wave-review"],
+      ["QuickBooks review", "/quickbooks-review"],
+      ["Zoho Books review", "/zoho-review"]
     ]
   },
   {
     title: "Buyer's guides",
     links: [
-      ["Best invoicing software", "best-invoicing-software.html"],
-      ["Best receipt tracking tools", "best-receipt-tracking.html"],
-      ["How to choose accounting software", "how-to-choose-accounting-software.html"]
+      ["Best invoicing software", "/best-invoicing-software"],
+      ["Best receipt tracking tools", "/best-receipt-tracking"],
+      ["How to choose accounting software", "/how-to-choose-accounting-software"]
     ]
   },
   {
     title: "Trust",
     links: [
-      ["About", "about.html"],
-      ["Contact", "contact.html"],
-      ["Editorial policy", "editorial-policy.html"],
-      ["Affiliate disclosure", "affiliate-disclosure.html"]
+      ["About", "/about"],
+      ["Contact", "/contact"],
+      ["Editorial policy", "/editorial-policy"],
+      ["Affiliate disclosure", "/affiliate-disclosure"]
     ]
   }
 ];
@@ -301,7 +356,7 @@ function renderHeader() {
     <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="brand" href="index.html" aria-label="AccountantToolkit home">
+        <a class="brand" href="/" aria-label="AccountantToolkit home">
           <span class="brand__mark" aria-hidden="true">AT</span>
           <span class="brand__text">
             <span class="brand__name">AccountantToolkit</span>
@@ -338,7 +393,7 @@ function renderFooter() {
         <section class="footer__brand">
           <h2>AccountantToolkit</h2>
           <p>We rebuild software buying decisions around actual workflows: invoicing, expense capture, client operations, bookkeeping depth, and integration risk.</p>
-          <p class="footer__meta">Read our <a href="editorial-policy.html">editorial policy</a> and <a href="affiliate-disclosure.html">affiliate disclosure</a> for how we research products, handle promotions, and label commercial relationships.</p>
+          <p class="footer__meta">Read our <a href="/editorial-policy">editorial policy</a> and <a href="/affiliate-disclosure">affiliate disclosure</a> for how we research products, handle promotions, and label commercial relationships.</p>
           <p class="footer__meta">Corrections and business inquiries: <a href="mailto:hello@accountanttoolkit.com">hello@accountanttoolkit.com</a>.</p>
           <p class="footer__meta">Last rebuilt on ${formatReviewedDate(SITE_REBUILD_DATE)}.</p>
         </section>
@@ -390,6 +445,8 @@ function decorateProductTokens(root = document) {
   });
 }
 document.addEventListener("DOMContentLoaded", () => {
+  initTagManager();
+
   const currentPage = document.body.dataset.page || "";
   const headerSlot = document.querySelector("[data-site-header]");
   const footerSlot = document.querySelector("[data-site-footer]");
@@ -405,6 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
   decorateProductTokens();
   initThemeToggle();
   initAffiliateTracking();
+  trackPageView();
 
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".site-nav__links");
@@ -465,7 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
       note.innerHTML = `
         <p class="kicker">Editorial note</p>
         <p><strong>Last reviewed:</strong> ${formatReviewedDate(reviewDate)}. AccountantToolkit checks official vendor pages before making plan, trial, or pricing claims. When pricing is promotional, region-specific, or usage-based, we say so instead of freezing numbers that age badly.</p>
-        <p>For details on how pages are updated and how commercial relationships are handled, see our <a href="editorial-policy.html">editorial policy</a> and <a href="affiliate-disclosure.html">affiliate disclosure</a>.</p>
+        <p>For details on how pages are updated and how commercial relationships are handled, see our <a href="/editorial-policy">editorial policy</a> and <a href="/affiliate-disclosure">affiliate disclosure</a>.</p>
       `;
 
       const lede = articleBody.querySelector(".lede");

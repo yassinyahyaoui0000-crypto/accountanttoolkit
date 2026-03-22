@@ -3,7 +3,49 @@ param(
     [string]$OutputCsvPath
 )
 
-function Invoke-WithRedirects {
+function Invoke-WithoutAutoRedirect {
+    param(
+        [string]$Url
+    )
+
+    $request = [System.Net.HttpWebRequest]::Create($Url)
+    $request.Method = "GET"
+    $request.AllowAutoRedirect = $false
+    $request.Timeout = 30000
+    $request.UserAgent = "AccountantToolkitSEOObserver/1.0"
+
+    try {
+        $response = [System.Net.HttpWebResponse]$request.GetResponse()
+    }
+    catch [System.Net.WebException] {
+        if (-not $_.Exception.Response) {
+            throw
+        }
+
+        $response = [System.Net.HttpWebResponse]$_.Exception.Response
+    }
+
+    try {
+        $reader = New-Object System.IO.StreamReader($response.GetResponseStream())
+        $content = $reader.ReadToEnd()
+    }
+    finally {
+        if ($reader) {
+            $reader.Dispose()
+        }
+
+        $response.Close()
+    }
+
+    return [PSCustomObject]@{
+        StatusCode = [int]$response.StatusCode
+        Content = [string]$content
+        Headers = $response.Headers
+        ResponseUri = [string]$response.ResponseUri.AbsoluteUri
+    }
+}
+
+function Resolve-RedirectTarget {
     param(
         [string]$Url,
         [int]$MaxRedirects = 5
@@ -12,7 +54,7 @@ function Invoke-WithRedirects {
     $currentUrl = $Url
 
     for ($attempt = 0; $attempt -le $MaxRedirects; $attempt++) {
-        $response = Invoke-WebRequest -Uri $currentUrl -UseBasicParsing -MaximumRedirection 0 -TimeoutSec 30
+        $response = Invoke-WithoutAutoRedirect -Url $currentUrl
         $statusCode = [int]$response.StatusCode
 
         if ($statusCode -in @(301, 302, 307, 308)) {
@@ -64,7 +106,7 @@ $results = @()
 
 foreach ($url in $urls) {
     try {
-        $request = Invoke-WithRedirects -Url $url
+        $request = Resolve-RedirectTarget -Url $url
         $finalUrl = $request.FinalUrl
         $content = [string]$request.Content
         $title = Get-MatchValue -Content $content -Pattern "<title>\s*(.*?)\s*</title>"
@@ -78,6 +120,7 @@ foreach ($url in $urls) {
             Status = [int]$request.StatusCode
             Canonical = $canonical
             CanonicalMatchesUrl = ($canonical -eq $finalUrl)
+            CanonicalMatchesRequestedUrl = ($canonical -eq $url)
             Robots = $robots
             HasNoindex = ($robots -match "(^|,\s*)noindex(\s*,|$)")
             Title = $title
@@ -97,6 +140,7 @@ foreach ($url in $urls) {
             Status = if ($statusCode) { $statusCode } else { "ERROR" }
             Canonical = ""
             CanonicalMatchesUrl = $false
+            CanonicalMatchesRequestedUrl = $false
             Robots = ""
             HasNoindex = $false
             Title = ""
@@ -109,6 +153,14 @@ Write-Output ""
 Write-Output "Priority URL live check"
 Write-Output "-----------------------"
 $results | Select-Object Url, Redirected, Status, CanonicalMatchesUrl, HasNoindex, FinalUrl | Format-Table -AutoSize
+
+$canonicalDrift = $results | Where-Object { $_.Error -eq "" -and -not $_.CanonicalMatchesUrl }
+if ($canonicalDrift) {
+    Write-Output ""
+    Write-Output "Canonical Drift"
+    Write-Output "---------------"
+    $canonicalDrift | Select-Object Url, FinalUrl, Canonical, CanonicalMatchesRequestedUrl | Format-List
+}
 
 $errors = $results | Where-Object { $_.Error -ne "" }
 if ($errors) {
