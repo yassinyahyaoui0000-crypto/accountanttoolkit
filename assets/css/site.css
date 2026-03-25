@@ -364,6 +364,10 @@ select {
   box-shadow: var(--shadow-lg);
 }
 
+body[data-page="reviews"] .page-hero {
+  margin-top: clamp(3rem, 5vw, 3.75rem);
+}
+
 .page-hero__eyebrow,
 .pill {
   display: inline-flex;
@@ -923,6 +927,7 @@ td.product-token .product-token__icon {
     radial-gradient(circle at top right, rgba(18, 145, 139, 0.16), transparent 18rem),
     linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 250, 252, 0.98) 100%);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .decision-workbench__lead h3,
@@ -1221,6 +1226,10 @@ td.product-token .product-token__icon {
   padding-block: var(--space-12) var(--space-16);
 }
 
+body[data-page="reviews"] .article-shell {
+  padding-top: clamp(3.4rem, 4.6vw, 4rem);
+}
+
 .article-main {
   min-width: 0;
 }
@@ -1234,6 +1243,10 @@ td.product-token .product-token__icon {
   top: 5.5rem;
   display: grid;
   gap: var(--space-5);
+}
+
+body[data-page="reviews"] .article-sidebar {
+  top: 6.15rem;
 }
 
 .sidebar-card {
@@ -1436,6 +1449,7 @@ td.product-token .product-token__icon {
     radial-gradient(circle at top right, rgba(18, 145, 139, 0.12), transparent 18rem),
     linear-gradient(180deg, #ffffff 0%, #f4f9fb 100%);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .product-figure img {
@@ -2153,6 +2167,14 @@ tbody td[data-product] {
   .principle-panel,
   .faq-item {
     padding: 1.2rem;
+  }
+
+  body[data-page="reviews"] .page-hero {
+    margin-top: var(--space-8);
+  }
+
+  body[data-page="reviews"] .article-shell {
+    padding-top: var(--space-12);
   }
 
   .page-hero__title {
