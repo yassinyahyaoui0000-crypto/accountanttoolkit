@@ -3319,6 +3319,40 @@ td,
   color: var(--navy-900);
 }
 
+.page-hero:not(.page-hero--home) .meta-row--light {
+  color: var(--gray-600);
+}
+
+.page-hero:not(.page-hero--home) .meta-row--light span::after {
+  background: var(--line-strong);
+}
+
+.page-hero:not(.page-hero--home) .product-chip {
+  background: var(--surface-paper-strong);
+  border-color: var(--line-soft);
+  color: var(--gray-800);
+}
+
+.page-hero:not(.page-hero--home) .best-for-badge {
+  background: rgba(39, 127, 119, 0.07);
+  border-color: rgba(23, 38, 61, 0.12);
+  color: var(--navy-900);
+}
+
+thead {
+  background: linear-gradient(135deg, #15243a 0%, #223754 100%);
+  color: #f4f7fc;
+}
+
+th {
+  color: inherit;
+}
+
+:root[data-theme="dark"] thead {
+  background: linear-gradient(135deg, #21364f 0%, #2b486c 100%);
+  color: #f6f8fc;
+}
+
 :root[data-theme="dark"] .decision-path__meta,
 :root[data-theme="dark"] .comparison-rail__meta,
 :root[data-theme="dark"] .review-ledger__meta,
