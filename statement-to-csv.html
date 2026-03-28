@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statement2CSV: Convert Bank Statement PDFs to CSV Locally | AccountantToolkit</title>
+  <meta name="description" content="Convert text-based bank statement PDFs into clean CSV locally in your browser. Preview rows, adjust date parsing, and download without uploading files to a server.">
+  <meta name="author" content="AccountantToolkit Editorial Team">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="canonical" href="https://accountanttoolkit.com/statement-to-csv">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AccountantToolkit">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Statement2CSV: Convert Bank Statement PDFs to CSV Locally">
+  <meta property="og:description" content="A lightweight, browser-based statement parser for text-based PDF bank statements. No account signup, no server upload, and a downloadable CSV preview.">
+  <meta property="og:url" content="https://accountanttoolkit.com/statement-to-csv">
+  <meta property="og:image" content="https://accountanttoolkit.com/assets/img/social/og-guide.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Statement2CSV page preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Statement2CSV: Convert Bank Statement PDFs to CSV Locally">
+  <meta name="twitter:description" content="Upload a text-based bank statement PDF, preview extracted rows, and download CSV without sending files to a server.">
+  <meta name="twitter:image" content="https://accountanttoolkit.com/assets/img/social/og-guide.png">
+  <meta name="twitter:image:alt" content="Statement2CSV page preview">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Statement2CSV",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript and a modern browser",
+        "description": "A browser-based tool that converts text-based bank statement PDFs into downloadable CSV files without uploading the document to a server.",
+        "url": "https://accountanttoolkit.com/statement-to-csv",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "AccountantToolkit Editorial Team",
+          "url": "https://accountanttoolkit.com/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Statement2CSV upload my bank statement?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This MVP parses the file locally in your browser, so the statement does not need to be uploaded to a server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What kind of statement PDFs work best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Text-based PDFs work best. Scanned-image statements still need OCR before the parser can extract transactions reliably."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the CSV include?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The exported CSV includes raw and normalized dates, description, amount, debit, credit, balance, transaction type, source line, and row order."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css?v=2026-03-26-editorial">
+  <link rel="stylesheet" href="assets/css/statement2csv.css?v=2026-03-28-statement2csv">
+  <script defer src="assets/js/site.js?v=2026-03-26-editorial"></script>
+  <script type="module" src="assets/js/statement2csv.js?v=2026-03-28-statement2csv"></script>
+  <!-- Google Tag Manager -->
+  <script data-gtm-container="GTM-MXCN4BF7">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MXCN4BF7');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body data-page="tools">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXCN4BF7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div data-site-header></div>
+
+  <main id="content">
+    <section class="page-hero">
+      <span class="page-hero__eyebrow">Free tool</span>
+      <div class="page-hero__layout">
+        <div>
+          <h1 class="page-hero__title">Turn a text-based bank statement into CSV without leaving the browser.</h1>
+          <p class="page-hero__lede">Statement2CSV is the smallest credible utility surface for this repo: a local-first parser that fits the static site architecture, deploys cleanly to Cloudflare Pages, and avoids a fragile backend until OCR or user accounts are actually needed.</p>
+          <div class="meta-row meta-row--light">
+            <span>Updated March 28, 2026</span>
+            <span>Browser-based MVP</span>
+            <span>Best for text-based PDF statements</span>
+          </div>
+          <div class="chip-row">
+            <a class="button button--primary" href="#statement-tool">Open the converter</a>
+            <a class="button button--secondary" href="/best-receipt-tracking">See receipt workflow guidance</a>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <h2>What this MVP does well</h2>
+          <ul class="icon-list icon-list--good">
+            <li>Parses text-based PDF statements locally in the browser.</li>
+            <li>Lets you preview transactions before downloading CSV.</li>
+            <li>Stays deployable as a pure static site on Cloudflare Pages.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page-section page-section--tight" id="statement-tool">
+      <div class="statement-tool-layout" data-statement-tool>
+        <div class="statement-tool-main">
+          <section class="table-card statement-tool-panel">
+            <div class="section-heading statement-tool-heading">
+              <div>
+                <span class="card__eyebrow">Converter</span>
+                <h2>Upload a statement or paste raw statement text.</h2>
+              </div>
+              <p>The parser groups transaction lines, infers amounts and balances, and exports a flat CSV. If the PDF is image-only, paste OCR text instead.</p>
+            </div>
+
+            <div class="statement-tool-dropzone" data-dropzone>
+              <input id="statement-file" type="file" accept=".pdf,.txt,text/plain,application/pdf">
+              <div class="statement-tool-dropzone__copy">
+                <span class="pill">Local-first input</span>
+                <h3>Drop a PDF or text export here.</h3>
+                <p>Files stay in the current browser session. This MVP does not store, upload, or sync statement files.</p>
+                <p class="muted">PDF and plain text only, up to 10 MB for this beta version.</p>
+                <p class="muted" id="statement-file-label">No file selected yet.</p>
+              </div>
+            </div>
+
+            <div class="statement-tool-form-grid">
+              <div class="statement-tool-field">
+                <label for="statement-date-order">Date order</label>
+                <select id="statement-date-order">
+                  <option value="auto">Auto (day-first fallback)</option>
+                  <option value="day-first">Day first (DD/MM)</option>
+                  <option value="month-first">Month first (MM/DD)</option>
+                </select>
+              </div>
+              <div class="statement-tool-field">
+                <label for="statement-default-year">Default year</label>
+                <input id="statement-default-year" type="number" inputmode="numeric" min="2000" max="2100" value="2026">
+              </div>
+            </div>
+
+            <div class="statement-tool-field">
+              <label for="statement-paste">Paste text instead (optional)</label>
+              <textarea id="statement-paste" placeholder="Paste copied statement text here if the PDF is image-only or if you already have OCR output."></textarea>
+              <p class="muted statement-tool-input-hint" id="statement-input-hint">If this box has text, Convert to CSV will use the pasted text instead of the selected file.</p>
+            </div>
+
+            <div class="statement-tool-actions">
+              <button class="button button--primary" id="statement-run" type="button">Convert to CSV</button>
+              <button class="button button--secondary" id="statement-download" type="button" disabled>Download CSV</button>
+              <button class="button button--secondary" id="statement-copy" type="button" disabled>Copy CSV</button>
+              <button class="button button--secondary" id="statement-reset" type="button">Reset</button>
+            </div>
+
+            <p class="statement-tool-status" id="statement-status" role="status" aria-live="polite">Upload a statement PDF or paste statement text to begin.</p>
+
+            <section class="callout callout--muted statement-tool-trust">
+              <p><strong>Files stay in your browser.</strong> This tool works best with text-based PDFs and plain text only. Always review the extracted rows before importing them into accounting software.</p>
+              <p class="muted statement-tool-beta">CSV export is free for now while Statement2CSV is in beta.</p>
+            </section>
+          </section>
+
+          <section class="table-card statement-tool-panel statement-tool-results" id="statement-results" hidden>
+            <div class="statement-tool-results__header">
+              <div>
+                <span class="card__eyebrow">Preview</span>
+                <h2>Review the extracted rows before you download.</h2>
+              </div>
+              <p class="muted" id="statement-results-note">The preview shows the first rows from the generated CSV.</p>
+            </div>
+
+            <div class="statement-tool-stats">
+              <article class="stat-card statement-tool-stat">
+                <strong id="statement-count">0</strong>
+                <span>Transactions found</span>
+              </article>
+              <article class="stat-card statement-tool-stat">
+                <strong id="statement-balance-count">0</strong>
+                <span>Rows with balance</span>
+              </article>
+              <article class="stat-card statement-tool-stat">
+                <strong id="statement-source">-</strong>
+                <span>Input source</span>
+              </article>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <caption>Statement2CSV preview</caption>
+                <thead>
+                  <tr>
+                    <th>Raw date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Balance</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody id="statement-preview-body">
+                  <tr>
+                    <td colspan="5" class="statement-tool-empty">Run the converter to see extracted rows here.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="table-card statement-tool-panel statement-tool-next-steps" id="statement-next-steps" hidden>
+            <div class="statement-tool-results__header">
+              <div>
+                <span class="card__eyebrow">Next step</span>
+                <h2>Keep the cleanup moving.</h2>
+              </div>
+              <p class="muted">CSV export is free for now while the tool is in beta. If you want to turn the cleaned data into bookkeeping work, these are the most practical next tools to evaluate.</p>
+            </div>
+
+            <div class="summary-grid statement-tool-recommendations" id="statement-next-steps-grid"></div>
+          </section>
+        </div>
+
+        <aside class="statement-tool-sidebar">
+          <section class="sidebar-card">
+            <h2>CSV columns</h2>
+            <ul class="sidebar-list">
+              <li><span><strong>Dates:</strong> raw date, normalized date, and optional posted date.</span></li>
+              <li><span><strong>Money:</strong> amount, debit, credit, and balance when available.</span></li>
+              <li><span><strong>Audit trail:</strong> transaction type, row order, and original source line.</span></li>
+            </ul>
+          </section>
+
+          <section class="sidebar-card">
+            <h2>Known limits</h2>
+            <ul class="icon-list icon-list--bad">
+              <li>Scanned-image PDFs still need OCR before parsing.</li>
+              <li>Ambiguous dates may need a different day-first or month-first setting.</li>
+              <li>Very custom bank layouts can still need manual cleanup after export.</li>
+            </ul>
+          </section>
+
+          <section class="sidebar-card">
+            <h2>Why this shape fits the repo</h2>
+            <p>This site is a static publishing surface. A browser-based tool page keeps deployment simple on Cloudflare Pages and avoids introducing backend risk into the editorial pages.</p>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page-section page-section--tight">
+      <div class="section-heading section-heading--stacked">
+        <div>
+          <span class="card__eyebrow">How it works</span>
+          <h2>Small architecture now, room to grow later.</h2>
+        </div>
+        <p>The current build is intentionally local-first. If the tool later needs OCR, saved jobs, or institution-specific rules, that is the point to graduate into Cloudflare Pages Functions or a Worker-backed pipeline.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="card">
+          <span class="card__eyebrow">Step 1</span>
+          <h3>Extract text</h3>
+          <p>The tool reads a text-based PDF in the browser with PDF.js, then rebuilds rough statement lines from positioned text items.</p>
+        </article>
+        <article class="card">
+          <span class="card__eyebrow">Step 2</span>
+          <h3>Infer transactions</h3>
+          <p>Rows are identified from leading date patterns and amount tokens, with balance-aware heuristics used to improve debit and credit inference.</p>
+        </article>
+        <article class="card">
+          <span class="card__eyebrow">Step 3</span>
+          <h3>Download CSV</h3>
+          <p>The parser generates a flat CSV that can feed spreadsheet cleanup, bookkeeping imports, or a manual reconciliation pass.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

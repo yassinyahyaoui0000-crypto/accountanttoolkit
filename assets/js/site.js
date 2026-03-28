@@ -1,11 +1,27 @@
 const THEME_STORAGE_KEY = "accountanttoolkit-theme";
-const ASSET_VERSION = "2026-03-22-stabilize";
-const SITE_REBUILD_DATE = "2026-03-22";
+const ASSET_VERSION = "2026-03-26-editorial";
+const SITE_REBUILD_DATE = "2026-03-26";
 const DEFAULT_REVIEW_DATE = "2026-03-22";
 const GTM_CONTAINER_ID = "GTM-MXCN4BF7";
+const CLARITY_PROJECT_ID = "";
+const AFFILIATE_URL_OVERRIDES = {
+  xero: "",
+  freshbooks: "",
+  wave: "",
+  bonsai: "",
+  "zoho-books": "",
+  quickbooks: "",
+  dext: "",
+  hubdoc: "",
+  "zoho-expense": ""
+};
 
 function isConfiguredGtmId(value) {
   return /^GTM-[A-Z0-9]+$/i.test(value) && !/^GTM-X+$/i.test(value);
+}
+
+function isConfiguredClarityId(value) {
+  return /^\d+$/.test(String(value || "").trim());
 }
 
 function ensureDataLayer() {
@@ -38,6 +54,28 @@ function initTagManager() {
   script.setAttribute("data-gtm-container", GTM_CONTAINER_ID);
   document.head.appendChild(script);
   document.documentElement.dataset.gtmConfigured = "true";
+
+  return true;
+}
+
+function initClarity() {
+  if (!isConfiguredClarityId(CLARITY_PROJECT_ID)) {
+    return false;
+  }
+
+  if (
+    typeof window.clarity === "function" ||
+    document.querySelector(`script[data-clarity-project-id="${CLARITY_PROJECT_ID}"]`)
+  ) {
+    return true;
+  }
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.clarity.ms/tag/${encodeURIComponent(CLARITY_PROJECT_ID)}`;
+  script.setAttribute("data-clarity-project-id", CLARITY_PROJECT_ID);
+  document.head.appendChild(script);
+  document.documentElement.dataset.clarityConfigured = "true";
 
   return true;
 }
@@ -205,22 +243,66 @@ const productCatalog = {
   hubdoc: { icon: `assets/img/products/hubdoc.svg?v=${ASSET_VERSION}` }
 };
 
-const affiliateDomainToProduct = {
-  "xero.com": "xero",
-  "freshbooks.com": "freshbooks",
-  "waveapps.com": "wave",
-  "hellobonsai.com": "bonsai",
-  "zoho.com": "zoho-books",
-  "intuit.com": "quickbooks"
-};
+function normalizeHost(hostname) {
+  return hostname.replace(/^www\./, "").toLowerCase();
+}
 
-function getProductByHostname(hostname) {
-  const normalizedHost = hostname.replace(/^www\./, "").toLowerCase();
-  const match = Object.keys(affiliateDomainToProduct).find((domain) =>
-    normalizedHost === domain || normalizedHost.endsWith(`.${domain}`)
-  );
+function getProductByUrl(url) {
+  const normalizedHost = normalizeHost(url.hostname);
+  const normalizedPath = url.pathname.toLowerCase();
 
-  return match ? affiliateDomainToProduct[match] : null;
+  if (
+    normalizedHost === "hubdoc.com" ||
+    normalizedHost.endsWith(".hubdoc.com") ||
+    ((normalizedHost === "xero.com" || normalizedHost.endsWith(".xero.com")) &&
+      normalizedPath.includes("hubdoc"))
+  ) {
+    return "hubdoc";
+  }
+
+  if (
+    normalizedHost === "zohoexpense.com" ||
+    normalizedHost.endsWith(".zohoexpense.com") ||
+    ((normalizedHost === "zoho.com" || normalizedHost.endsWith(".zoho.com")) &&
+      normalizedPath.includes("/expense"))
+  ) {
+    return "zoho-expense";
+  }
+
+  if (normalizedHost === "dext.com" || normalizedHost.endsWith(".dext.com")) {
+    return "dext";
+  }
+
+  if (normalizedHost === "xero.com" || normalizedHost.endsWith(".xero.com")) {
+    return "xero";
+  }
+
+  if (normalizedHost === "freshbooks.com" || normalizedHost.endsWith(".freshbooks.com")) {
+    return "freshbooks";
+  }
+
+  if (normalizedHost === "waveapps.com" || normalizedHost.endsWith(".waveapps.com")) {
+    return "wave";
+  }
+
+  if (normalizedHost === "hellobonsai.com" || normalizedHost.endsWith(".hellobonsai.com")) {
+    return "bonsai";
+  }
+
+  if (normalizedHost === "zoho.com" || normalizedHost.endsWith(".zoho.com")) {
+    return "zoho-books";
+  }
+
+  if (normalizedHost === "intuit.com" || normalizedHost.endsWith(".intuit.com")) {
+    return "quickbooks";
+  }
+
+  return null;
+}
+
+function getConfiguredAffiliateUrl(product) {
+  const value = AFFILIATE_URL_OVERRIDES[product];
+  return typeof value === "string" && value.trim() ? value.trim() : null;
 }
 
 function detectCtaPosition(link) {
@@ -259,33 +341,50 @@ function normalizeAffiliateLinks(root = document) {
     }
 
     const isExternal = parsed.hostname !== window.location.hostname;
-    const product = getProductByHostname(parsed.hostname);
+    const product = getProductByUrl(parsed);
 
     if (!isExternal || !product) {
       return;
     }
 
+    const overrideUrl = getConfiguredAffiliateUrl(product);
+    const linkMode = overrideUrl ? "affiliate" : "official";
     const relSet = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
-    relSet.add("sponsored");
+
+    if (linkMode === "affiliate") {
+      relSet.add("sponsored");
+    } else {
+      relSet.delete("sponsored");
+    }
+
     relSet.add("nofollow");
     relSet.add("noopener");
     relSet.add("noreferrer");
     link.setAttribute("rel", Array.from(relSet).join(" "));
 
-    parsed.searchParams.set("utm_source", "accountanttoolkit");
-    parsed.searchParams.set("utm_medium", "affiliate");
+    if (overrideUrl) {
+      try {
+        parsed = new URL(overrideUrl);
+      } catch {
+        parsed = new URL(link.href, window.location.origin);
+      }
+    } else {
+      parsed.searchParams.set("utm_source", "accountanttoolkit");
+      parsed.searchParams.set("utm_medium", "review");
 
-    if (!parsed.searchParams.has("utm_campaign")) {
-      parsed.searchParams.set("utm_campaign", page);
-    }
+      if (!parsed.searchParams.has("utm_campaign")) {
+        parsed.searchParams.set("utm_campaign", page);
+      }
 
-    if (!parsed.searchParams.has("utm_content")) {
-      parsed.searchParams.set("utm_content", detectCtaPosition(link));
+      if (!parsed.searchParams.has("utm_content")) {
+        parsed.searchParams.set("utm_content", detectCtaPosition(link));
+      }
     }
 
     link.href = parsed.toString();
     link.dataset.affiliateLink = "true";
     link.dataset.affiliateProduct = product;
+    link.dataset.linkMode = linkMode;
   });
 }
 
@@ -297,6 +396,7 @@ function trackAffiliateClick(link) {
     domain: new URL(link.href).hostname,
     position: detectCtaPosition(link),
     product: link.dataset.affiliateProduct || "unknown",
+    link_mode: link.dataset.linkMode || "official",
     label: (link.textContent || "").trim().slice(0, 80)
   };
 
@@ -357,16 +457,20 @@ function renderHeader() {
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="/" aria-label="AccountantToolkit home">
-          <span class="brand__mark" aria-hidden="true">AT</span>
+          <span class="brand__mark" aria-hidden="true"><img src="assets/img/logo-mark.svg" alt="" width="44" height="44"></span>
           <span class="brand__text">
+            <span class="brand__eyebrow">Independent editorial desk</span>
             <span class="brand__name">AccountantToolkit</span>
-            <span class="brand__tag">Software reviews for freelance accountants</span>
+            <span class="brand__tag">Software research for freelancers and bookkeepers</span>
           </span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" aria-pressed="false"><span class="theme-toggle__icon" aria-hidden="true" data-icon="sun">\u2600</span><span class="theme-toggle__label">Dark mode</span></button>
-          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
+          <span class="site-nav__label">Browse</span>
           <div class="site-nav__links" id="site-nav-links">${navLinks}</div>
+          <div class="site-nav__actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" aria-pressed="false"><span class="theme-toggle__icon" aria-hidden="true" data-icon="sun">\u2600</span><span class="theme-toggle__label">Dark mode</span></button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -391,8 +495,14 @@ function renderFooter() {
     <footer class="footer">
       <div class="footer__inner">
         <section class="footer__brand">
+          <span class="footer__eyebrow">Independent product notes</span>
           <h2>AccountantToolkit</h2>
-          <p>We rebuild software buying decisions around actual workflows: invoicing, expense capture, client operations, bookkeeping depth, and integration risk.</p>
+          <p>We publish pragmatic accounting, invoicing, and receipt-capture research for freelancers and bookkeepers who want clearer tradeoffs, faster decisions, and fewer vendor-driven detours.</p>
+          <div class="footer__trust">
+            <span>Static, fast pages</span>
+            <span>2026 buyer-intent updates</span>
+            <span>Independent editorial structure</span>
+          </div>
           <p class="footer__meta">Read our <a href="/editorial-policy">editorial policy</a> and <a href="/affiliate-disclosure">affiliate disclosure</a> for how we research products, handle promotions, and label commercial relationships.</p>
           <p class="footer__meta">Corrections and business inquiries: <a href="mailto:hello@accountanttoolkit.com">hello@accountanttoolkit.com</a>.</p>
           <p class="footer__meta">Last rebuilt on ${formatReviewedDate(SITE_REBUILD_DATE)}.</p>
@@ -446,6 +556,7 @@ function decorateProductTokens(root = document) {
 }
 document.addEventListener("DOMContentLoaded", () => {
   initTagManager();
+  initClarity();
 
   const currentPage = document.body.dataset.page || "";
   const headerSlot = document.querySelector("[data-site-header]");
