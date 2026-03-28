@@ -3,9 +3,25 @@ const ASSET_VERSION = "2026-03-26-editorial";
 const SITE_REBUILD_DATE = "2026-03-26";
 const DEFAULT_REVIEW_DATE = "2026-03-22";
 const GTM_CONTAINER_ID = "GTM-MXCN4BF7";
+const CLARITY_PROJECT_ID = "";
+const AFFILIATE_URL_OVERRIDES = {
+  xero: "",
+  freshbooks: "",
+  wave: "",
+  bonsai: "",
+  "zoho-books": "",
+  quickbooks: "",
+  dext: "",
+  hubdoc: "",
+  "zoho-expense": ""
+};
 
 function isConfiguredGtmId(value) {
   return /^GTM-[A-Z0-9]+$/i.test(value) && !/^GTM-X+$/i.test(value);
+}
+
+function isConfiguredClarityId(value) {
+  return /^\d+$/.test(String(value || "").trim());
 }
 
 function ensureDataLayer() {
@@ -38,6 +54,28 @@ function initTagManager() {
   script.setAttribute("data-gtm-container", GTM_CONTAINER_ID);
   document.head.appendChild(script);
   document.documentElement.dataset.gtmConfigured = "true";
+
+  return true;
+}
+
+function initClarity() {
+  if (!isConfiguredClarityId(CLARITY_PROJECT_ID)) {
+    return false;
+  }
+
+  if (
+    typeof window.clarity === "function" ||
+    document.querySelector(`script[data-clarity-project-id="${CLARITY_PROJECT_ID}"]`)
+  ) {
+    return true;
+  }
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.clarity.ms/tag/${encodeURIComponent(CLARITY_PROJECT_ID)}`;
+  script.setAttribute("data-clarity-project-id", CLARITY_PROJECT_ID);
+  document.head.appendChild(script);
+  document.documentElement.dataset.clarityConfigured = "true";
 
   return true;
 }
@@ -205,22 +243,66 @@ const productCatalog = {
   hubdoc: { icon: `assets/img/products/hubdoc.svg?v=${ASSET_VERSION}` }
 };
 
-const affiliateDomainToProduct = {
-  "xero.com": "xero",
-  "freshbooks.com": "freshbooks",
-  "waveapps.com": "wave",
-  "hellobonsai.com": "bonsai",
-  "zoho.com": "zoho-books",
-  "intuit.com": "quickbooks"
-};
+function normalizeHost(hostname) {
+  return hostname.replace(/^www\./, "").toLowerCase();
+}
 
-function getProductByHostname(hostname) {
-  const normalizedHost = hostname.replace(/^www\./, "").toLowerCase();
-  const match = Object.keys(affiliateDomainToProduct).find((domain) =>
-    normalizedHost === domain || normalizedHost.endsWith(`.${domain}`)
-  );
+function getProductByUrl(url) {
+  const normalizedHost = normalizeHost(url.hostname);
+  const normalizedPath = url.pathname.toLowerCase();
 
-  return match ? affiliateDomainToProduct[match] : null;
+  if (
+    normalizedHost === "hubdoc.com" ||
+    normalizedHost.endsWith(".hubdoc.com") ||
+    ((normalizedHost === "xero.com" || normalizedHost.endsWith(".xero.com")) &&
+      normalizedPath.includes("hubdoc"))
+  ) {
+    return "hubdoc";
+  }
+
+  if (
+    normalizedHost === "zohoexpense.com" ||
+    normalizedHost.endsWith(".zohoexpense.com") ||
+    ((normalizedHost === "zoho.com" || normalizedHost.endsWith(".zoho.com")) &&
+      normalizedPath.includes("/expense"))
+  ) {
+    return "zoho-expense";
+  }
+
+  if (normalizedHost === "dext.com" || normalizedHost.endsWith(".dext.com")) {
+    return "dext";
+  }
+
+  if (normalizedHost === "xero.com" || normalizedHost.endsWith(".xero.com")) {
+    return "xero";
+  }
+
+  if (normalizedHost === "freshbooks.com" || normalizedHost.endsWith(".freshbooks.com")) {
+    return "freshbooks";
+  }
+
+  if (normalizedHost === "waveapps.com" || normalizedHost.endsWith(".waveapps.com")) {
+    return "wave";
+  }
+
+  if (normalizedHost === "hellobonsai.com" || normalizedHost.endsWith(".hellobonsai.com")) {
+    return "bonsai";
+  }
+
+  if (normalizedHost === "zoho.com" || normalizedHost.endsWith(".zoho.com")) {
+    return "zoho-books";
+  }
+
+  if (normalizedHost === "intuit.com" || normalizedHost.endsWith(".intuit.com")) {
+    return "quickbooks";
+  }
+
+  return null;
+}
+
+function getConfiguredAffiliateUrl(product) {
+  const value = AFFILIATE_URL_OVERRIDES[product];
+  return typeof value === "string" && value.trim() ? value.trim() : null;
 }
 
 function detectCtaPosition(link) {
@@ -259,33 +341,50 @@ function normalizeAffiliateLinks(root = document) {
     }
 
     const isExternal = parsed.hostname !== window.location.hostname;
-    const product = getProductByHostname(parsed.hostname);
+    const product = getProductByUrl(parsed);
 
     if (!isExternal || !product) {
       return;
     }
 
+    const overrideUrl = getConfiguredAffiliateUrl(product);
+    const linkMode = overrideUrl ? "affiliate" : "official";
     const relSet = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
-    relSet.add("sponsored");
+
+    if (linkMode === "affiliate") {
+      relSet.add("sponsored");
+    } else {
+      relSet.delete("sponsored");
+    }
+
     relSet.add("nofollow");
     relSet.add("noopener");
     relSet.add("noreferrer");
     link.setAttribute("rel", Array.from(relSet).join(" "));
 
-    parsed.searchParams.set("utm_source", "accountanttoolkit");
-    parsed.searchParams.set("utm_medium", "affiliate");
+    if (overrideUrl) {
+      try {
+        parsed = new URL(overrideUrl);
+      } catch {
+        parsed = new URL(link.href, window.location.origin);
+      }
+    } else {
+      parsed.searchParams.set("utm_source", "accountanttoolkit");
+      parsed.searchParams.set("utm_medium", "review");
 
-    if (!parsed.searchParams.has("utm_campaign")) {
-      parsed.searchParams.set("utm_campaign", page);
-    }
+      if (!parsed.searchParams.has("utm_campaign")) {
+        parsed.searchParams.set("utm_campaign", page);
+      }
 
-    if (!parsed.searchParams.has("utm_content")) {
-      parsed.searchParams.set("utm_content", detectCtaPosition(link));
+      if (!parsed.searchParams.has("utm_content")) {
+        parsed.searchParams.set("utm_content", detectCtaPosition(link));
+      }
     }
 
     link.href = parsed.toString();
     link.dataset.affiliateLink = "true";
     link.dataset.affiliateProduct = product;
+    link.dataset.linkMode = linkMode;
   });
 }
 
@@ -297,6 +396,7 @@ function trackAffiliateClick(link) {
     domain: new URL(link.href).hostname,
     position: detectCtaPosition(link),
     product: link.dataset.affiliateProduct || "unknown",
+    link_mode: link.dataset.linkMode || "official",
     label: (link.textContent || "").trim().slice(0, 80)
   };
 
@@ -456,6 +556,7 @@ function decorateProductTokens(root = document) {
 }
 document.addEventListener("DOMContentLoaded", () => {
   initTagManager();
+  initClarity();
 
   const currentPage = document.body.dataset.page || "";
   const headerSlot = document.querySelector("[data-site-header]");
