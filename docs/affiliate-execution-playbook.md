@@ -8,6 +8,12 @@ This repo now includes the site-side pieces needed for the first 30-day affiliat
 - a 10-page priority list
 - a tracker template for indexing, clicks, and approvals
 
+For the current no-social growth approach, pair this file with:
+
+- `docs/non-social-traffic-playbook-90-days.md`
+- `docs/outreach-playbook.md`
+- `docs/statement2csv-support-queue.md`
+
 ## Priority money pages
 
 Use only these pages for the first sprint:
@@ -64,7 +70,7 @@ The same URLs are stored in `seo/priority-money-urls.txt`.
 - GTM publishing
 - Clarity project creation
 - Affiliate program applications and payout setup
-- Reddit, Quora, and forum outreach
+- Non-social email outreach and resource-page prospecting
 
 ## Repo-side switches
 
