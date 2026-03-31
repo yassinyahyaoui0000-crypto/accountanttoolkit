@@ -621,6 +621,19 @@ document.addEventListener("DOMContentLoaded", () => {
         closeNav();
       }
     });
+
+    const desktopNavMedia = window.matchMedia("(min-width: 841px)");
+    const handleDesktopNavReset = (event) => {
+      if (event.matches) {
+        closeNav();
+      }
+    };
+
+    if (typeof desktopNavMedia.addEventListener === "function") {
+      desktopNavMedia.addEventListener("change", handleDesktopNavReset);
+    } else if (typeof desktopNavMedia.addListener === "function") {
+      desktopNavMedia.addListener(handleDesktopNavReset);
+    }
   }
 
   if (articlePages.has(currentPage)) {
