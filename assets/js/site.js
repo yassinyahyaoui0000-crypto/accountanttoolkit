@@ -1,6 +1,6 @@
 const THEME_STORAGE_KEY = "accountanttoolkit-theme";
-const ASSET_VERSION = "2026-03-26-editorial";
-const SITE_REBUILD_DATE = "2026-03-26";
+const ASSET_VERSION = "2026-04-01-uipro";
+const SITE_REBUILD_DATE = "2026-04-01";
 const DEFAULT_REVIEW_DATE = "2026-03-22";
 const GTM_CONTAINER_ID = "GTM-MXCN4BF7";
 const CLARITY_PROJECT_ID = "";
@@ -459,15 +459,16 @@ function renderHeader() {
         <a class="brand" href="/" aria-label="AccountantToolkit home">
           <span class="brand__mark" aria-hidden="true"><img src="assets/img/logo-mark.svg" alt="" width="44" height="44"></span>
           <span class="brand__text">
-            <span class="brand__eyebrow">Independent editorial desk</span>
+            <span class="brand__eyebrow">Independent research bulletin</span>
             <span class="brand__name">AccountantToolkit</span>
-            <span class="brand__tag">Software research for freelancers and bookkeepers</span>
+            <span class="brand__tag">Accounting software field notes for freelancers and bookkeepers</span>
           </span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <span class="site-nav__label">Browse</span>
+          <span class="site-nav__label">Field guide</span>
           <div class="site-nav__links" id="site-nav-links">${navLinks}</div>
           <div class="site-nav__actions">
+            <a class="site-nav__cta" href="/best-receipt-tracking">Read the receipt leader</a>
             <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" aria-pressed="false"><span class="theme-toggle__icon" aria-hidden="true" data-icon="sun">\u2600</span><span class="theme-toggle__label">Dark mode</span></button>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
           </div>
@@ -495,9 +496,14 @@ function renderFooter() {
     <footer class="footer">
       <div class="footer__inner">
         <section class="footer__brand">
-          <span class="footer__eyebrow">Independent product notes</span>
+          <span class="footer__eyebrow">Issue 01 · accountanttoolkit</span>
           <h2>AccountantToolkit</h2>
           <p>We publish pragmatic accounting, invoicing, and receipt-capture research for freelancers and bookkeepers who want clearer tradeoffs, faster decisions, and fewer vendor-driven detours.</p>
+          <div class="footer__edition">
+            <span>Built as a static editorial desk</span>
+            <span>Updated for 2026 buyer-intent searches</span>
+            <span><a href="/statement-to-csv">Includes a free statement-to-CSV tool</a></span>
+          </div>
           <div class="footer__trust">
             <span>Static, fast pages</span>
             <span>2026 buyer-intent updates</span>
